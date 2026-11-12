@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sanitär Marco Koller · Wil SG</title>
+<meta name="description" content="Sanitär Marco Koller in Wil SG: Reparatur-Service, Ablauf-Entstopfungen, Elektroboiler-Entkalkungen, Wasser-Enthärtungsanlagen und sanitäre Anlagen in Um- und Neubauten.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#C1022C; --red-dark:#8E0120; --ink:#111013; --mute:#5d5a5e; --line:#dedadb; --paper:#fff; --tint:#f6f1f2; --water:#2f8fd6;
+  --pw:30px;                     /* Rohrdicke (gerade Zahl, damit alles pixelgenau sitzt) */
+  --s:calc(30/18);               /* Massstab des Logos (px pro Logo-Einheit) */
+  --px:clamp(300px,27vw,430px);  /* x-Position der Rohrmitte */
+  --lt:118px;                    /* Abstand Logo von oben */
+  --lh:calc(164px*var(--s));     /* Logo-Höhe */
+  --gap:76px;                    /* Abstand Rohrmitte bis Inhalt */
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,"Helvetica Neue",Arial,sans-serif;font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.x{font-stretch:118%;font-weight:800;letter-spacing:-.01em}   /* breite, fette Schrift wie im Logo */
+.page{position:relative;overflow:clip}
+
+/* ---------- Das Rohr ---------- */
+.pipe{position:absolute;left:calc(var(--px) - var(--pw)/2);width:var(--pw);background:var(--red);z-index:2;pointer-events:none}
+.pipeA{top:0;height:calc(var(--lt) + 2px);transform-origin:top}
+.pipeB{top:calc(var(--lt) + var(--lh) - 2px);height:0;transition:height .3s cubic-bezier(.2,.7,.2,1)}
+/* Wasser im Rohr: bewegt sich nur, solange gescrollt wird */
+.pipeB::after{content:"";position:absolute;top:0;bottom:0;left:24%;width:13%;border-radius:9px;background:repeating-linear-gradient(180deg,rgba(255,255,255,.36) 0 34px,transparent 34px 92px);background-position-y:var(--fy,0px);opacity:var(--fo,0);transition:opacity .7s}
+.logo{position:absolute;z-index:3;top:var(--lt);left:calc(var(--px) - 137.5px*var(--s));width:calc(150px*var(--s));height:var(--lh);overflow:visible}
+.logo text{font-family:Archivo,"Helvetica Neue",Arial,sans-serif;font-weight:800;font-stretch:112%;font-size:28.5px;fill:var(--ink)}
+.logo .bend{fill:none;stroke:var(--red);stroke-width:18;stroke-dasharray:100;stroke-dashoffset:0}
+
+/* Intro: Rohr fliesst von oben durch den Siphon, Schrift kommt aus dem Rohr */
+.intro .pipeA{animation:growY .45s cubic-bezier(.5,0,.9,.6) both}
+.intro .logo .bend{animation:draw 1s .42s cubic-bezier(.45,0,.3,1) both}
+.intro .logo .w{animation:outOfPipe .7s cubic-bezier(.2,.8,.2,1) both}
+.intro .logo .w1{animation-delay:.75s}.intro .logo .w2{animation-delay:1.15s}.intro .logo .w3{animation-delay:1.3s}
+.intro .rise{animation:rise .8s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(1.45s + var(--i,0)*.11s)}
+@keyframes growY{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes draw{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}
+@keyframes outOfPipe{from{clip-path:inset(0 0 0 100%);transform:translateX(14px)}to{clip-path:inset(0 0 0 -5%);transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+/* ---------- Layout ---------- */
+.col{margin-left:calc(var(--px) + var(--gap));margin-right:6vw;max-width:820px;position:relative;z-index:1}
+.top{display:flex;justify-content:flex-end;align-items:center;gap:30px;padding:30px 0 0;font-size:16px;font-weight:600}
+.top a{text-decoration:none}
+.top a:hover{color:var(--red)}
+.top .tel{border:2px solid var(--ink);padding:9px 16px;border-radius:999px;white-space:nowrap}
+.top .tel:hover{background:var(--ink);color:#fff}
+
+.hero .col{max-width:900px}
+.hero-body{padding-top:42px}
+.kicker{font-size:15px;font-weight:700;color:var(--red);margin:0 0 14px}
+h1{font-size:clamp(58px,10.4vw,172px);line-height:.88;margin:0 0 30px;letter-spacing:-.04em}
+h1 .dot{color:var(--red)}
+.lead{font-size:clamp(19px,1.7vw,24px);max-width:25em;color:#2b292c;margin:0 0 34px}
+.cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-weight:700;border-radius:999px;padding:17px 28px;font-size:19px;border:2px solid transparent;transition:transform .15s,background .15s,color .15s}
+.btn:active{transform:scale(.97)}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-dark)}
+.btn-line{border-color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:#fff}
+.btn svg{width:20px;height:20px;flex:none}
+.hint{margin-top:22px;font-size:15px;color:var(--mute)}
+
+/* Wasserhahn rechts im Titelbereich: gleiche Linie wie das Rohr im Logo */
+.hero{position:relative;padding-bottom:56px}
+.tapfx{position:absolute;right:0;top:150px;width:clamp(250px,25.5vw,367px);height:auto;overflow:visible;z-index:1;pointer-events:none}
+.tapfx path{fill:none}
+.t-pipe{stroke:var(--red);stroke-width:18;stroke-dasharray:100;stroke-dashoffset:0}
+.t-noz{fill:var(--red-dark);transform-box:fill-box;transform-origin:50% 0}
+.t-handle{transform-box:fill-box;transform-origin:50% 0}
+.t-handle path{stroke:var(--ink);stroke-linecap:round}
+.t-basin{stroke:var(--ink);stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:100;stroke-dashoffset:0}
+.t-stream{stroke:var(--water);stroke-width:7;stroke-linecap:round;stroke-dasharray:100;stroke-dashoffset:0}
+.t-flow{stroke:#fff;stroke-opacity:.6;stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 23;animation:flowdash .55s linear infinite}
+@keyframes flowdash{to{stroke-dashoffset:-32}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes popY{from{transform:scaleY(0)}to{transform:none}}
+@keyframes turn{0%,100%{transform:none}50%{transform:scaleX(.28)}}
+.intro .t-pipe{animation:draw .55s 1.55s cubic-bezier(.4,0,.3,1) both}
+.intro .t-noz{animation:popY .25s 2.05s both}
+.intro .t-handle{animation:fadeIn .35s 2.05s both,turn .8s 2.75s ease-in-out both}
+.intro .t-basin{animation:draw .7s 2.05s cubic-bezier(.4,0,.3,1) both,fadeIn .01s 2.05s both}
+.intro .t-stream{animation:draw .4s 3.1s cubic-bezier(.6,0,1,1) both,fadeIn .01s 3.1s both}
+.intro .t-flow{animation:flowdash .55s linear infinite,fadeIn .3s 3.45s both}
+
+.sec{position:relative;padding:112px 0;display:grid;grid-template-columns:calc(var(--px) - var(--pw)/2 - 28px) minmax(0,1fr)}
+.sec .col{margin-left:calc(var(--pw)/2 + 28px + var(--gap))}
+.label{position:sticky;top:104px;align-self:start;text-align:right;text-transform:uppercase;font-size:clamp(16px,1.45vw,22px);line-height:1.05;margin:-10px 0 0}
+.label b{display:block;font-size:clamp(70px,8vw,124px);line-height:.82;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.5px var(--red);margin-bottom:12px;transition:color .5s}
+.sec.on .label b{color:var(--red)}
+.collar{position:absolute;z-index:3;top:118px;left:calc(var(--px) - var(--pw)/2 - 6px);width:calc(var(--pw) + 12px);height:18px;background:var(--red-dark);border-radius:4px;transform:scaleX(0);transition:transform .3s}
+.branch{position:absolute;z-index:1;top:123px;left:calc(var(--px) + var(--pw)/2);width:52px;height:8px;background:var(--red);border-radius:0 4px 4px 0;transform:scaleX(0);transform-origin:left;transition:transform .5s .1s cubic-bezier(.2,.8,.2,1)}
+.on>.collar,.on>.branch{transform:none}
+h2{font-size:clamp(32px,4.3vw,62px);line-height:.98;margin:0 0 18px;letter-spacing:-.03em}
+.sub{font-size:20px;color:#2b292c;max-width:32em;margin:0 0 46px}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0)*70ms)}
+.seen .reveal{opacity:1;transform:none}
+
+/* Leistungen: jede hängt mit einem Abzweiger am Rohr */
+.svc{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.row{position:relative;display:grid;grid-template-columns:60px minmax(0,1fr) auto;gap:2px 26px;padding:30px 0;border-bottom:1px solid var(--line);align-items:center}
+.tap{position:absolute;left:calc(var(--pw)/2 - var(--gap));width:calc(var(--gap) - var(--pw)/2 + 2px);top:56px;height:8px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.3,.7,.2,1)}
+.row.on .tap{transform:none}
+.ico{grid-row:span 2;width:60px;height:60px;border-radius:50%;border:2.5px solid var(--line);display:grid;place-items:center;background:#fff;position:relative;z-index:1;transition:border-color .25s .3s,background .25s .3s}
+.row.on .ico{border-color:var(--red)}
+.ico svg{width:32px;height:32px;stroke:var(--ink);stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.ico svg .r{stroke:var(--red)}
+.row h3{margin:0;font-size:clamp(21px,2.1vw,29px);line-height:1.12;align-self:end}
+.row p{margin:0;color:var(--mute);grid-column:2;max-width:33em;align-self:start}
+.ask{grid-column:3;grid-row:1/span 2;font-size:16px;font-weight:700;text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;gap:8px;padding:8px 0}
+.ask::after{content:"";width:22px;height:8px;background:var(--red);border-radius:0 4px 4px 0;transition:width .25s}
+.ask:hover{color:var(--red)}.ask:hover::after{width:40px}
+.row h3,.row p,.row .ask{opacity:0;transform:translateX(18px);transition:opacity .6s .15s,transform .6s .15s cubic-bezier(.2,.8,.2,1)}
+.row.seen h3,.row.seen p,.row.seen .ask{opacity:1;transform:none}
+
+/* Schwarzes Band mit der Telefonnummer */
+.band{background:var(--ink);color:#fff;padding:92px 0 96px}
+.band p{margin:0;font-size:20px;color:#c9c5ca;max-width:30em}
+.band .q{font-size:clamp(26px,3vw,40px);color:#fff;margin:0 0 6px}
+.band a{display:inline-block;font-size:clamp(46px,8.6vw,138px);line-height:1;letter-spacing:-.04em;text-decoration:none;margin:10px 0 18px;transition:color .2s;white-space:nowrap}
+.band a:hover{color:#ff3b62}
+
+/* Was ist los? */
+.what{background:var(--tint)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px}
+.chip{font:inherit;font-weight:600;font-size:17px;padding:13px 20px;border-radius:999px;border:2px solid var(--ink);background:#fff;color:var(--ink);cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.chip:hover{border-color:var(--red);color:var(--red)}
+.chip[aria-pressed=true]{background:var(--red);border-color:var(--red);color:#fff}
+.answer{background:#fff;border-left:8px solid var(--red);padding:30px 32px 34px;min-height:214px}
+.answer h3{margin:0 0 10px;font-size:clamp(24px,2.7vw,36px);line-height:1.06}
+.answer p{margin:0 0 24px;color:#2b292c;max-width:33em;font-size:19px}
+.answer.swap>*{animation:rise .4s cubic-bezier(.2,.8,.2,1) both}
+.answer.swap>:nth-child(2){animation-delay:.05s}.answer.swap>:nth-child(3){animation-delay:.1s}
+
+/* Kontakt */
+.contact{padding-bottom:160px}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:34px 44px;border-top:2px solid var(--ink);padding-top:30px}
+.cgrid h3{font-size:15px;color:var(--red);margin:0 0 8px;font-weight:700}
+.cgrid p{margin:0;font-size:20px;line-height:1.45}
+.cgrid .small{font-size:16px;color:var(--mute);margin-top:6px}
+.cgrid a{text-underline-offset:4px}
+.cgrid a:hover{color:var(--red)}
+.cgrid .tel{font-size:clamp(26px,2.6vw,34px);text-decoration:none;white-space:nowrap}
+
+/* Rohrende mit Tropfen */
+.end{position:absolute;z-index:3;bottom:80px;left:calc(var(--px) - var(--pw)/2 - 6px);width:calc(var(--pw) + 12px);height:20px;background:var(--red-dark);border-radius:4px 4px 8px 8px}
+.drop{position:absolute;left:50%;top:22px;width:12px;height:12px;margin-left:-6px;background:var(--water);border-radius:0 50% 50% 50%;transform:rotate(45deg);opacity:0}
+.flow .drop{animation:drip 2.6s cubic-bezier(.6,0,.9,.6) infinite}
+@keyframes drip{0%{opacity:0;transform:translateY(-6px) rotate(45deg) scale(.3)}18%{opacity:1;transform:translateY(0) rotate(45deg) scale(1)}34%{opacity:1;transform:translateY(2px) rotate(45deg) scale(1)}70%{opacity:1}78%,100%{opacity:0;transform:translateY(46px) rotate(45deg) scale(.9)}}
+
+footer{background:var(--ink);color:#bdb9be;font-size:15px;padding:26px 0 66px;position:relative;z-index:4}
+footer .col{display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-between;max-width:none}
+footer a{color:#fff;text-decoration:none}
+footer button{font:inherit;background:none;border:0;color:#fff;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:0}
+
+.draft{position:fixed;z-index:20;right:16px;bottom:16px;background:#fff;border:1px solid var(--line);box-shadow:0 6px 24px rgba(0,0,0,.12);border-radius:999px;padding:8px 14px;font-size:13px;color:var(--mute);display:flex;gap:8px;align-items:center}
+.draft b{color:var(--ink)}
+.draft i{width:8px;height:8px;border-radius:50%;background:var(--red);display:block}
+.fab{display:none}
+
+/* Nur-Logo-Modus für Videoaufnahmen: index.html?logo */
+.only-logo{--pw:44px;--s:calc(44/18);--px:calc(50% + 150px);--lt:calc(50vh - 200px)}
+.only-logo .page{height:100vh}
+.only-logo .hero,.only-logo main,.only-logo footer,.only-logo .draft,.only-logo .fab{display:none!important}
+
+@media (max-width:1020px){.tapfx{display:none}}
+@media (max-width:900px){
+  :root{--pw:16px;--s:calc(16/18);--px:calc(100% - 36px);--lt:74px}
+  body{font-size:17px}
+  .col,.sec .col{margin-left:22px;margin-right:74px}
+  .top{display:none}
+  .hero-body{padding-top:calc(var(--lt) + var(--lh) + 30px)}
+  h1{font-size:clamp(56px,18.5vw,104px)}
+  .btn{padding:15px 22px;font-size:18px}
+  .tapfx{display:none}
+  .hero{padding-bottom:20px}
+  .sec{display:block;padding:72px 0}
+  .label{position:static;text-align:left;margin:0 74px 18px 22px;display:flex;align-items:baseline;gap:12px;font-size:15px}
+  .label b{font-size:46px;margin:0;-webkit-text-stroke-width:1.2px}
+  .collar{top:84px}
+  .branch,.tap{display:none}
+  .row{grid-template-columns:48px minmax(0,1fr);gap:4px 16px;padding:24px 0;align-items:start}
+  .ico{width:48px;height:48px}.ico svg{width:26px;height:26px}
+  .ask{grid-column:2;grid-row:auto}
+  .band{padding:66px 0 70px}
+  .band a{font-size:clamp(28px,9.6vw,64px)}
+  .row h3{font-size:20px}
+  .answer{padding:24px 20px 26px}
+  .contact{padding-bottom:124px}
+  .end{bottom:58px}
+  footer{padding-bottom:86px}
+  footer .col{margin-right:22px}
+  .draft{right:auto;left:12px;bottom:12px;font-size:12px;padding:6px 11px}
+  .fab{display:flex;position:fixed;z-index:20;right:12px;bottom:12px;width:58px;height:58px;border-radius:50%;background:var(--red);color:#fff;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(193,2,44,.4)}
+  .fab svg{width:26px;height:26px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .tapfx *{animation:none!important}
+  .intro .pipeA,.intro .logo .bend,.intro .logo .w,.intro .rise,.flow .drop,.answer.swap>*{animation:none}
+  .reveal,.row h3,.row p,.row .ask{opacity:1;transform:none;transition:none}
+  .pipeB,.branch,.tap,.collar{transition:none}
+  .pipeB::after{display:none}
+}
+</style>
+</head>
+<body>
+<div class="page intro" id="page">
+
+  <!-- Das rote Rohr aus dem Logo läuft durch die ganze Seite -->
+  <div class="pipe pipeA"></div>
+  <svg class="logo" viewBox="126 108 150 164" role="img" aria-label="Sanitär Marco Koller">
+    <path class="bend" pathLength="100" d="M263.5,108 V147.5 A13,13 0 0 1 250.5,160.5 H151 A17,17 0 0 0 151,194.5 H250.5 A13,13 0 0 1 263.5,207.5 V272"/>
+    <text class="w w1" x="242" y="140" text-anchor="end" textLength="110" lengthAdjust="spacingAndGlyphs">SANITÄR</text>
+    <text class="w w2" x="242.5" y="236" text-anchor="end" textLength="111" lengthAdjust="spacingAndGlyphs">MARCO</text>
+    <text class="w w3" x="242" y="262.5" text-anchor="end" textLength="110" lengthAdjust="spacingAndGlyphs">KOLLER</text>
+  </svg>
+  <div class="pipe pipeB" id="pipeB"></div>
+
+  <header class="hero" id="top">
+    <div class="col">
+      <nav class="top rise" style="--i:4" aria-label="Hauptnavigation">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#wasistlos">Was ist los?</a>
+        <a href="#kontakt">Kontakt</a>
+        <a class="tel" href="tel:+41719112460">071 911 24 60</a>
+      </nav>
+      <div class="hero-body">
+        <p class="kicker rise" style="--i:0">Ihr Sanitär an der Poststrasse in Wil</p>
+        <h1 class="x rise" style="--i:1">Läuft<br>wieder<span class="dot">.</span></h1>
+        <p class="lead rise" style="--i:2">Reparaturen, Ablauf-Entstopfungen, Boiler-Entkalkungen und sanitäre Anlagen für Um- und Neubauten.</p>
+        <div class="cta rise" style="--i:3">
+          <a class="btn btn-red" href="tel:+41719112460">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>
+            071 911 24 60
+          </a>
+          <a class="btn btn-line" href="mailto:info@sanitaer-koller.ch?subject=Anfrage">E-Mail schreiben</a>
+        </div>
+        <p class="hint rise" style="--i:4">Sanitär Marco Koller · Poststrasse 17 · 9500 Wil SG</p>
+      </div>
+    </div>
+    <svg class="tapfx" viewBox="-30 0 220 300" aria-hidden="true">
+      <path class="t-basin" pathLength="100" d="M-34,236 H-24 V258 A22,22 0 0 0 -2,280 H88 A22,22 0 0 0 110,258 V236 H120"/>
+      <path class="t-stream" pathLength="100" d="M43,113 V273"/>
+      <path class="t-flow" d="M43,116 V272"/>
+      <path class="t-pipe" pathLength="100" d="M200,60 H60 A17,17 0 0 0 43,77 V104"/>
+      <rect class="t-noz" x="30.5" y="100" width="25" height="11" rx="2.5"/>
+      <g class="t-handle"><path stroke-width="7" d="M112,50 V24"/><path stroke-width="10" d="M91,21 H133"/></g>
+    </svg>
+  </header>
+
+  <main>
+    <section id="leistungen" class="sec cp" data-o="127">
+      <div class="label x"><b>01</b>Leistungen</div>
+      <i class="collar"></i><i class="branch"></i>
+      <div class="col">
+        <h2 class="x reveal">Was wir für Sie erledigen</h2>
+        <p class="sub reveal" style="--i:1">Vom tropfenden Hahn bis zum neuen Bad.</p>
+        <ul class="svc">
+          <li class="row cp" data-o="60">
+            <i class="tap"></i>
+            <span class="ico"><svg viewBox="0 0 44 44"><path d="M6 21 22 7l16 14"/><path d="M10 18v19h24V18"/><path class="r" d="M22 21c-3 4-4.500 6-4.500 8.200a4.500 4.500 0 0 0 9 0C26.500 27 25 25 22 21z"/></svg></span>
+            <h3 class="x">Sanitäre Anlagen in Um- und Neubauten</h3>
+            <p>Bad, Küche oder Waschküche: Wir installieren die sanitären Anlagen in Ihrem Umbau oder Neubau.</p>
+            <a class="ask" href="mailto:info@sanitaer-koller.ch?subject=Anfrage%3A%20Sanit%C3%A4re%20Anlagen%20Umbau%2FNeubau">Anfragen</a>
+          </li>
+          <li class="row cp" data-o="60">
+            <i class="tap"></i>
+            <span class="ico"><svg viewBox="0 0 44 44"><path d="M27.500 6.500a9 9 0 0 0-8.300 12.300L6.500 31.500a4.200 4.200 0 0 0 6 6l12.700-12.700A9 9 0 0 0 37.500 16.500l-5.500 5.500-5-1.500-1.500-5 5.500-5.500a9 9 0 0 0-3.500-3.500z"/><path class="r" d="M10.500 33.500h.01"/></svg></span>
+            <h3 class="x">Reparatur-Service</h3>
+            <p>Tropfender Hahn, laufende Spülung, undichte Leitung: Wir kommen vorbei und bringen es in Ordnung.</p>
+            <a class="ask" href="mailto:info@sanitaer-koller.ch?subject=Anfrage%3A%20Reparatur">Anfragen</a>
+          </li>
+          <li class="row cp" data-o="60">
+            <i class="tap"></i>
+            <span class="ico"><svg viewBox="0 0 44 44"><path d="M8 7h28"/><path d="M12 7v6a10 10 0 0 0 20 0V7"/><path class="r" d="M22 23v5a4 4 0 0 1-4 4h-4a4 4 0 0 0 0 8h18"/></svg></span>
+            <h3 class="x">Ablauf-Entstopfungen</h3>
+            <p>Wenn das Wasser im Lavabo, in der Dusche oder im WC nicht mehr abläuft, machen wir den Ablauf wieder frei.</p>
+            <a class="ask" href="mailto:info@sanitaer-koller.ch?subject=Anfrage%3A%20Ablauf-Entstopfung">Anfragen</a>
+          </li>
+          <li class="row cp" data-o="60">
+            <i class="tap"></i>
+            <span class="ico"><svg viewBox="0 0 44 44"><rect x="12" y="5" width="20" height="30" rx="7"/><path d="M17 35v4M27 35v4"/><path class="r" d="M23.500 13 19 21h6l-4.500 8"/></svg></span>
+            <h3 class="x">Elektroboiler-Entkalkungen</h3>
+            <p>Kalk im Boiler kostet Strom und verkürzt die Lebensdauer. Wir entkalken Ihren Elektroboiler.</p>
+            <a class="ask" href="mailto:info@sanitaer-koller.ch?subject=Anfrage%3A%20Boiler-Entkalkung">Anfragen</a>
+          </li>
+          <li class="row cp" data-o="60">
+            <i class="tap"></i>
+            <span class="ico"><svg viewBox="0 0 44 44"><path d="M22 5C15 14 11 20 11 26.500a11 11 0 0 0 22 0C33 20 29 14 22 5z"/><path class="r" d="M17 27c0 3 2 5 5 5"/></svg></span>
+            <h3 class="x">Wasser-Enthärtungs&shy;anlagen</h3>
+            <p>Weicheres Wasser schont Leitungen, Armaturen und Geräte. Wir beraten Sie und bauen die Anlage ein.</p>
+            <a class="ask" href="mailto:info@sanitaer-koller.ch?subject=Anfrage%3A%20Wasser-Enth%C3%A4rtungsanlage">Anfragen</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="band" aria-label="Telefon">
+      <div class="col">
+        <p class="q x">Ein Anruf genügt.</p>
+        <a class="x" href="tel:+41719112460">071 911 24 60</a>
+        <p>Schildern Sie kurz, worum es geht, und wir finden einen Termin.</p>
+      </div>
+    </section>
+
+    <section id="wasistlos" class="sec what cp" data-o="127">
+      <div class="label x"><b>02</b>Was ist los?</div>
+      <i class="collar"></i><i class="branch"></i>
+      <div class="col">
+        <h2 class="x reveal">Was ist bei Ihnen los?</h2>
+        <p class="sub reveal" style="--i:1">Tippen Sie an, was zutrifft.</p>
+        <div class="chips reveal" style="--i:2" id="chips" role="group" aria-label="Ihr Anliegen"></div>
+        <div class="answer reveal" style="--i:3" id="answer" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="kontakt" class="sec contact cp" data-o="127">
+      <div class="label x"><b>03</b>Kontakt</div>
+      <i class="collar"></i><i class="branch"></i>
+      <div class="col">
+        <h2 class="x reveal">So erreichen Sie uns</h2>
+        <div class="cgrid reveal" style="--i:1">
+          <div>
+            <h3>Telefon</h3>
+            <a class="tel x" href="tel:+41719112460">071 911 24 60</a>
+            <p class="small">Telefax 071 911 74 60</p>
+          </div>
+          <div>
+            <h3>E-Mail</h3>
+            <p><a href="mailto:info@sanitaer-koller.ch">info@sanitaer-koller.ch</a></p>
+          </div>
+          <div>
+            <h3>Adresse</h3>
+            <p>Sanitär Marco Koller<br>Poststrasse 17<br>9500 Wil SG</p>
+            <p class="small"><a href="https://www.google.com/maps/search/?api=1&query=Poststrasse+17%2C+9500+Wil" target="_blank" rel="noopener">Auf der Karte ansehen</a></p>
+          </div>
+        </div>
+      </div>
+      <i class="end" id="end"><b class="drop"></b></i>
+    </section>
+  </main>
+
+  <footer>
+    <div class="col">
+      <span>© <span id="yr">2026</span> Sanitär Marco Koller, Wil SG</span>
+      <span><a href="tel:+41719112460">071 911 24 60</a> · <a href="mailto:info@sanitaer-koller.ch">info@sanitaer-koller.ch</a> · <button type="button" id="replay">Animation nochmals abspielen</button></span>
+    </div>
+  </footer>
+</div>
+
+<a class="fab" href="tel:+41719112460" aria-label="Anrufen">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>
+</a>
+<div class="draft"><i></i><span><b>Entwurf</b> · nicht veröffentlicht</span></div>
+
+<script>
+(function(){
+  var TEL='071 911 24 60', TELHREF='tel:+41719112460', MAIL='info@sanitaer-koller.ch';
+  var root=document.documentElement, page=document.getElementById('page'), pipeB=document.getElementById('pipeB'),
+      end=document.getElementById('end');
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var onlyLogo=/[?&]logo\b/.test(location.search);
+  if(onlyLogo) root.classList.add('only-logo');
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  /* --- "Was ist los?" --- */
+  var cases=[
+    {q:'Der Hahn tropft', t:'Reparatur-Service', a:'Meist ist es eine Dichtung oder die Kartusche. Wir kommen vorbei und reparieren die Armatur, bevor aus dem Tropfen ein Schaden wird.'},
+    {q:'Der Ablauf ist verstopft', t:'Ablauf-Entstopfung', a:'Lavabo, Dusche, Badewanne oder WC: Wir machen den Ablauf wieder frei, damit das Wasser sauber abläuft.'},
+    {q:'Das Wasser wird nicht richtig warm', t:'Elektroboiler-Entkalkung', a:'Oft liegt es am Kalk im Boiler. Nach der Entkalkung heizt er wieder besser und braucht weniger Strom.'},
+    {q:'Überall Kalkflecken', t:'Wasser-Enthärtungsanlage', a:'Eine Enthärtungsanlage macht das Wasser im ganzen Haus weicher. Das schont Armaturen, Leitungen und Geräte.'},
+    {q:'Wir bauen um oder neu', t:'Sanitäre Anlagen in Um- und Neubauten', a:'Erzählen Sie uns von Ihrem Vorhaben. Wir installieren die sanitären Anlagen für Bad, Küche und Waschküche.'}
+  ];
+  var chips=document.getElementById('chips'), answer=document.getElementById('answer');
+  function show(i){
+    var c=cases[i];
+    [].forEach.call(chips.children,function(b,j){b.setAttribute('aria-pressed',j===i)});
+    answer.innerHTML='<h3 class="x"></h3><p></p><div class="cta">'+
+      '<a class="btn btn-red" href="'+TELHREF+'">Anrufen: '+TEL+'</a>'+
+      '<a class="btn btn-line" href="mailto:'+MAIL+'?subject='+encodeURIComponent('Anfrage: '+c.q)+'">Per E-Mail schildern</a></div>';
+    answer.querySelector('h3').textContent=c.t;
+    answer.querySelector('p').textContent=c.a;
+    answer.classList.remove('swap'); void answer.offsetWidth; answer.classList.add('swap');
+  }
+  cases.forEach(function(c,i){
+    var b=document.createElement('button'); b.type='button'; b.className='chip'; b.textContent=c.q;
+    b.addEventListener('click',function(){show(i)}); chips.appendChild(b);
+  });
+  show(0);
+
+  /* --- Das Rohr füllt sich beim Scrollen und schaltet Abzweiger und Inhalte ein --- */
+  var cps=[].slice.call(document.querySelectorAll('.cp')), started=reduce, flowT=0;
+  function fill(){
+    if(!started) return;
+    if(onlyLogo){ pipeB.style.height='100vh'; return; }
+    var pr=page.getBoundingClientRect().top, top=pipeB.offsetTop;
+    var max=end.getBoundingClientRect().top-pr-top+2;
+    var maxScroll=Math.max(1,root.scrollHeight-innerHeight);
+    var want=scrollY+innerHeight*(.72+.28*Math.min(1,scrollY/maxScroll))-top;
+    var h=reduce?max:Math.max(0,Math.min(max,want));
+    pipeB.style.height=h+'px';
+    page.classList.toggle('flow',h>=max-1);
+    var bottom=top+h;
+    cps.forEach(function(el){
+      var on=bottom>=el.getBoundingClientRect().top-pr+(+el.dataset.o||0);
+      el.classList.toggle('on',on); if(on) el.classList.add('seen');
+    });
+  }
+  function onScroll(){
+    fill();
+    if(reduce) return;
+    pipeB.style.setProperty('--fy',(scrollY*.9)+'px'); pipeB.style.setProperty('--fo','1');
+    clearTimeout(flowT); flowT=setTimeout(function(){pipeB.style.setProperty('--fo','0')},160);
+  }
+  function snap(){ /* Rohrmitte auf ganze Pixel legen, sonst gibt es feine Kanten an den Übergängen */
+    root.style.removeProperty('--px');
+    if(innerWidth>900&&!onlyLogo) root.style.setProperty('--px',Math.round(Math.min(430,Math.max(300,innerWidth*.27)))+'px');
+  }
+  snap();
+  addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',function(){snap();fill()});
+
+  /* --- Intro --- */
+  function play(){
+    started=reduce; pipeB.style.transition='none'; pipeB.style.height='0px';
+    cps.forEach(function(el){el.classList.remove('on')});
+    page.classList.remove('intro'); void page.offsetWidth; page.classList.add('intro');
+    setTimeout(function(){ pipeB.style.transition=''; started=true; fill(); }, reduce?0:1400);
+  }
+  document.getElementById('replay').addEventListener('click',function(){ scrollTo({top:0,behavior:'instant'}); setTimeout(play,60); });
+  play();
+})();
+</script>
+</body>
+</html>
