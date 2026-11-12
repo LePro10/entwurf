@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Frenke Holzbau GmbH · Zimmerei in Ziefen</title>
+<meta name="description" content="Frenke Holzbau GmbH in Ziefen BL: Zimmerei, Neubauten, Elementbau, Umbauten, Treppenbau, Böden, Innenausbau, Carports, Bedachungen und Dachsanierungen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#0a14e6; --blue-d:#060c8f; --yellow:#ffe800; --ink:#0b0f2e; --mute:#575b76; --line:#d9dbe8; --paper:#fff; --tint:#f3f4fa; --wood:#f6e9b8;
+  --pad:clamp(20px,5vw,72px); --max:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 "Barlow",system-ui,sans-serif;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.h{font-family:"Barlow Condensed","Barlow",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:-.005em;line-height:.96}
+.kicker{font:600 14px/1 "Barlow",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:12px}
+.kicker::before{content:"";width:34px;height:5px;background:var(--blue)}
+
+/* Logo */
+.fr-raf{fill:var(--yellow)} .fr-base,.fr-word{fill:var(--blue)}
+
+/* ---------- Intro ---------- */
+#intro{position:fixed;inset:0;z-index:60;background:#fff;display:grid;place-items:center}
+#intro svg{width:min(78vw,520px);height:auto;overflow:visible;transform-origin:0 0;will-change:transform}
+#intro.fly svg{transition:transform .75s cubic-bezier(.7,0,.2,1)}
+#intro.gone{display:none}
+#intro .fr-base{transform:scaleX(0);transform-origin:1.75px 0}
+#intro .fr-raf{opacity:0;transform:translateY(-70px) rotate(-7deg);transform-box:fill-box;transform-origin:50% 100%}
+#intro .fr-word{clip-path:inset(0 0 100% 0);transform:translateY(9px)}
+#intro.play .fr-base{animation:base .55s cubic-bezier(.7,0,.2,1) .1s forwards}
+#intro.play .fr-raf{animation:drop .5s cubic-bezier(.3,1.35,.5,1) forwards}
+#intro.play .fr-raf1{animation-delay:.6s}#intro.play .fr-raf2{animation-delay:.82s}#intro.play .fr-raf3{animation-delay:1.04s}#intro.play .fr-raf4{animation-delay:1.22s}#intro.play .fr-raf5{animation-delay:1.4s}
+#intro.play .fr-word{animation:rise .6s cubic-bezier(.2,.8,.2,1) 1.95s forwards}
+@keyframes base{to{transform:none}}
+@keyframes drop{0%{opacity:0;transform:translateY(-70px) rotate(-7deg)}35%{opacity:1}100%{opacity:1;transform:none}}
+@keyframes rise{to{clip-path:inset(0 0 -30% 0);transform:none}}
+
+/* ---------- Header ---------- */
+header{position:fixed;left:0;right:0;top:0;z-index:40;transition:background .3s,box-shadow .3s}
+header .in{max-width:var(--max);margin:0 auto;padding:10px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:20px}
+header.solid{background:rgba(255,255,255,.95);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--line)}
+#hlogo{display:block;width:128px;transition:width .3s}
+header.solid #hlogo{width:98px}
+#hlogo svg{display:block;width:100%;height:auto;overflow:visible}
+body.intro-on #hlogo{visibility:hidden}
+nav{display:flex;align-items:center;gap:clamp(14px,2.2vw,30px);font:600 15px/1 "Barlow",sans-serif;letter-spacing:.08em;text-transform:uppercase}
+nav a{text-decoration:none;padding:8px 0;position:relative}
+nav a:not(.tel)::after{content:"";position:absolute;left:0;right:0;bottom:1px;height:3px;background:var(--yellow);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+nav a:hover::after,nav a.on::after{transform:scaleX(1)}
+nav .tel{background:var(--blue);color:#fff;padding:12px 16px;white-space:nowrap}
+nav .tel:hover{background:var(--blue-d)}
+@media(max-width:900px){nav a:not(.tel){display:none}}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:130px 0 0;overflow:hidden;
+  background-image:linear-gradient(to right,rgba(10,20,230,.055) 1px,transparent 1px),linear-gradient(to bottom,rgba(10,20,230,.055) 1px,transparent 1px);background-size:44px 44px}
+.hero .wrap{width:100%;position:relative}
+.hero h1{font-size:clamp(46px,8.4vw,128px);margin:24px 0 28px;max-width:10.5em;position:relative;z-index:2}
+.hero h1 span{display:block;overflow:hidden;padding-top:.06em}
+.hero h1 span i{display:block;font-style:normal;transform:translateY(108%);transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+body.ready .hero h1 span i{transform:none}
+body.ready .hero h1 span:nth-child(2) i{transition-delay:.08s}
+body.ready .hero h1 span:nth-child(3) i{transition-delay:.16s}
+body.ready .hero h1 span:nth-child(4) i{transition-delay:.24s}
+.hero h1 u{text-decoration:none;background:linear-gradient(var(--yellow),var(--yellow)) 0 88%/100% .2em no-repeat}
+.hero p.lead{font-size:clamp(17px,1.5vw,20px);max-width:31em;color:var(--mute);position:relative;z-index:2}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;position:relative;z-index:2}
+.btn{display:inline-flex;align-items:center;gap:10px;font:600 16px/1 "Barlow",sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:17px 22px;background:var(--blue);color:#fff;border:0;cursor:pointer;transition:background .2s,transform .2s}
+.btn:hover{background:var(--blue-d);transform:translateY(-2px)}
+.btn.y{background:var(--yellow);color:var(--ink)}
+.btn.y:hover{background:#fff14d}
+.roof{position:absolute;right:calc(var(--pad) * -1 - 4vw);top:66%;width:min(44vw,620px);transform:translateY(-50%);z-index:1;pointer-events:none}
+.roof svg{display:block;width:100%;height:auto;overflow:visible}
+.roof polygon{fill:var(--yellow);will-change:transform}
+.fade{opacity:0;transform:translateY(16px);transition:opacity .7s ease .35s,transform .7s ease .35s}
+body.ready .fade{opacity:1;transform:none}
+.facts{margin-top:clamp(50px,8vw,100px);border-top:5px solid var(--blue);background:#fff;position:relative;z-index:2}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.facts div{padding:22px 18px 24px 0;border-right:1px solid var(--line);padding-left:18px}
+.facts div:first-child{padding-left:0}.facts div:last-child{border-right:0}
+.facts b{display:block;font:700 clamp(30px,3.4vw,46px)/1 "Barlow Condensed",sans-serif;color:var(--blue)}
+.facts span{font-size:14.5px;color:var(--mute);line-height:1.35;display:block;margin-top:6px}
+@media(max-width:760px){
+  .hero{padding-top:118px}
+  .roof{position:relative;right:auto;top:auto;transform:none;width:86%;margin:0 0 26px auto}
+  .facts .wrap{grid-template-columns:1fr 1fr}
+  .facts div{border-bottom:1px solid var(--line)} .facts div:nth-child(odd){padding-left:0}.facts div:nth-child(even){border-right:0}
+}
+
+/* ---------- Leistungen / Aufrichte ---------- */
+#leistungen{padding:clamp(70px,10vw,140px) 0 clamp(50px,8vw,100px)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(20px,5vw,70px);align-items:end;margin-bottom:clamp(36px,6vw,80px)}
+.sec-head h2{font-size:clamp(38px,5.6vw,80px);margin-top:18px}
+.sec-head p{color:var(--mute);max-width:34em}
+.build{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1fr);gap:clamp(24px,5vw,80px)}
+.frame{position:sticky;top:96px;align-self:start;background:var(--tint);padding:clamp(14px,2vw,26px);
+  background-image:linear-gradient(to right,rgba(10,20,230,.07) 1px,transparent 1px),linear-gradient(to bottom,rgba(10,20,230,.07) 1px,transparent 1px);background-size:22px 22px}
+.frame svg{display:block;width:100%;height:auto;overflow:visible}
+.frame .cap{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-top:2px solid var(--ink);margin-top:10px;padding-top:10px;font:600 14px/1.2 "Barlow",sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.frame .cap b{color:var(--blue);font-variant-numeric:tabular-nums}
+.st>*{opacity:0;transform:translateY(-24px);transition:opacity .35s ease,transform .5s cubic-bezier(.3,1.3,.5,1)}
+.st.on>*{opacity:1;transform:none}
+.rows{counter-reset:r}
+.row{padding:clamp(26px,3.6vw,44px) 0;border-top:1px solid var(--line);display:grid;grid-template-columns:54px minmax(0,1fr);gap:8px 14px;scroll-margin-top:100px;transition:opacity .3s}
+.row:last-child{border-bottom:1px solid var(--line)}
+.row .no{font:700 22px/1.1 "Barlow Condensed",sans-serif;color:var(--line);transition:color .3s;padding-top:5px}
+.row.on .no{color:var(--blue)}
+.row h3{font:700 clamp(28px,3vw,42px)/1 "Barlow Condensed",sans-serif;text-transform:uppercase;display:inline;background:linear-gradient(var(--yellow),var(--yellow)) 0 90%/0% .22em no-repeat;transition:background-size .5s ease}
+.row.on h3{background-size:100% .22em}
+.row p{color:var(--mute);margin-top:12px;max-width:34em;font-size:16.5px}
+.row figure{margin:16px 0 0;max-width:340px;border:1px solid var(--line);background:#fff;padding:6px}
+.row figure img{width:100%}
+@media(max-width:860px){
+  .sec-head{grid-template-columns:1fr}
+  .build{grid-template-columns:1fr;gap:0}
+  .frame{top:60px;z-index:5;margin:0 calc(var(--pad) * -1);padding:8px var(--pad) 8px;background-color:#f3f4fa;box-shadow:0 1px 0 var(--line)}
+  .frame svg{height:150px;width:auto;margin:0 auto}
+  .frame .cap{margin-top:4px;padding-top:6px;font-size:12.5px}
+  .row{grid-template-columns:38px minmax(0,1fr)}
+}
+
+/* ---------- Ablauf ---------- */
+#ablauf{background:var(--ink);color:#fff;padding:clamp(70px,10vw,130px) 0}
+#ablauf .kicker{color:var(--yellow)}#ablauf .kicker::before{background:var(--yellow)}
+#ablauf .sec-head p{color:#b9bcd6}
+.flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.6vw,36px);position:relative}
+.flow::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:rgba(255,255,255,.14)}
+.flow .bar{position:absolute;left:0;top:0;height:5px;background:var(--yellow);width:0}
+.step{padding-top:30px;display:flex;flex-direction:column}
+.step b{font:700 15px/1 "Barlow",sans-serif;letter-spacing:.16em;color:var(--yellow)}
+.step h3{font:700 clamp(30px,3.2vw,44px)/1 "Barlow Condensed",sans-serif;text-transform:uppercase;margin:10px 0 12px}
+.step p{color:#b9bcd6;font-size:16px}
+.step p{margin-bottom:18px}
+.step img{margin-top:auto;width:100%;aspect-ratio:16/10;object-fit:cover}
+@media(max-width:800px){.flow{grid-template-columns:1fr}.flow::before,.flow .bar{display:none}.step{border-top:5px solid var(--yellow)}.step img{max-width:420px}}
+
+/* ---------- Geschichte ---------- */
+#geschichte{padding:clamp(70px,10vw,140px) 0;overflow:hidden}
+.story{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,6vw,90px);align-items:start}
+.eleven{font:700 clamp(170px,27vw,400px)/.78 "Barlow Condensed",sans-serif;color:var(--blue);letter-spacing:-.03em;position:relative;white-space:nowrap}
+.eleven small{display:block;font:600 15px/1.3 "Barlow",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin-top:26px;white-space:normal}
+.story h2{font-size:clamp(34px,4.6vw,64px);margin:18px 0 22px}
+.story p{color:var(--mute);max-width:36em}
+.story p+p{margin-top:14px}
+.years{list-style:none;margin:30px 0 0;padding:0;border-top:2px solid var(--ink)}
+.years li{display:grid;grid-template-columns:86px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.years b{font:700 26px/1 "Barlow Condensed",sans-serif;color:var(--blue)}
+@media(max-width:800px){.story{grid-template-columns:1fr}.eleven{font-size:44vw}}
+
+/* ---------- Lehre ---------- */
+#lehre{background:var(--yellow);padding:clamp(60px,8vw,110px) 0}
+.lehre{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:start}
+#lehre .kicker{color:var(--ink)}#lehre .kicker::before{background:var(--ink)}
+#lehre h2{font-size:clamp(36px,5vw,72px);margin:18px 0 20px}
+#lehre p{max-width:33em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.chips li{background:#fff;padding:9px 13px;font:600 15px/1.1 "Barlow",sans-serif;border:2px solid var(--ink);opacity:0;transform:translateY(12px) rotate(-2deg);transition:opacity .4s ease,transform .5s cubic-bezier(.3,1.4,.5,1)}
+.chips.in li{opacity:1;transform:none}
+.lehre h3{font:600 14px/1 "Barlow",sans-serif;letter-spacing:.16em;text-transform:uppercase;margin-bottom:16px}
+@media(max-width:800px){.lehre{grid-template-columns:1fr}}
+
+/* ---------- Kontakt ---------- */
+#kontakt{padding:clamp(70px,10vw,140px) 0 clamp(50px,7vw,90px)}
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,6vw,90px)}
+.contact h2{font-size:clamp(38px,5.6vw,80px);margin:18px 0 22px}
+.contact .big{display:inline-block;font:700 clamp(40px,5.4vw,76px)/1 "Barlow Condensed",sans-serif;text-decoration:none;color:var(--blue);margin:24px 0 6px}
+.contact .big:hover{color:var(--blue-d)}
+.contact .mail{font-size:18px;text-underline-offset:4px;text-decoration-color:var(--blue);overflow-wrap:anywhere}
+.people{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:34px;padding-top:24px;border-top:2px solid var(--ink)}
+.people b{display:block;font:700 24px/1.1 "Barlow Condensed",sans-serif;text-transform:uppercase}
+.people span{color:var(--mute);font-size:15.5px}
+.addr{margin-top:24px;color:var(--mute);font-size:16px}
+.addr a{text-underline-offset:3px}
+form{background:var(--tint);padding:clamp(22px,3vw,36px);border-top:5px solid var(--blue);display:grid;gap:16px;align-content:start}
+form h3{font:700 30px/1 "Barlow Condensed",sans-serif;text-transform:uppercase}
+label{display:grid;gap:6px;font:600 13px/1 "Barlow",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+input,select,textarea{font:400 16px/1.4 "Barlow",sans-serif;color:var(--ink);background:#fff;border:1px solid var(--line);padding:12px 13px;border-radius:0;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--blue);outline-offset:0;border-color:var(--blue)}
+textarea{min-height:110px;resize:vertical}
+form small{color:var(--mute);font-size:13.5px}
+@media(max-width:860px){.contact{grid-template-columns:1fr}}
+@media(max-width:400px){.people{grid-template-columns:1fr}}
+
+footer{background:var(--blue);color:#fff;font-size:14.5px;padding:24px 0 80px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 30px;justify-content:space-between;align-items:center}
+footer a{text-underline-offset:3px}
+footer button{font:inherit;color:inherit;background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+.draft{position:fixed;left:14px;bottom:14px;z-index:50;background:#0b0f2e;color:#fff;font:500 13px/1 "Barlow",sans-serif;padding:9px 13px;display:flex;gap:8px;align-items:center;border-radius:2px}
+.draft i{width:8px;height:8px;border-radius:50%;background:var(--yellow)}
+
+body.logo-only header,body.logo-only main,body.logo-only footer,body.logo-only .draft{display:none}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv,.fade,.hero h1 span i,.chips li,.st>*{opacity:1!important;transform:none!important;transition:none!important}
+}
+</style>
+</head>
+<body class="intro-on">
+
+<div id="intro" aria-hidden="true">
+  <svg viewBox="0 0 151 86" role="img" aria-label="Logo Frenke Holzbau GmbH">
+<rect class="fr-base" x="1.75" y="73.25" width="145.5" height="5"/>
+<polygon class="fr-raf fr-raf1" points="1.25,51 9.75,51 45,15.75 40.75,11.5"/>
+<polygon class="fr-raf fr-raf2" points="40.75,11.5 36.5,15.75 71.75,51 80.25,51"/>
+<polygon class="fr-raf fr-raf3" points="54.7,11 63.2,11 103.2,51 94.7,51"/>
+<polygon class="fr-raf fr-raf4" points="78,11 86.5,11 126.5,51 118,51"/>
+<polygon class="fr-raf fr-raf5" points="101.3,11 109.8,11 149.8,51 141.3,51"/>
+<g class="fr-word" font-family="Arial, Helvetica, sans-serif" font-weight="700"><text x="2" y="68.3" font-size="14" textLength="52.5" lengthAdjust="spacingAndGlyphs">FRENKE</text><text x="62" y="68.3" font-size="14" textLength="61" lengthAdjust="spacingAndGlyphs">HOLZBAU</text><text x="125.8" y="68.3" font-size="8" textLength="21" lengthAdjust="spacingAndGlyphs">GmbH</text></g>
+  </svg>
+</div>
+
+<header id="hdr">
+  <div class="in">
+    <a href="#top" id="hlogo" aria-label="Frenke Holzbau, zum Seitenanfang">
+      <svg viewBox="0 0 151 86">
+<rect class="fr-base" x="1.75" y="73.25" width="145.5" height="5"/>
+<polygon class="fr-raf fr-raf1" points="1.25,51 9.75,51 45,15.75 40.75,11.5"/>
+<polygon class="fr-raf fr-raf2" points="40.75,11.5 36.5,15.75 71.75,51 80.25,51"/>
+<polygon class="fr-raf fr-raf3" points="54.7,11 63.2,11 103.2,51 94.7,51"/>
+<polygon class="fr-raf fr-raf4" points="78,11 86.5,11 126.5,51 118,51"/>
+<polygon class="fr-raf fr-raf5" points="101.3,11 109.8,11 149.8,51 141.3,51"/>
+<g class="fr-word" font-family="Arial, Helvetica, sans-serif" font-weight="700"><text x="2" y="68.3" font-size="14" textLength="52.5" lengthAdjust="spacingAndGlyphs">FRENKE</text><text x="62" y="68.3" font-size="14" textLength="61" lengthAdjust="spacingAndGlyphs">HOLZBAU</text><text x="125.8" y="68.3" font-size="8" textLength="21" lengthAdjust="spacingAndGlyphs">GmbH</text></g>
+      </svg>
+    </a>
+    <nav>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#geschichte">Geschichte</a>
+      <a href="#lehre">Lehre</a>
+      <a href="#kontakt">Kontakt</a>
+      <a class="tel" href="tel:+41619313167">061 931 31 67</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="roof fade" aria-hidden="true">
+      <svg viewBox="0 8 151 46">
+        <polygon data-l=".05" points="1.25,51 9.75,51 45,15.75 40.75,11.5"/>
+        <polygon data-l=".05" points="40.75,11.5 36.5,15.75 71.75,51 80.25,51"/>
+        <polygon data-l=".11" points="54.7,11 63.2,11 103.2,51 94.7,51"/>
+        <polygon data-l=".18" points="78,11 86.5,11 126.5,51 118,51"/>
+        <polygon data-l=".26" points="101.3,11 109.8,11 149.8,51 141.3,51"/>
+      </svg>
+    </div>
+    <div class="kicker fade">Zimmerei · Holzbau · Ziefen BL</div>
+    <h1 class="h"><span><i>Bei uns werden</i></span><span><i>Ihre Holzbau&shy;wünsche</i></span><span><i><u>Wirklichkeit.</u></i></span></h1>
+    <p class="lead fade">Vom Kleinst- bis zum Grossauftrag: Wir wickeln sämtliche Arbeiten unkompliziert und kostengünstig ab. Fragen Sie uns an, wir beraten Sie kompetent und unverbindlich.</p>
+    <div class="btns fade">
+      <a class="btn" href="#kontakt">Offerte anfragen</a>
+      <a class="btn y" href="#leistungen">Was wir bauen</a>
+    </div>
+  </div>
+  <div class="facts fade">
+    <div class="wrap">
+      <div><b>1997</b><span>in Ziefen gegründet</span></div>
+      <div><b>11.</b><span>Generation Zimmerleute der Familie Hug</span></div>
+      <div><b>10</b><span>Arbeitsgebiete, vom Carport bis zum Neubau</span></div>
+      <div><b>4 Jahre</b><span>Lehre zum Zimmermann im Betrieb</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="leistungen">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="kicker rv">Leistungen</div><h2 class="h rv">Stück für Stück zum fertigen Bau.</h2></div>
+      <p class="rv">Dank langjähriger Berufserfahrung und guter Ausbildung sind Sie bei uns richtig in allen Fragen rund um den Holzbau. Scrollen Sie durch die zehn Arbeitsgebiete: Mit jedem kommt ein Teil dazu.</p>
+    </div>
+    <div class="build">
+      <div class="frame">
+        <svg id="haus" viewBox="0 20 420 300" role="img" aria-label="Zeichnung eines Holzbaus, der mit jedem Arbeitsgebiet wächst"></svg>
+        <div class="cap"><span id="capname">Zimmerei</span><b id="capno">01 / 10</b></div>
+      </div>
+      <div class="rows" id="rows">
+        <article class="row" data-n="Zimmerei"><div class="no">01</div><div><h3>Zimmerei</h3><p>In der Zimmerei ist das zentrale Element das Holz. Wir verarbeiten diesen faszinierenden Baustoff nach Ihren Wünschen. Bauen mit dem nachwachsenden Baustoff Holz liegt im Trend.</p><figure><img src="img/zimmerei.jpg" alt="Dachstuhl mit Sparren" loading="lazy" width="463" height="321"></figure></div></article>
+        <article class="row" data-n="Neubauten"><div class="no">02</div><div><h3>Neubauten</h3><p>Sie planen einen Neubau? Als Fachmann im Holzbau beraten und unterstützen wir Sie gerne in sämtlichen Fragen zu Ihrem Projekt. Verlangen Sie eine unverbindliche Offerte.</p><figure><img src="img/neubauten.jpg" alt="Wandelement wird mit dem Kran auf einen Neubau gesetzt" loading="lazy" width="400" height="267"></figure></div></article>
+        <article class="row" data-n="Elementbau"><div class="no">03</div><div><h3>Elementbau</h3><p>Dank sehr hohem Vorfertigungsgrad können die Gebäude in kürzester Zeit auf der Baustelle montiert werden. Die hochwertig gedämmten Wand- und Dachelemente bieten ein behagliches Wohnklima. Wir erstellen Einfamilienhäuser, Dachaufstockungen und Anbauten in Elementbauweise.</p><figure><img src="img/elementbau.jpg" alt="Elementbau auf der Baustelle mit Firmenfahrzeugen" loading="lazy" width="600" height="400"></figure></div></article>
+        <article class="row" data-n="Umbauten"><div class="no">04</div><div><h3>Umbauten und Sanierungen</h3><p>Umbauten, Sanierungen und Modernisierungen schaffen auf der Basis einer soliden Bausubstanz eine Erneuerung, die Ihnen ein ganz neues Wohnumfeld bieten kann. Holz ist hierbei ein kostengünstiger Baustoff, der sich überall sehr gut einpasst.</p></div></article>
+        <article class="row" data-n="Treppenbau"><div class="no">05</div><div><h3>Treppenbau</h3><p>Eine Treppe in Holz ist mehr als die Verbindung verschiedener Ebenen. Durch unterschiedliche Materialkombinationen und Oberflächenbehandlungen wird sie zum Einrichtungsstück der besonderen Art.</p></div></article>
+        <article class="row" data-n="Böden"><div class="no">06</div><div><h3>Böden</h3><p>Wir verlegen Bodenbeläge im Innen- wie auch im Aussenbereich. Möchten Sie Ihren Teppichboden durch Parkett oder Laminat ersetzen? Planen Sie ein neues Holzdeck auf dem Balkon oder im Garten?</p></div></article>
+        <article class="row" data-n="Innenausbau"><div class="no">07</div><div><h3>Innenausbau</h3><p>Ob Decken- oder Wandverkleidungen, Ausbauten mit Dachfenster, Ersatz Ihrer Fassadenfenster oder der Einbau von Zimmertüren in verschiedensten Variationen: Wir setzen Ihre Anliegen um.</p><figure><img src="img/innenausbau.jpg" alt="Ausgebautes Dachgeschoss mit Holzverkleidung" loading="lazy" width="400" height="281"></figure></div></article>
+        <article class="row" data-n="Carport"><div class="no">08</div><div><h3>Carport</h3><p>Sie sind es leid, im Winter die gefrorenen Scheiben Ihres Autos frei kratzen zu müssen? Ein auf Ihre Bedürfnisse zugeschnittener Carport könnte die Lösung sein. Rufen Sie uns an.</p><figure><img src="img/carport.jpg" alt="Drei gebaute Carports" loading="lazy" width="500" height="324"></figure></div></article>
+        <article class="row" data-n="Bedachungen"><div class="no">09</div><div><h3>Bedachungen</h3><p>Ein sicheres Dach über dem Kopf ist wohl eines der ältesten Grundbedürfnisse des Menschen. Als Ihr Dachdecker sorgen wir dafür, dass Ihr Zuhause auch bei Wind und Wetter ein gemütlicher Ort des Rückzugs ist.</p><figure><img src="img/bedachung.jpg" alt="Einfamilienhaus mit neu gedecktem Dach" loading="lazy" width="400" height="266"></figure></div></article>
+        <article class="row" data-n="Dachsanierungen"><div class="no">10</div><div><h3>Dachsanierungen und Aufstockungen</h3><p>Nicht nur im Winter, sondern auch im Sommer muss eine Dämmung hohen Ansprüchen genügen. Nebst der Dämmstärke sind auch die eingesetzten Materialien von grosser Bedeutung. Wir koordinieren für Sie auch den Einsatz der verschiedenen Handwerker.</p><figure><img src="img/dachsanierung.jpg" alt="Drei Beispiele von Dachaufstockungen" loading="lazy" width="500" height="375"></figure></div></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ablauf">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="kicker rv">Ablauf</div><h2 class="h rv">Im Werk vorbereitet, auf dem Bau schnell montiert.</h2></div>
+      <p class="rv">Holzelementbau und Vorfabrikation im Werk liegen im Trend. Dank unserer gut eingerichteten Werkhalle können wir Ihre Aufträge rationell und in bester Qualität vorbereiten.</p>
+    </div>
+    <div class="flow" id="flow">
+      <i class="bar" id="flowbar"></i>
+      <div class="step rv"><b>01</b><h3>Planung</h3><p>Eine seriöse Arbeitsvorbereitung ist die Voraussetzung für eine erfolgreiche Auftragsausführung. Wir erstellen Pläne mit modernen CAD-Programmen.</p><img src="img/planung.jpg" alt="Zimmermann auf einem Dachstuhl" loading="lazy" width="350" height="226"></div>
+      <div class="step rv"><b>02</b><h3>Produktion</h3><p>Die Bauteile werden im Werk genauestens zugeschnitten und vorbereitet. Qualität und termingerechte Abwicklung sind unser oberstes Ziel.</p><img src="img/produktion.jpg" alt="Wandelemente in der Werkhalle" loading="lazy" width="500" height="281"></div>
+      <div class="step rv"><b>03</b><h3>Montage</h3><p>Die Montage auf der Baustelle erfolgt dann in kürzester Zeit.</p><img src="img/werkhalle.jpg" alt="Werkhalle der Frenke Holzbau mit Firmenfahrzeugen" loading="lazy" width="420" height="279"></div>
+    </div>
+  </div>
+</section>
+
+<section id="geschichte">
+  <div class="wrap story">
+    <div class="eleven rv" aria-hidden="true"><span id="eleven">11</span><small>Generationen Zimmerleute in Ziefen</small></div>
+    <div>
+      <div class="kicker rv">Geschichte</div>
+      <h2 class="h rv">Ein Handwerk, das in der Familie bleibt.</h2>
+      <p class="rv">Das Zimmermanns-Handwerk hat sich seit Generationen in der Familie Hug beibehalten. Firmengründer Stefan Hug bildete die elfte Generation, welche in Ziefen den Beruf des Zimmermanns ausübte.</p>
+      <p class="rv">Das Unternehmen wird in seinem Sinne von Yvonne Hug und dem langjährigen Mitarbeiter und Zimmermeister Robert Gottstein weitergeführt.</p>
+      <ul class="years rv">
+        <li><b>1997</b><span>Stefan Hug, diplomierter Zimmermeister, gründet im Januar den Holzbaubetrieb in Ziefen.</span></li>
+        <li><b>2003</b><span>Robert Gottstein übernimmt immer mehr Führungsaufgaben und komplexere Aufträge.</span></li>
+        <li><b>2014</b><span>Yvonne Hug und Robert Gottstein führen die Frenke Holzbau GmbH weiter.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="lehre">
+  <div class="wrap lehre">
+    <div>
+      <div class="kicker rv">Lehre</div>
+      <h2 class="h rv">Wir bilden Zimmerleute aus.</h2>
+      <p class="rv">Aufgrund unserer vielfältigen Arbeiten können wir eine attraktive Lehrstelle anbieten. Die Ausbildung dauert vier Jahre: ein Tag pro Woche Berufsschule, vier Tage in der Zimmerei und auf dem Bau.</p>
+      <p class="rv" style="margin-top:14px">Interessierte können sich gerne schriftlich bewerben. Bitte erkundigen Sie sich vorgängig, ob wir noch freie Lehrstellen haben.</p>
+      <div class="btns rv"><a class="btn" href="mailto:info@frenkeholzbau.ch?subject=Lehrstelle%20Zimmermann%2FZimmerin">Nach Lehrstelle fragen</a></div>
+    </div>
+    <div>
+      <h3 class="rv">Das solltest du mitbringen</h3>
+      <ul class="chips" id="chips">
+        <li>Abgeschlossene Volksschule</li><li>Räumliches Vorstellungsvermögen</li><li>Technisches Verständnis</li><li>Interesse an Geometrie und Physik</li><li>Teamfähigkeit</li><li>Robuste Gesundheit</li><li>Körperkraft</li><li>Beweglichkeit</li><li>Handwerkliches Geschick</li><li>Schwindelfreiheit</li><li>Wetterfestigkeit</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap contact">
+    <div>
+      <div class="kicker rv">Kontakt</div>
+      <h2 class="h rv">Fragen Sie uns an.</h2>
+      <p class="rv" style="color:var(--mute);max-width:32em">Wir beraten Sie kompetent und unverbindlich, ob Carport oder Neubau.</p>
+      <a class="big rv" href="tel:+41619313167">061 931 31 67</a><br>
+      <a class="mail rv" href="mailto:info@frenkeholzbau.ch">info@frenkeholzbau.ch</a>
+      <div class="people rv">
+        <div><b>Yvonne Hug</b><span>Kauffrau</span></div>
+        <div><b>Robert Gottstein</b><span>Zimmermeister</span></div>
+      </div>
+      <p class="addr rv">Frenke Holzbau GmbH · Hauptstrasse 17 · Postfach 20 · 4417 Ziefen<br>Mobile <a href="tel:+41794225025">079 422 50 25</a> · <a href="https://www.google.com/maps/search/?api=1&query=Frenke+Holzbau+Hauptstrasse+17+4417+Ziefen" target="_blank" rel="noopener">Situationsplan</a></p>
+    </div>
+    <form id="form" class="rv">
+      <h3>Unverbindliche Offerte</h3>
+      <label>Worum geht es?
+        <select name="thema"><option>Zimmerei</option><option>Neubau</option><option>Elementbau</option><option>Umbau / Sanierung</option><option>Treppe</option><option>Boden</option><option>Innenausbau</option><option>Carport</option><option>Bedachung</option><option>Dachsanierung / Aufstockung</option></select>
+      </label>
+      <label>Name<input name="name" autocomplete="name" required></label>
+      <label>Telefon<input name="tel" type="tel" autocomplete="tel"></label>
+      <label>Nachricht<textarea name="msg" placeholder="Zum Beispiel: Carport für zwei Autos, Ziefen, Ausführung im Frühling."></textarea></label>
+      <button class="btn" type="submit">Anfrage senden</button>
+      <small>Öffnet Ihr Mailprogramm mit der fertigen Nachricht.</small>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Frenke Holzbau GmbH · Hauptstrasse 17 · 4417 Ziefen</span>
+    <span><a href="tel:+41619313167">061 931 31 67</a> · <button type="button" id="replay">Animation nochmals abspielen</button></span>
+  </div>
+</footer>
+
+<div class="draft"><i></i><span><b>Entwurf</b> · nicht veröffentlicht</span></div>
+
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var logoOnly=/[?&]logo\b/.test(location.search);
+  var body=document.body, intro=document.getElementById('intro'), isvg=intro.querySelector('svg'), hlogo=document.getElementById('hlogo');
+  if(logoOnly) body.classList.add('logo-only');
+
+  var timers=[];
+  function play(){
+    timers.forEach(clearTimeout); timers=[];
+    body.classList.add('intro-on'); body.classList.remove('ready');
+    intro.classList.remove('gone','fly','play'); isvg.style.transform=''; intro.style.background='#fff';
+    void intro.offsetWidth; intro.classList.add('play');
+    if(logoOnly) return;
+    timers.push(setTimeout(function(){
+      var a=isvg.getBoundingClientRect(), b=hlogo.getBoundingClientRect(), s=b.width/a.width;
+      intro.classList.add('fly'); isvg.style.transform='translate('+(b.left-a.left)+'px,'+(b.top-a.top)+'px) scale('+s+')';
+      intro.style.background='transparent'; body.classList.add('ready');
+    }, reduce?300:3000));
+    timers.push(setTimeout(function(){ body.classList.remove('intro-on'); intro.classList.add('gone'); }, reduce?400:3780));
+  }
+  intro.style.transition='background .6s ease';
+  play();
+  document.getElementById('replay').addEventListener('click',function(){ scrollTo({top:0,behavior:'instant'}); setTimeout(play,60); });
+
+  // ----- Holzbau-Zeichnung: jedes Arbeitsgebiet fügt ein Teil hinzu -----
+  var NS='http://www.w3.org/2000/svg', haus=document.getElementById('haus'), INK='#0b0f2e', Y='#ffe800', B='#0a14e6';
+  function el(tag,attrs,parent){ var e=document.createElementNS(NS,tag); for(var k in attrs) e.setAttribute(k,attrs[k]); parent.appendChild(e); return e; }
+  function stage(){ return el('g',{'class':'st'},haus); }
+  function beam(g,x1,y1,x2,y2,w){ var b=el('g',{},g); el('line',{x1:x1,y1:y1,x2:x2,y2:y2,stroke:INK,'stroke-width':w+2.6,'stroke-linecap':'butt'},b); el('line',{x1:x1,y1:y1,x2:x2,y2:y2,stroke:Y,'stroke-width':w},b); return b; }
+  var s=[],g,i;
+  // 1 Zimmerei: Fundament + Schwelle
+  g=s[0]=stage(); el('rect',{x:28,y:300,width:276,height:9,fill:B},g); beam(g,34,294,298,294,11);
+  // 2 Neubauten: Pfosten
+  g=s[1]=stage(); [42,104,166,228,290].forEach(function(x){ beam(g,x,289,x,200,9); });
+  // 3 Elementbau: Rähm + Riegel
+  g=s[2]=stage(); beam(g,30,195,302,195,11); [[47,99],[109,161],[171,223],[233,285]].forEach(function(p){ beam(g,p[0],246,p[1],246,6); });
+  // 4 Umbauten: Streben
+  g=s[3]=stage(); beam(g,50,287,97,251,6); beam(g,282,287,235,251,6);
+  // 5 Treppenbau
+  g=s[4]=stage(); beam(g,174,288,221,203,5);
+  (function(){ var d='M172 288',x=172,y=288; for(var k=0;k<6;k++){ y-=14; d+=' V'+y; x+=8.4; d+=' H'+x; } el('path',{d:d,fill:'none',stroke:INK,'stroke-width':2.6,'stroke-linejoin':'miter'},s[4]); })();
+  // 6 Böden: Riemen
+  g=s[5]=stage(); [[47,99],[109,161],[233,285]].forEach(function(p){ for(var x=p[0]+1;x<p[1]-8;x+=13){ el('rect',{x:x,y:282.5,width:12,height:5.5,fill:'#f6e9b8',stroke:INK,'stroke-width':1.2},g); } });
+  // 7 Innenausbau: Fenster + Türe
+  g=s[6]=stage();
+  [[52,206],[238,206]].forEach(function(p){ var w=el('g',{},g); el('rect',{x:p[0],y:p[1],width:42,height:32,fill:'#fff',stroke:B,'stroke-width':3},w); el('path',{d:'M'+(p[0]+21)+' '+p[1]+' v32 M'+p[0]+' '+(p[1]+16)+' h42',stroke:B,'stroke-width':2},w); });
+  (function(){ var w=el('g',{},g); el('rect',{x:116,y:204,width:38,height:37,fill:'#fff',stroke:B,'stroke-width':3},w); el('circle',{cx:147,cy:224,r:2.2,fill:B},w); })();
+  // 8 Carport
+  g=s[7]=stage(); el('rect',{x:306,y:300,width:96,height:9,fill:B},g); beam(g,388,300,388,236,8); beam(g,296,222,402,232,9); beam(g,388,262,366,234,5);
+  // 9 Bedachungen: Sparren + Firstpfosten
+  g=s[8]=stage(); beam(g,166,189,166,104,8); beam(g,96,150,236,150,6); beam(g,18,207,170,92,10); beam(g,314,207,162,92,10);
+  // 10 Dachsanierungen: Dachlatten + Aufrichtebäumchen
+  g=s[9]=stage();
+  (function(){ var w=el('g',{},g); for(var k=1;k<=8;k++){ var t=k/9, xl=18+(166-18)*t, yl=207+(92-207)*t, xr=314+(166-314)*t; el('rect',{x:xl-4.5,y:yl-11,width:9,height:5,fill:INK,transform:'rotate(-37 '+xl+' '+yl+')'},w); el('rect',{x:xr-4.5,y:yl-11,width:9,height:5,fill:INK,transform:'rotate(37 '+xr+' '+yl+')'},w); } })();
+  (function(){ var w=el('g',{},g); el('line',{x1:166,y1:92,x2:166,y2:58,stroke:INK,'stroke-width':2.4},w); el('path',{d:'M166 30 l-11 16 h6 l-9 13 h28 l-9 -13 h6 z',fill:'#1f8a45',stroke:INK,'stroke-width':1.6,'stroke-linejoin':'round'},w); el('path',{d:'M166 60 q10 4 16 14 M166 60 q-9 6 -13 17 M166 60 q4 9 2 20',fill:'none',stroke:B,'stroke-width':2.2,'stroke-linecap':'round'},w); })();
+  s.forEach(function(g){ [].forEach.call(g.children,function(c,i){ c.style.transitionDelay=(i*70)+'ms'; }); });
+
+  var rows=[].slice.call(document.querySelectorAll('#rows .row')), capname=document.getElementById('capname'), capno=document.getElementById('capno'), cur=-2;
+  function setStage(n){ if(n===cur) return; cur=n; s.forEach(function(g,i){ g.classList.toggle('on', i<=n); }); rows.forEach(function(r,i){ r.classList.toggle('on', i===n); });
+    var k=Math.max(0,n); capname.textContent=rows[k].dataset.n; capno.textContent=(k<9?'0':'')+(k+1)+' / 10'; }
+  if(reduce){ setStage(9); }
+
+  // Reveal
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  document.querySelectorAll('.rv,.chips').forEach(function(el){ io.observe(el); });
+  [].forEach.call(document.querySelectorAll('#chips li'),function(li,i){ li.style.transitionDelay=(i*60)+'ms'; });
+
+  var hdr=document.getElementById('hdr'), navs=[].slice.call(document.querySelectorAll('nav a:not(.tel)')), secs=navs.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  var roof=[].slice.call(document.querySelectorAll('.roof polygon')), flow=document.getElementById('flow'), flowbar=document.getElementById('flowbar'), tick=false;
+  var mobile=matchMedia('(max-width:860px)');
+  function frame(){
+    tick=false; var y=scrollY, vh=innerHeight;
+    hdr.classList.toggle('solid', y>30);
+    var c2=-1; secs.forEach(function(sc,i){ if(sc.getBoundingClientRect().top<vh*.4) c2=i; });
+    navs.forEach(function(l,i){ l.classList.toggle('on', i===c2); });
+    if(reduce) return;
+    // Stufe: letzte Zeile, deren Oberkante über der Marke liegt
+    var mark=mobile.matches? vh*.62 : vh*.6, n=-1; rows.forEach(function(r,i){ if(r.getBoundingClientRect().top<mark) n=i; });
+    setStage(n);
+    if(y<vh*1.3){ roof.forEach(function(p){ p.style.transform='translateY('+(-y*parseFloat(p.dataset.l)*.34)+'px)'; }); }
+    var fr=flow.getBoundingClientRect(); if(fr.top<vh&&fr.bottom>0){ var p=Math.min(1,Math.max(0,(vh*.85-fr.top)/(vh*.6))); flowbar.style.width=(p*100)+'%'; }
+  }
+  function onScroll(){ if(!tick){ tick=true; requestAnimationFrame(frame); } }
+  addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',onScroll); frame();
+
+  // 11 hochzählen
+  var eleven=document.getElementById('eleven');
+  if(!reduce){ eleven.textContent='01'; new IntersectionObserver(function(es,o){ if(es[0].isIntersecting){ o.disconnect(); var k=1, t=setInterval(function(){ k++; eleven.textContent=(k<10?'0':'')+k; if(k>=11) clearInterval(t); },110); } },{threshold:.5}).observe(eleven); }
+
+  document.getElementById('form').addEventListener('submit',function(e){
+    e.preventDefault(); var f=e.target;
+    var b='Guten Tag\n\n'+(f.msg.value||'')+'\n\nName: '+f.name.value+'\nTelefon: '+f.tel.value+'\n';
+    location.href='mailto:info@frenkeholzbau.ch?subject='+encodeURIComponent('Anfrage '+f.thema.value)+'&body='+encodeURIComponent(b);
+  });
+})();
+</script>
+</body>
+</html>

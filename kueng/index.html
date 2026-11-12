@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Teppich Küng · Bodenbeläge, Parkett, Vorhänge · Emmen</title>
+<meta name="description" content="Teppich Küng in Emmen, Fachgeschäft seit 1968: Parkett, Teppich und Bodenbeläge, Vorhangsysteme und Polsterarbeiten.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --mag:#c8005f; --mag-d:#97004a; --sky:#cfdcee; --sky-d:#b4c6de; --ink:#1c1320; --mute:#5f5766; --line:#dcd8de; --paper:#fbfaf7; --white:#fff;
+  --pad:clamp(20px,5vw,72px); --max:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 "Public Sans",system-ui,sans-serif;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,p,ul{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.kicker{font:700 13.5px/1 "Public Sans",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--mag)}
+
+/* Materialien als CSS-Muster */
+.m-parkett{background:repeating-linear-gradient(90deg,rgba(40,20,0,.22) 0 1px,transparent 1px 58px),repeating-linear-gradient(0deg,rgba(40,20,0,.18) 0 1px,transparent 1px 15px),linear-gradient(100deg,#bb8750,#a97540 45%,#c0905a)}
+.m-teppich{background:radial-gradient(circle at 3px 3px,rgba(255,255,255,.3) 1.2px,transparent 1.7px) 0 0/7px 7px,var(--mag)}
+.m-vorhang{background:repeating-linear-gradient(90deg,#f4f7fb 0 15px,#c5d1e3 15px 17px,#e6ecf5 17px 30px,#aebdd4 30px 32px)}
+.m-polster{background:radial-gradient(circle,rgba(0,0,0,.5) 0 2.6px,transparent 3.2px) 0 0/38px 38px,linear-gradient(45deg,transparent 48.5%,rgba(0,0,0,.2) 49% 51%,transparent 51.5%) 0 0/38px 38px,linear-gradient(-45deg,transparent 48.5%,rgba(0,0,0,.2) 49% 51%,transparent 51.5%) 0 0/38px 38px,#5a2c4f}
+
+/* Logo */
+.logo path{fill:var(--mag)}
+
+/* ---------- Intro ---------- */
+#intro{position:fixed;inset:0;z-index:60;background:var(--sky);display:grid;place-items:center}
+#intro svg{width:min(88vw,640px);height:auto;overflow:visible;transform-origin:0 0;will-change:transform}
+#intro.fly svg{transition:transform .75s cubic-bezier(.7,0,.2,1)}
+#intro.gone{display:none}
+#intro .cov{fill:var(--sky)}
+#intro .roll{opacity:0}
+#intro .kg-K,#intro .kg-u,#intro .kg-n,#intro .kg-g{opacity:0;transform:translateY(34px)}
+#intro .kg-name,#intro .kg-since{opacity:0}
+#intro.play .cov-bar{animation:unroll 1s cubic-bezier(.5,0,.3,1) .2s forwards}
+#intro.play .roll{animation:rollx 1s cubic-bezier(.5,0,.3,1) .2s forwards}
+#intro.play .cov-stem{animation:stem .5s cubic-bezier(.6,0,.2,1) 1.15s forwards}
+#intro.play .kg-K,#intro.play .kg-u,#intro.play .kg-n,#intro.play .kg-g{animation:pop .5s cubic-bezier(.3,1.4,.5,1) forwards}
+#intro.play .kg-K{animation-delay:1.55s}#intro.play .kg-u{animation-delay:1.67s}#intro.play .kg-n{animation-delay:1.79s}#intro.play .kg-g{animation-delay:1.91s}
+#intro.play .kg-since{animation:fade .5s ease 2.35s forwards}
+#intro.play .kg-name{animation:fade .5s ease 2.55s forwards}
+#intro.done .cov,#intro.done .roll{display:none}
+@keyframes unroll{to{transform:translateX(156px)}}
+@keyframes rollx{0%{opacity:1;transform:translateX(0)}92%{opacity:1}100%{opacity:0;transform:translateX(150px)}}
+@keyframes stem{to{transform:translateY(112px)}}
+@keyframes pop{to{opacity:1;transform:none}}
+@keyframes fade{to{opacity:1}}
+
+/* ---------- Header ---------- */
+header{position:fixed;left:0;right:0;top:0;z-index:40;transition:background .3s,box-shadow .3s}
+header .in{max-width:var(--max);margin:0 auto;padding:12px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:16px}
+header.solid{background:rgba(207,220,238,.95);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--sky-d)}
+#hlogo{display:block;width:clamp(170px,19vw,236px);transition:width .3s;flex:none}
+header.solid #hlogo{width:clamp(150px,15vw,190px)}
+#hlogo svg{display:block;width:100%;height:auto;overflow:visible}
+body.intro-on #hlogo{visibility:hidden}
+nav{display:flex;align-items:center;gap:clamp(12px,2vw,28px);font:700 14.5px/1 "Public Sans",sans-serif;letter-spacing:.04em}
+nav a{text-decoration:none;padding:8px 0;position:relative}
+nav a:not(.tel)::after{content:"";position:absolute;left:0;right:0;bottom:1px;height:3px;background:var(--mag);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+nav a:hover::after,nav a.on::after{transform:scaleX(1)}
+nav .tel{background:var(--mag);color:#fff;padding:12px 15px;white-space:nowrap}
+nav .tel:hover{background:var(--mag-d)}
+@media(max-width:980px){nav a:not(.tel){display:none}}
+
+/* ---------- Hero ---------- */
+.hero{background:var(--sky);padding:clamp(120px,13vw,170px) 0 0;position:relative}
+.hero h1{font:900 clamp(44px,8vw,124px)/.95 "Public Sans",sans-serif;letter-spacing:-.04em;margin:22px 0 26px;max-width:9.5em}
+.hero h1 span{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.hero h1 span i{display:block;font-style:normal;transform:translateY(110%);transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+body.ready .hero h1 span i{transform:none}
+body.ready .hero h1 span:nth-child(2) i{transition-delay:.08s}
+body.ready .hero h1 span:nth-child(3) i{transition-delay:.16s}
+.hero h1 em{font-style:normal;color:var(--mag)}
+.hero .row{display:flex;flex-wrap:wrap;gap:18px 40px;align-items:center;justify-content:space-between}
+.hero p.lead{font-size:clamp(17px,1.5vw,20px);max-width:30em;color:#3d3547}
+.badge{display:inline-flex;align-items:center;gap:10px;background:#fff;padding:11px 15px;font:600 15px/1.2 "Public Sans",sans-serif}
+.badge i{width:10px;height:10px;border-radius:50%;background:#9aa0aa;flex:none}
+.badge.is-open i{background:#1e9e55;box-shadow:0 0 0 4px rgba(30,158,85,.2)}
+.fade{opacity:0;transform:translateY(16px);transition:opacity .7s ease .35s,transform .7s ease .35s}
+body.ready .fade{opacity:1;transform:none}
+.pick{margin-top:clamp(34px,4.4vw,56px)}
+.pick>b{display:block;font:700 13.5px/1 "Public Sans",sans-serif;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;position:relative;z-index:2;margin-bottom:calc(clamp(34px,5vw,64px) * -1)}
+.tile{position:relative;display:block;text-decoration:none;color:#fff;aspect-ratio:1/1.08;overflow:hidden;background:var(--ink)}
+.tile .tx{position:absolute;inset:-12px;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.tile:hover .tx{transform:translate(10px,-10px) scale(1.04)}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,10,22,.86) 0,rgba(20,10,22,.25) 46%,transparent 70%)}
+.tile span{position:absolute;left:16px;right:14px;bottom:15px;z-index:2;font:800 clamp(17px,1.9vw,25px)/1.08 "Public Sans",sans-serif;letter-spacing:-.015em}
+.tile small{display:block;font:600 12.5px/1 "Public Sans",sans-serif;letter-spacing:.16em;opacity:.8;margin-bottom:8px}
+.tile:focus-visible{outline:4px solid var(--mag);outline-offset:2px}
+@media(max-width:760px){.tiles{grid-template-columns:1fr 1fr}.tile{aspect-ratio:1/.8}}
+
+/* ---------- Themen ---------- */
+#themen{padding:clamp(90px,12vw,170px) 0 clamp(30px,5vw,60px)}
+.topic{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(24px,5vw,80px);align-items:center;padding:clamp(40px,6vw,84px) 0;border-top:1px solid var(--line);scroll-margin-top:70px}
+.topic:first-child{border-top:0;padding-top:0}
+.topic:nth-child(even) .vis{order:-1}
+.topic .no{font:800 15px/1 "Public Sans",sans-serif;letter-spacing:.14em;color:var(--mag)}
+.topic h2{font:900 clamp(34px,4.8vw,68px)/1 "Public Sans",sans-serif;letter-spacing:-.035em;margin:14px 0 18px}
+.topic p{color:var(--mute);max-width:34em}
+.topic p+p{margin-top:12px}
+.topic h3{font:700 13.5px/1 "Public Sans",sans-serif;letter-spacing:.14em;text-transform:uppercase;margin:24px 0 12px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;list-style:none;padding:0}
+.tags li{border:1.5px solid var(--ink);padding:7px 11px;font:600 14.5px/1.1 "Public Sans",sans-serif;background:#fff}
+.tags.soft li{border-color:var(--line);color:var(--mute)}
+.ask{display:inline-block;margin-top:24px;font:700 15px/1 "Public Sans",sans-serif;text-decoration:none;color:#fff;background:var(--mag);padding:15px 19px;transition:background .2s,transform .2s}
+.ask:hover{background:var(--mag-d);transform:translateY(-2px)}
+.vis{min-width:0}
+.stage{position:relative;aspect-ratio:4/3;overflow:hidden;background-color:var(--sky)}
+.thumbs{display:flex;gap:8px;margin-top:8px}
+.thumbs img{flex:1 1 0;min-width:0;height:clamp(84px,11vw,150px);object-fit:cover;background:var(--sky)}
+.note{font-size:13px;color:var(--mute);margin-top:8px}
+@media(max-width:860px){.topic{grid-template-columns:1fr}.topic:nth-child(even) .vis{order:0}}
+
+/* Parkett: Riemen werden beim Scrollen verlegt */
+.s-parkett{background:#3a2a1c;display:grid;grid-template-rows:repeat(6,1fr);gap:3px;padding:3px}
+.s-parkett .r{display:flex;gap:3px;min-height:0}
+.s-parkett .r:nth-child(even){margin-left:-11%}
+.s-parkett .pl{flex:1 0 21%;opacity:0;transform:translate(-30px,-16px) rotate(-3deg);transition:opacity .3s ease,transform .5s cubic-bezier(.2,.9,.3,1)}
+.s-parkett .pl.on{opacity:1;transform:none}
+/* Teppich: Rolle rollt aus */
+.s-teppich{background:#e9e4e0;display:flex;align-items:flex-end}
+.s-teppich .floor{position:absolute;left:0;right:0;bottom:0;height:16%;background:repeating-linear-gradient(90deg,rgba(40,20,0,.2) 0 1px,transparent 1px 70px),#c39a6a}
+.s-teppich .carpet{position:absolute;left:0;bottom:16%;height:9%;width:0;will-change:width}
+.s-teppich .wall{position:absolute;left:8%;top:14%;font:900 clamp(40px,6.4vw,92px)/.9 "Public Sans",sans-serif;letter-spacing:-.04em;color:rgba(28,19,32,.09)}
+.s-teppich .rollc{position:absolute;bottom:16%;left:0;width:22%;aspect-ratio:1;border-radius:50%;background:repeating-radial-gradient(circle,var(--mag) 0 5px,var(--mag-d) 5px 7px);box-shadow:0 0 0 3px var(--mag-d) inset;will-change:transform,left,width}
+/* Vorhang: Lamellen drehen */
+.s-vorhang{background:linear-gradient(165deg,#a9cdee 0,#dbe9f6 52%,#f6ecd9 100%);display:flex}
+.s-vorhang::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent calc(50% - 5px),#fff calc(50% - 5px) calc(50% + 5px),transparent calc(50% + 5px)),linear-gradient(0deg,transparent calc(46% - 4px),#fff calc(46% - 4px) calc(46% + 4px),transparent calc(46% + 4px));box-shadow:inset 0 0 0 12px #fff}
+.s-vorhang .sl{flex:1;height:100%;background:linear-gradient(90deg,#fbfcfe,#dfe6f0 70%,#c3cfe0);box-shadow:1px 0 0 rgba(0,0,0,.12);transform-origin:50% 50%;will-change:transform;position:relative;z-index:1}
+.s-vorhang .rail{position:absolute;left:0;right:0;top:0;height:5%;background:#f4f6fa;box-shadow:0 2px 6px rgba(0,0,0,.25);z-index:2}
+/* Polster: Naht wird gezogen */
+.stage.m-polster{background-color:#5a2c4f}
+.s-polster svg{position:absolute;inset:0;width:100%;height:100%}
+.s-polster .lbl{position:absolute;left:7%;bottom:8%;color:#fff;font:900 clamp(26px,3.6vw,50px)/1 "Public Sans",sans-serif;letter-spacing:-.03em}
+
+/* ---------- Einsatzorte ---------- */
+#objekte{background:var(--ink);color:#fff;padding:clamp(60px,9vw,120px) 0}
+#objekte .kicker{color:#ff7ab4}
+.objs{margin-top:22px;font:900 clamp(30px,5.4vw,82px)/1.06 "Public Sans",sans-serif;letter-spacing:-.035em}
+.objs span{display:inline;color:rgba(255,255,255,.22);transition:color .35s ease}
+.objs span.lit{color:#fff}
+.objs span.lit:nth-child(3n+1){color:#ff7ab4}
+#objekte p{color:#c9c1cf;max-width:38em;margin-top:28px}
+
+/* ---------- Besuch ---------- */
+#besuch{padding:clamp(70px,10vw,140px) 0}
+.visit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,6vw,90px);align-items:start}
+.visit h2{font:900 clamp(34px,4.8vw,68px)/1 "Public Sans",sans-serif;letter-spacing:-.035em;margin:14px 0 22px}
+.hours{width:100%;border-collapse:collapse;font-size:17px;margin-top:8px}
+.hours td{padding:13px 0;border-top:1px solid var(--line);vertical-align:top}
+.hours tr:last-child td{border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.hours tr.today td{color:var(--mag)}
+.shop{background:var(--sky);padding:clamp(18px,2.6vw,30px)}
+.shop img{width:100%;max-width:300px}
+.shop b{display:block;font:800 22px/1.2 "Public Sans",sans-serif;letter-spacing:-.01em;margin-top:18px}
+.shop a.map{display:inline-block;margin-top:14px;font-weight:700;text-underline-offset:4px;text-decoration-color:var(--mag)}
+@media(max-width:800px){.visit{grid-template-columns:1fr}}
+
+/* ---------- Kontakt ---------- */
+#kontakt{background:var(--mag);color:#fff;padding:clamp(70px,10vw,130px) 0}
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,6vw,90px)}
+#kontakt .kicker{color:#ffd0e4}
+.contact h2{font:900 clamp(34px,5vw,72px)/1.03 "Public Sans",sans-serif;letter-spacing:-.03em;margin:14px 0 22px}
+.contact .big{display:inline-block;font:900 clamp(36px,5vw,70px)/1 "Public Sans",sans-serif;letter-spacing:-.035em;text-decoration:none;margin:22px 0 8px}
+.contact .mail{font-size:18px;text-underline-offset:4px;overflow-wrap:anywhere}
+.contact .addr{margin-top:22px;color:#ffd9e9;font-size:16px}
+form{background:#fff;color:var(--ink);padding:clamp(22px,3vw,36px);display:grid;gap:16px;align-content:start}
+form h3{font:800 24px/1.15 "Public Sans",sans-serif;letter-spacing:-.015em}
+label{display:grid;gap:6px;font:700 12.5px/1 "Public Sans",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+input,select,textarea{font:400 16px/1.4 "Public Sans",sans-serif;color:var(--ink);background:var(--paper);border:1px solid var(--line);padding:12px 13px;border-radius:0;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--mag);outline-offset:0;border-color:var(--mag)}
+textarea{min-height:110px;resize:vertical}
+form button{font:700 16px/1 "Public Sans",sans-serif;background:var(--ink);color:#fff;border:0;padding:17px 20px;cursor:pointer;transition:background .2s}
+form button:hover{background:#000}
+form small{color:var(--mute);font-size:13.5px}
+@media(max-width:860px){.contact{grid-template-columns:1fr}}
+
+footer{background:var(--ink);color:#b9b0c0;font-size:14.5px;padding:24px 0 80px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 30px;justify-content:space-between;align-items:center}
+footer a{text-underline-offset:3px}
+footer button{font:inherit;color:inherit;background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+.draft{position:fixed;left:14px;bottom:14px;z-index:50;background:#1c1320;color:#fff;font:500 13px/1 "Public Sans",sans-serif;padding:9px 13px;display:flex;gap:8px;align-items:center;border-radius:2px}
+.draft i{width:8px;height:8px;border-radius:50%;background:var(--mag)}
+
+body.logo-only header,body.logo-only main,body.logo-only footer,body.logo-only .draft{display:none}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv,.fade,.hero h1 span i,.s-parkett .pl{opacity:1!important;transform:none!important;transition:none!important}
+  .objs span{color:#fff}
+}
+</style>
+</head>
+<body class="intro-on">
+
+<div id="intro" aria-hidden="true">
+  <svg class="logo" viewBox="6 8 580 138" role="img" aria-label="Logo Teppich Küng">
+<path class="kg-T" fill-rule="evenodd" d="M 12.8 14.4 C 12.5 15, 12.4 33, 12.8 33.4 C 12.9 33.5, 19.2 33.5, 26.9 33.6 C 34.6 33.6, 41 33.7, 41.2 33.8 C 41.3 34, 41.4 57.3, 41.5 85.7 L 41.6 137.4 51.4 137.4 L 61.1 137.4 61.2 85.8 C 61.2 49.8, 61.3 34.1, 61.5 33.9 C 61.7 33.7, 76.3 33.6, 109.7 33.6 C 148 33.5, 157.6 33.5, 157.8 33.2 C 158.1 32.8, 158.1 14.7, 157.8 14.3 C 157.6 14.1, 143 14, 85.4 13.9 C 13.2 13.9, 13.2 13.9, 12.8 14.4 M 121 16.8 C 120.8 17, 120.8 18.6, 120.8 22.3 C 120.8 28, 120.8 28.4, 122.1 27.8 C 122.7 27.5, 122.8 27.4, 122.8 24.9 C 122.8 22.5, 122.8 22.2, 123.3 22 C 124.3 21.4, 124.8 22.3, 124.8 25 C 124.8 27.8, 125 28.3, 126.1 27.8 C 126.7 27.5, 126.8 27.5, 126.8 24.4 C 126.8 21.4, 126.8 21.4, 125.9 20.5 C 125.2 19.8, 125 19.7, 124.1 19.9 C 123 20.1, 122.8 19.8, 122.8 18.2 C 122.8 17.1, 122.7 17, 122.1 16.7 C 121.3 16.4, 121.4 16.4, 121 16.8 M 109.8 17.1 C 109.1 17.9, 109.5 18.6, 110.6 18.6 C 111.5 18.6, 111.6 18.5, 111.7 18.1 C 111.8 17.3, 111.3 16.8, 110.6 16.8 C 110.3 16.8, 109.9 16.9, 109.8 17.1 M 77.1 17.5 C 76.4 18.2, 76.9 19.3, 77.9 19.3 C 78.9 19.3, 79 19.8, 79.1 23.8 C 79.1 27.6, 79.1 27.6, 79.8 27.9 C 81.1 28.3, 81.3 27.8, 81.3 23.8 C 81.2 19.8, 81.3 19.3, 82.6 19.2 C 83.3 19.1, 83.4 19.1, 83.4 18.3 C 83.4 17.4, 83.4 17.4, 80.4 17.3 C 78.2 17.3, 77.3 17.3, 77.1 17.5 M 85.8 20.4 C 83.1 22.5, 83.7 27, 86.8 28 C 88.4 28.5, 89.8 28, 90 26.9 C 90 26.2, 90 26.2, 88.8 26.3 C 87.5 26.5, 86.5 26.1, 86.5 25.4 C 86.5 24.9, 87.1 24.8, 88.5 24.8 C 90.3 24.8, 90.5 24.6, 90.5 23.5 C 90.5 20.7, 87.7 18.9, 85.8 20.4 M 95.7 20 C 95.4 20.2, 94.8 20.2, 94.1 20.1 C 93.5 20.1, 93 20.1, 92.9 20.2 C 92.8 20.3, 92.8 22.8, 92.7 25.6 C 92.7 30.4, 92.7 30.9, 93.1 31.2 C 94.1 31.9, 94.8 31.2, 94.8 29.4 C 94.8 27.9, 95 27.7, 96 28 C 98.8 29.1, 100.5 23.4, 98.1 20.7 C 97.2 19.7, 96.5 19.5, 95.7 20 M 103.7 20 C 103.4 20.2, 102.8 20.2, 102.1 20.1 C 101.5 20.1, 101 20.1, 100.9 20.2 C 100.8 20.3, 100.8 22.8, 100.7 25.6 C 100.7 30.4, 100.7 30.9, 101.2 31.2 C 102.1 31.9, 102.8 31.2, 102.8 29.4 C 102.8 27.9, 103 27.7, 104 28 C 105.8 28.7, 107.1 26.9, 107.1 23.8 C 107.1 21.8, 107.1 21.8, 106.1 20.8 C 105.1 19.7, 104.5 19.6, 103.7 20 M 116 20 C 113.4 20.8, 112.4 23.8, 113.9 26.4 C 115.2 28.5, 118.8 28.9, 118.8 26.8 C 118.8 26.2, 118.6 26.2, 117.3 26.2 C 116.2 26.3, 115.5 25.5, 115.5 24 C 115.5 22.4, 116 21.8, 117.4 21.7 C 118.3 21.6, 118.6 21.5, 118.7 21.3 C 118.9 20.3, 117.3 19.5, 116 20 M 110 20.3 C 109.8 20.6, 109.6 25.7, 109.7 27.4 C 109.8 27.9, 110.7 28.1, 111.2 27.8 C 111.8 27.4, 112 20.9, 111.5 20.3 C 111.1 19.9, 110.4 19.9, 110 20.3 M 86.9 21.8 C 86.3 22.1, 86.4 23, 87.1 23.1 C 88.2 23.4, 88.7 22.5, 88 21.8 C 87.6 21.4, 87.5 21.4, 86.9 21.8 M 95 22.1 C 94.7 22.4, 94.7 25.1, 95 25.8 C 95.7 27.1, 97 25.9, 97 23.9 C 97 22, 96 21.1, 95 22.1 M 103 22.1 C 102.7 22.4, 102.7 25.1, 103 25.8 C 103.4 26.5, 104.5 26.4, 104.8 25.6 C 105.1 24.8, 105.1 22.8, 104.7 22.2 C 104.5 21.7, 103.5 21.6, 103 22.1"/>
+<path class="kg-K" fill-rule="evenodd" d="M 76 41.4 C 75.8 41.6, 75.8 56.6, 75.8 79 L 75.9 116.4 86.4 116.4 C 92.2 116.5, 97 116.4, 97.2 116.3 C 97.5 116.1, 97.5 112.6, 97.5 98.8 C 97.5 81.8, 97.5 81.5, 98 81.5 C 98.3 81.5, 98.7 82, 99.2 82.8 C 99.7 83.6, 100.2 84.3, 100.4 84.5 C 100.6 84.7, 100.8 84.9, 100.8 85 C 100.8 85.2, 101.4 86.1, 102.1 87.1 C 102.9 88.1, 103.5 89, 103.5 89.2 C 103.5 89.3, 104 89.9, 104.5 90.7 C 105 91.4, 105.5 92.1, 105.5 92.2 C 105.5 92.3, 106 92.9, 106.5 93.7 C 107 94.4, 107.5 95, 107.5 95.1 C 107.5 95.2, 107.9 95.8, 108.3 96.5 C 108.8 97.1, 111.8 101.6, 115.1 106.5 C 122.8 118.1, 121.6 116.9, 125.8 116.8 C 127.6 116.8, 133.3 116.7, 138.4 116.7 C 149.6 116.6, 149.1 116.7, 147.3 114.2 C 145 111, 143.4 108.6, 143.2 108.3 C 143.1 108, 142.3 106.9, 141.4 105.6 C 139.9 103.6, 138.1 101, 137 99.3 C 136.5 98.6, 134.3 95.4, 131.7 91.8 C 130.6 90.2, 129.4 88.5, 129.1 88 C 128.8 87.5, 128 86.4, 127.4 85.6 C 125.3 82.5, 123.4 79.7, 123.1 79.3 C 123 79.1, 122.4 78.2, 121.8 77.4 C 120.5 75.6, 120.5 75.6, 121.8 74 C 122.4 73.2, 123.1 72.3, 123.3 72 C 123.5 71.6, 124.5 70.3, 125.5 69.1 C 126.5 67.9, 127.3 66.9, 127.3 66.8 C 127.3 66.7, 127.9 65.9, 128.6 65 C 129.4 64.1, 130 63.3, 130 63.2 C 130 63, 130.5 62.3, 131.1 61.5 C 131.7 60.8, 134 57.8, 136.2 54.9 C 138.3 52, 141.4 47.9, 142.9 45.9 C 144.5 43.8, 145.7 41.9, 145.7 41.7 C 145.6 41.2, 145 41.2, 133.6 41.2 C 126.9 41.2, 121.3 41.3, 121.2 41.4 C 121 41.5, 119.9 42.9, 118.8 44.4 C 117.7 45.9, 116.5 47.5, 116.2 47.9 C 115.9 48.2, 115.2 49.2, 114.6 50 C 114.1 50.8, 113.2 52, 112.6 52.7 C 111.5 54.1, 109.5 56.9, 107.1 60 C 106.3 61.1, 105.1 62.7, 104.5 63.5 C 103.9 64.3, 103.2 65.2, 103 65.5 C 102.8 65.8, 101.9 67.1, 100.9 68.3 C 100 69.6, 99.1 70.8, 98.9 71.1 C 98.6 71.8, 98.3 72, 97.8 71.8 C 97.6 71.7, 97.5 69, 97.5 56.6 C 97.5 44.4, 97.4 41.5, 97.2 41.4 C 96.5 41.1, 76.2 41.1, 76 41.4"/>
+<path class="kg-u" fill-rule="evenodd" d="M 162.9 41 C 162.3 41.4, 162.3 54.4, 162.9 54.6 C 163.7 54.9, 179.1 54.8, 179.4 54.5 C 179.7 54.2, 179.8 52.4, 179.8 47.7 C 179.8 41.2, 179.8 41.2, 179.1 41 C 178.2 40.7, 163.5 40.7, 162.9 41 M 191.1 41 C 190.8 41.3, 190.8 43.1, 190.8 47.8 C 190.8 52.4, 190.8 54.2, 191.1 54.5 C 191.5 54.9, 207 54.9, 207.4 54.5 C 207.7 54.2, 207.8 52.4, 207.8 47.7 C 207.8 41.2, 207.8 41.2, 207.1 41 C 206.1 40.6, 191.4 40.7, 191.1 41 M 156.9 61.1 C 156.5 61.4, 156.5 62.4, 156.6 81.5 C 156.7 101.6, 156.7 101.6, 157.3 104 C 158.7 109, 160.3 111.7, 163.5 114.1 C 167.6 117.2, 172.4 118.3, 179 117.7 C 181.2 117.5, 184.6 116.5, 185.3 115.9 C 185.5 115.7, 185.8 115.5, 186.1 115.5 C 187.3 115.2, 191.9 111.3, 193 109.5 C 193.1 109.3, 193.4 109.3, 193.6 109.3 C 194 109.5, 194 109.9, 194 112.7 C 193.9 114.5, 194 116.1, 194.1 116.2 C 194.4 116.6, 212.5 116.6, 212.9 116.2 C 213.2 116, 213.3 109.5, 213.3 88.6 C 213.3 61.8, 213.2 61.3, 212.8 61 C 212 60.6, 192.9 60.7, 192.5 61.1 C 192.3 61.4, 192.2 65.1, 192.3 75.1 C 192.3 93.7, 192 96, 189.4 98.6 C 187.8 100.1, 187.2 100.4, 184.4 100.4 C 181.6 100.3, 180.8 100.1, 179.7 98.7 C 177.6 96.3, 177.5 95.2, 177.5 76.7 C 177.5 61.5, 177.5 61.5, 176.9 61.1 C 176.2 60.6, 157.6 60.5, 156.9 61.1"/>
+<path class="kg-n" fill-rule="evenodd" d="M 265.8 59.5 C 265.5 59.6, 264.9 59.7, 264.6 59.6 C 263.9 59.4, 260.8 59.9, 259.3 60.4 C 257.6 61, 254.5 62.5, 254.5 62.8 C 254.5 62.9, 254.4 63, 254.2 63 C 253.8 63, 251.1 65.2, 249.8 66.7 C 248.1 68.6, 247.9 68.4, 248 64.5 C 248.1 62.8, 248 61.2, 247.9 61 C 247.6 60.5, 229.4 60.6, 228.9 61.1 C 228.2 61.8, 228.3 115.9, 229 116.2 C 229.7 116.6, 249.7 116.6, 249.9 116.2 C 249.9 116, 250 108.6, 250.1 99.6 C 250.1 83.4, 250.1 83.4, 250.8 81.6 C 252.2 78.4, 254.2 77, 257.6 76.8 C 261 76.7, 263.1 78.1, 264.1 81.2 C 264.6 82.6, 264.6 83.4, 264.7 99.2 C 264.8 110.7, 264.9 116, 265 116.2 C 265.4 116.7, 285.6 116.7, 286 116.2 C 286.5 115.5, 286.2 81, 285.7 76.6 C 285.2 73, 285.2 72.8, 283.7 69.4 C 282.6 66.8, 278.3 62, 277.1 62 C 277 62, 276.6 61.8, 276.3 61.5 C 274.9 60.6, 271.9 59.8, 269.4 59.6 C 268.4 59.6, 267.3 59.5, 267 59.4 C 266.7 59.3, 266.1 59.4, 265.8 59.5"/>
+<path class="kg-g" fill-rule="evenodd" d="M 317.6 59.4 C 313.7 59.9, 312.5 60.1, 311.6 60.5 C 311 60.8, 310.3 61, 310.1 61 C 309.8 61, 309.3 61.2, 308.9 61.5 C 308.6 61.8, 308.2 62, 308.1 62 C 307.3 62, 301.3 67.3, 301.3 68 C 301.3 68.1, 301 68.5, 300.6 69 C 300 69.7, 298 73.4, 298 73.9 C 298 74, 297.8 74.6, 297.5 75.2 C 297.2 75.8, 297 76.4, 297 76.6 C 297 76.8, 296.8 77.4, 296.6 78 C 294.6 83.6, 295.1 96.6, 297.6 101.9 C 298 102.6, 298.3 103.3, 298.3 103.3 C 298.3 103.4, 298.8 104.3, 299.4 105.4 C 304.8 114.6, 313.8 118.4, 325.9 116.6 C 328.1 116.3, 332.9 114.2, 334.2 113 C 335.2 112, 335.5 112.5, 335.5 115.2 C 335.5 123.5, 333.6 126, 327.5 126 C 324.6 126, 321.5 124.6, 321.5 123.4 C 321.5 123.2, 321.3 122.9, 321 122.7 C 320.4 122.1, 299.8 122, 299.3 122.5 C 298.9 123, 298.9 123.7, 299.4 124.5 C 299.6 124.9, 299.8 125.6, 299.9 126 C 300 126.5, 300.3 127.2, 300.5 127.5 C 300.7 127.8, 301.1 128.6, 301.4 129.1 C 302.4 131, 308 135.8, 309.3 135.8 C 309.5 135.8, 309.9 135.9, 310.1 136.1 C 310.7 136.5, 314.2 137.5, 316.9 138.2 C 321.7 139.3, 338.4 138.6, 341.2 137.1 C 341.6 136.9, 342.1 136.8, 342.3 136.8 C 342.6 136.8, 343.4 136.5, 344.1 136.2 C 351.5 133.2, 355 128.3, 356.5 118.9 C 357.2 114.1, 357.3 61.4, 356.5 61 C 355.8 60.6, 337.6 60.7, 337.3 61.1 C 337.2 61.2, 337.2 62.6, 337.2 64 C 337.3 67.4, 337.2 67.5, 335.2 65.5 C 333.3 63.5, 332.7 63.1, 330.4 61.8 C 327.3 60.2, 321 59, 317.6 59.4 M 325.4 76 C 325.1 76.1, 324.5 76.2, 324.1 76.2 C 322.5 76.3, 320 78.3, 319 80.2 C 317.1 83.9, 317.1 92.5, 318.9 96.5 C 320.5 99.8, 323 101.4, 326.8 101.2 C 330.6 101, 332.9 99.3, 334.4 95.9 C 335.6 92.7, 335.7 84.7, 334.5 82.3 C 334.3 81.8, 334 81.1, 333.9 80.8 C 333.5 79, 330.3 76.5, 328.2 76.2 C 327.5 76.1, 326.8 76, 326.4 75.9 C 326.1 75.8, 325.6 75.9, 325.4 76"/>
+<path class="kg-name" fill-rule="evenodd" d="M 525.1 91.8 C 524.7 92.2, 524.6 94.8, 525 95.2 C 525.2 95.4, 526 95.5, 526.8 95.5 C 528.5 95.5, 528.7 95.3, 528.5 93.1 C 528.4 91.6, 528.4 91.6, 526.9 91.5 C 525.9 91.5, 525.3 91.6, 525.1 91.8 M 530.7 91.7 C 530.5 91.9, 530.5 94.6, 530.6 95.1 C 530.8 95.6, 533.2 95.7, 533.7 95.2 C 534.2 94.7, 534.1 91.8, 533.6 91.7 C 533.1 91.5, 530.9 91.5, 530.7 91.7 M 397.8 92.1 C 393.9 93, 392.1 95.2, 392.1 99 C 392.1 103.5, 393.6 104.7, 401.4 106.5 C 401.9 106.7, 402.7 106.9, 403.2 107.1 C 403.6 107.3, 404.1 107.5, 404.2 107.5 C 404.7 107.5, 406.3 109.3, 406.3 109.8 C 406.3 113.2, 400.2 114.2, 397.7 111.2 C 395.7 108.9, 396 109, 394.1 109.2 C 392 109.3, 391.7 109.6, 391.9 110.7 C 392.5 113.9, 395.3 116.3, 399.2 116.8 C 405.2 117.5, 409.8 115.5, 410.7 111.7 C 411.8 107.3, 410.1 104.2, 406 103 C 405.4 102.8, 404.8 102.6, 404.6 102.5 C 404.5 102.4, 403.6 102.2, 402.6 102 C 401.6 101.8, 400.7 101.6, 400.6 101.5 C 400.5 101.3, 400.2 101.3, 399.9 101.3 C 398.7 101.3, 396.8 99.6, 396.8 98.5 C 396.7 96.6, 400.6 94.9, 402.7 96 C 404.5 96.9, 404.7 97, 405.5 98.8 C 405.8 99.3, 409.9 99.4, 410.1 98.9 C 410.6 97.6, 407.8 93, 406.5 93 C 406.3 93, 405.9 92.8, 405.8 92.7 C 405.1 91.8, 400.6 91.5, 397.8 92.1 M 514.3 92.5 C 512 92.6, 512 92.6, 510.4 94.3 C 506.5 98.4, 503.2 101.8, 502.9 101.8 C 502.8 101.9, 502.7 100.4, 502.7 97.5 C 502.8 94.5, 502.7 93.1, 502.5 92.9 C 502.1 92.4, 498.8 92.3, 498.3 92.8 C 498.1 93, 498 96, 498 104.5 C 498 117.7, 497.8 116.5, 500.6 116.5 C 502.8 116.5, 502.8 116.5, 502.8 111.9 C 502.8 108, 502.8 108, 503.8 106.8 C 505.1 105.4, 505.5 105.5, 506.7 107.3 C 507.2 108, 508.1 109.2, 508.6 110 C 509.2 110.8, 510.3 112.3, 511.1 113.5 C 513.2 116.5, 513.1 116.5, 516 116.5 C 519 116.5, 519.2 116.3, 517.8 114.5 C 517.3 113.8, 516.6 112.9, 516.3 112.5 C 515.5 111.3, 512.1 106.6, 510.9 105 C 508.5 101.9, 508.4 102.5, 512.7 98.2 C 516.9 93.9, 517.8 92.8, 517.2 92.5 C 517 92.4, 516.8 92.3, 516.8 92.3 C 516.7 92.3, 515.6 92.4, 514.3 92.5 M 414.7 93.1 C 414.4 94, 414.4 95.8, 414.8 96.3 C 415.1 96.7, 415.5 96.8, 417 96.7 L 418.9 96.6 418.9 94.8 C 419 92.6, 419 92.5, 416.7 92.5 C 415.1 92.5, 415 92.5, 414.7 93.1 M 423.8 92.8 C 423.5 93.3, 423.4 115.7, 423.8 116.2 C 424.1 116.6, 427.8 116.6, 428.2 116.2 C 428.6 115.8, 428.6 94.1, 428.3 93.1 C 428 92.5, 427.9 92.5, 426 92.5 C 424.7 92.5, 424 92.6, 423.8 92.8 M 454.1 98.2 C 453.4 98.4, 453.1 98.5, 451.6 99.3 C 450 100.2, 448.6 103.2, 449.4 104.1 C 450.3 105, 453.5 104.5, 453.7 103.3 C 453.8 102.4, 455.1 101.8, 456.7 101.8 C 458.9 101.8, 460.1 103.4, 458.9 104.7 C 458.6 105, 457.8 105.2, 454 105.9 C 450.4 106.5, 449 107.9, 448.7 110.8 C 448.4 115.4, 450.7 117.4, 455.4 116.8 C 456.7 116.6, 457.2 116.4, 457.9 115.8 C 458.7 115, 459.8 114.7, 459.8 115.4 C 459.8 116.2, 460.5 116.5, 462.3 116.5 C 465 116.5, 465.1 116.4, 464.2 114.4 C 463.8 113.4, 463.7 112.8, 463.8 107.2 C 463.8 100.2, 463.7 100, 460.9 98.8 C 459.3 98.2, 455.6 97.8, 454.1 98.2 M 565.4 98.2 C 565 98.2, 564.5 98.4, 564.3 98.6 C 564 98.8, 563.6 99, 563.4 99.1 C 561.5 99.7, 559.8 103.8, 559.8 107.5 C 559.8 114.2, 565 118.3, 570.3 115.6 C 572.1 114.7, 572.3 114.7, 572.3 115.9 C 572.3 119.5, 568 121.4, 565.6 118.8 C 565 118.1, 561 118, 560.5 118.6 C 559.8 119.5, 561.7 121.9, 564 123 C 567 124.4, 572.9 123.6, 574.8 121.5 C 576.7 119.5, 576.8 119.2, 576.8 108.7 C 576.8 98.1, 576.9 98.9, 574.5 98.8 C 573.1 98.8, 572.9 98.8, 572.7 99.4 C 572.3 100.2, 571.9 100.2, 570.8 99.3 C 569.4 98.1, 567.9 97.8, 565.4 98.2 M 475.9 98.7 C 475.5 98.9, 474.8 99.3, 474.4 99.6 C 473.7 100.1, 473 100, 473 99.4 C 473 99.2, 472.8 99, 472.6 99 C 470.7 98.8, 469 98.8, 468.7 99 C 468.3 99.3, 468.1 115.6, 468.5 116.2 C 468.9 116.6, 472.6 116.6, 473 116.2 C 473.2 115.9, 473.3 114.2, 473.3 110.6 C 473.2 107.7, 473.3 105, 473.4 104.6 C 473.6 103.7, 475.1 102.1, 475.5 102.4 C 475.6 102.5, 476 102.4, 476.3 102.3 C 477 101.8, 478.4 102.4, 479 103.3 C 479.5 104.1, 479.5 104.5, 479.5 110 C 479.4 113.3, 479.5 116, 479.6 116.2 C 479.9 116.6, 483.6 116.6, 483.9 116.2 C 484.2 116, 484.3 114.1, 484.3 109.5 C 484.3 101.2, 484 100.2, 481.2 98.8 C 479.9 98.1, 477 98.1, 475.9 98.7 M 548.4 98.5 C 548.3 98.6, 547.9 98.9, 547.4 99.1 C 547 99.3, 546.4 99.6, 546.2 99.8 C 545.8 100.1, 545.6 100, 545.2 99.5 C 544.7 98.8, 541.3 98.5, 540.8 99.1 C 540.6 99.3, 540.5 102.2, 540.6 107.9 L 540.6 116.4 542.4 116.5 C 545.5 116.6, 545.3 117.1, 545.3 110.9 C 545.3 108, 545.4 105.2, 545.5 104.7 C 546 102.8, 548.5 101.6, 550.2 102.5 C 551.5 103.1, 551.5 103.1, 551.5 110.2 C 551.5 117, 551.3 116.5, 554 116.5 C 556.5 116.5, 556.3 117, 556.3 109.3 C 556.2 100.8, 556 100.1, 553.4 98.7 C 552.3 98.2, 548.7 98, 548.4 98.5 M 415 99 C 414.5 99.3, 414.3 115.6, 414.8 116.2 C 415.1 116.5, 418.1 116.6, 418.7 116.3 C 419.1 116, 419.1 99.5, 418.8 99.2 C 418.4 98.8, 415.5 98.7, 415 99 M 430.8 99.2 C 430.7 99.4, 431.5 101.9, 433.1 106.1 C 433.5 107.1, 433.9 108.4, 434.1 109.1 C 434.3 109.7, 434.6 110.4, 434.7 110.6 C 434.8 110.7, 435 111.3, 435.1 111.8 C 435.2 112.2, 435.5 113, 435.8 113.5 C 436 114.1, 436.3 114.8, 436.3 115.1 C 436.3 116.1, 437 116.5, 439.1 116.5 C 441.3 116.5, 441.8 116.2, 442.3 114.3 C 442.6 113.7, 443.1 112.2, 443.5 111 C 443.9 109.8, 444.5 108.3, 444.8 107.5 C 445.1 106.7, 445.4 105.7, 445.5 105.3 C 445.7 104.8, 445.9 104, 446.1 103.6 C 446.3 103.2, 446.5 102.7, 446.5 102.5 C 446.5 102.4, 446.7 101.8, 447 101.2 C 448.1 99, 447.5 98.6, 443.4 99 C 442.9 99, 442.4 100, 442.1 101.5 C 442 102, 441.8 102.8, 441.6 103.2 C 441.4 103.6, 441.3 104.1, 441.3 104.4 C 441.3 104.7, 441 105.6, 440.8 106.3 C 440.5 107, 440.2 108, 440.1 108.6 C 439.8 110.3, 438.5 110.7, 438.5 109 C 438.5 108.7, 438.3 107.7, 438 106.9 C 437.8 106.1, 437.3 104.5, 437 103.4 C 436.2 100.6, 435.8 99.3, 435.4 99.1 C 434.9 98.8, 430.9 98.8, 430.8 99.2 M 521.8 99.1 C 521.4 99.4, 521.4 112.7, 521.7 112.9 C 521.8 112.9, 522 113.3, 522.1 113.8 C 522.3 114.7, 524 116.4, 525 116.6 C 527.4 117.1, 530.2 116.6, 531.2 115.6 C 532 114.9, 532.8 114.8, 532.8 115.5 C 532.8 115.7, 532.9 116, 533 116.2 C 533.5 116.6, 536.5 116.6, 537 116.2 C 537.4 115.8, 537.4 99.4, 537 99.1 C 536.5 98.8, 533.1 98.8, 532.8 99 C 532.6 99.3, 532.5 100.7, 532.5 104.8 C 532.5 111.1, 532.4 111.6, 530.8 112.4 C 529.3 113.2, 528.3 113.2, 527.2 112.3 C 526.4 111.6, 526.4 111.6, 526.3 105.5 C 526.3 102.1, 526.1 99.3, 526 99.2 C 525.7 98.8, 522.1 98.8, 521.8 99.1 M 567 102.3 C 565.4 102.9, 564.7 104.3, 564.7 107.1 C 564.6 110.9, 565.6 112.3, 568.4 112.3 C 569.9 112.3, 570 112.2, 570.8 111.3 C 574.2 107.5, 571.3 100.8, 567 102.3 M 458.2 108.1 C 457.9 108.3, 457.2 108.5, 456.5 108.6 C 453.6 109, 452.3 110.8, 453.5 112.5 C 454.1 113.3, 454.1 113.3, 455.8 113.2 C 458.4 113.1, 459.3 112, 459.2 109.6 C 459.1 107.8, 458.9 107.5, 458.2 108.1"/>
+<path class="kg-since" fill-rule="evenodd" d="M 95 126.5 C 94.7 126.7, 94.7 127.7, 94.7 131.9 C 94.8 137.2, 94.9 137.8, 95.7 137.8 C 96.6 137.8, 96.8 137.2, 96.8 134.6 C 96.8 131.8, 97.1 131.1, 98.3 131.8 C 98.8 132, 98.8 132.2, 98.7 134.7 C 98.6 137.4, 98.8 137.7, 99.8 137.8 C 100.6 137.8, 100.8 137.2, 100.8 134.4 C 100.8 130.6, 100.1 129.6, 97.8 129.8 C 96.9 129.9, 96.9 129.9, 96.8 128.4 C 96.7 126.4, 96.1 125.8, 95 126.5 M 130 126.6 C 129.5 127.2, 129.8 137.3, 130.3 137.6 C 131.3 138.2, 131.6 137.5, 131.7 135.1 C 131.8 131.8, 132.1 131.1, 133.3 131.8 C 133.7 132, 133.7 132.4, 133.8 134.7 C 133.9 137.5, 134.2 138.2, 135.2 137.6 C 135.6 137.4, 135.6 136.9, 135.7 134.3 C 135.8 131.3, 135.8 131.3, 135 130.5 C 134.3 129.8, 134.2 129.7, 133.1 129.8 C 131.9 129.9, 131.9 129.9, 131.8 128.4 C 131.7 126.4, 130.9 125.6, 130 126.6 M 145.7 127 C 145.3 127.4, 145 128, 145 128.3 C 145 128.6, 144.8 129.2, 144.5 129.7 C 143.9 130.7, 143.9 131.1, 144.5 131.6 C 144.9 132, 145 132.4, 145.1 134.7 C 145.1 137.5, 145.4 138.2, 146.4 137.6 C 146.8 137.4, 146.9 136.9, 146.9 134.5 C 147 132.1, 147.1 131.7, 147.5 131.5 C 148.1 131.2, 148.1 130.4, 147.5 129.9 C 146.8 129.3, 146.9 128.2, 147.7 127.9 C 148.9 127.3, 148.5 126.3, 147.1 126.3 C 146.5 126.3, 146.1 126.5, 145.7 127 M 172.1 126.7 C 171.7 127, 171.5 127.7, 171.8 128.1 C 172.2 128.7, 173.5 128.5, 173.8 128 C 174.3 127.2, 172.9 126.1, 172.1 126.7 M 75.1 127.3 C 74.5 127.7, 74.6 137.4, 75.3 137.6 C 76.4 138, 76.8 137.6, 76.8 135.7 C 76.8 133.4, 77 132.9, 78.2 133.1 C 79 133.2, 79.3 133.1, 79.6 132.8 C 80.3 132, 79.9 131.5, 78.5 131.5 C 77.1 131.5, 76.8 131.2, 76.8 130.1 C 76.8 129.1, 77.3 128.6, 78.3 128.8 C 79.7 129.1, 80.7 127.9, 79.5 127.2 C 78.9 126.9, 75.7 127, 75.1 127.3 M 138.6 127.4 C 138.3 128, 138.7 128.5, 139.3 128.5 C 139.7 128.4, 139.9 128.2, 139.9 127.8 C 139.9 127, 138.8 126.7, 138.6 127.4 M 140.8 127.4 C 140.6 128.1, 140.9 128.5, 141.7 128.4 C 142.2 128.4, 142.4 128.3, 142.4 127.8 C 142.4 127, 141.1 126.7, 140.8 127.4 M 193 127.5 C 190.3 129.4, 191.2 133.6, 194.3 133.8 C 195.9 133.9, 196.1 134.3, 195.2 135.4 C 194.6 136, 194.3 136.1, 193.4 136.1 C 192 136.1, 191.4 136.7, 192 137.3 C 192.2 137.6, 192.8 137.8, 193.8 137.8 C 195.9 137.8, 197 136.8, 197.6 134.2 C 198.8 129.5, 196 125.5, 193 127.5 M 200.8 127.3 C 199.2 128.1, 198.2 131.8, 198.9 135.1 C 199.3 137.2, 201.8 138.5, 203.4 137.4 C 206.1 135.5, 205.1 131, 202 131 C 199.7 131, 200.7 128.8, 203.1 128.7 C 204.4 128.6, 204.8 128.3, 204.3 127.5 C 204 127, 201.8 126.9, 200.8 127.3 M 208.4 127.3 C 206.8 128.1, 206.2 130.3, 207.3 131.4 C 207.8 132, 207.8 132, 207.3 132.8 C 205.6 135.1, 207 137.8, 209.9 137.8 C 212.7 137.8, 214.1 134.8, 212.2 132.9 C 211.5 132.3, 211.4 132.1, 211.7 131.8 C 212.8 130.2, 212.9 128.7, 211.8 127.7 C 211.2 127.1, 209.3 126.9, 208.4 127.3 M 185.2 128.3 C 183.7 129.7, 183.7 130.3, 185.2 130.4 C 185.9 130.4, 185.9 130.4, 186 133.8 C 186.1 137.6, 186.4 138.3, 187.4 137.6 C 187.9 137.3, 188.2 129.3, 187.9 127.8 C 187.7 126.9, 186.6 127.1, 185.2 128.3 M 150.4 128.4 C 150.2 128.6, 149.8 129.1, 149.6 129.5 C 149.4 129.9, 149.1 130.3, 149 130.3 C 148.5 130.3, 148.8 131.1, 149.4 131.6 C 150 132, 150 132.2, 150 133.8 C 149.9 136.5, 149.9 136.5, 150.6 137.1 C 151.6 138.1, 153.5 137.9, 153.5 136.8 C 153.5 136.7, 153.2 136.4, 152.8 136.2 C 151.8 135.7, 151.6 131.9, 152.6 131.5 C 153.4 131.1, 153.4 130.5, 152.8 130.1 C 152.5 129.9, 152.2 129.4, 152.1 128.9 C 151.8 128, 151.1 127.7, 150.4 128.4 M 175.3 128.6 C 175.1 128.9, 174.8 129.3, 174.7 129.6 C 174.6 129.9, 174.2 130, 173.3 130 C 171.7 130, 171.8 130, 171.8 134 C 171.8 137.5, 171.9 137.9, 173.1 137.7 C 173.7 137.5, 173.7 137.4, 173.8 134.6 C 173.9 131.8, 173.9 131.6, 174.4 131.6 C 174.8 131.6, 174.9 131.8, 175 134 C 175.2 137.1, 175.5 137.8, 177.1 137.8 C 178.5 137.8, 179.1 136.7, 177.9 136.3 C 176.7 135.8, 176.5 132.4, 177.6 131.5 C 178.4 131, 178.4 130.6, 177.8 130.1 C 177.6 129.9, 177.3 129.4, 177.1 129 C 176.8 127.9, 176.1 127.8, 175.3 128.6 M 193.6 129.2 C 193.3 130, 193.4 131.5, 193.8 131.9 C 194.9 133, 196.2 131.3, 195.6 129.6 C 195.3 128.7, 193.9 128.4, 193.6 129.2 M 208.8 129.2 C 208.4 129.9, 208.9 131.1, 209.7 131.2 C 210.3 131.3, 210.8 130.5, 210.7 129.6 C 210.6 128.7, 209.2 128.4, 208.8 129.2 M 82.8 129.9 C 81.2 130.7, 81.5 132.1, 83 131.5 C 83.7 131.3, 84.1 131.3, 84.6 131.5 C 85.5 131.8, 85.3 132.3, 84.1 132.7 C 82.4 133.1, 81.6 133.7, 81.3 134.5 C 80.4 136.6, 82.7 138.6, 84.8 137.5 C 85.1 137.3, 85.4 137.3, 85.8 137.5 C 87.1 138.1, 87.3 137.5, 87.2 134.2 C 87.1 131.1, 86.9 130.6, 85.5 129.8 C 84.6 129.4, 83.8 129.4, 82.8 129.9 M 90.6 130 C 88 131, 87.5 134.9, 89.5 137 C 91 138.3, 94.1 138, 93.6 136.5 C 93.5 136.1, 93.3 136, 92.5 136.2 C 91.2 136.4, 90.1 135.2, 90.3 133.6 C 90.5 132.1, 91 131.5, 92.3 131.4 C 93.7 131.3, 93.9 130.5, 92.8 129.9 C 92.4 129.7, 92 129.5, 92 129.5 C 91.9 129.5, 91.3 129.8, 90.6 130 M 103.7 130.1 C 102.6 130.8, 102.4 131.4, 102.4 133.9 C 102.4 136.6, 103.8 138.2, 105.5 137.6 C 106.5 137.2, 106.9 137.4, 106.6 138.3 C 106.4 139, 105.1 139.5, 104 139.2 C 103.4 139, 103.1 139, 102.8 139.4 C 101.4 140.7, 105.8 141.6, 107.4 140.3 C 108.6 139.3, 108.8 138.5, 108.8 134.4 C 108.8 129.9, 108.8 129.9, 107.3 130.1 C 106.5 130.2, 106 130.1, 105.6 129.9 C 105 129.4, 104.8 129.4, 103.7 130.1 M 112.4 129.9 C 111.1 130.6, 110.8 131, 110.5 132.4 C 109.8 135.7, 111.1 137.8, 113.9 137.8 C 115.6 137.8, 116.3 137.3, 115.8 136.5 C 115.6 136.2, 115.3 136.2, 114.5 136.2 C 113.8 136.3, 113.3 136.2, 113 135.9 C 112 135, 112.5 134.5, 114.2 134.5 C 116.3 134.5, 116.8 133.9, 116.2 131.9 C 115.9 131.2, 115.5 130.7, 114.9 130.2 C 113.7 129.4, 113.4 129.4, 112.4 129.9 M 125.9 129.9 C 123.1 130.9, 122.4 134.6, 124.6 136.9 C 125.9 138.3, 129 138, 128.7 136.6 C 128.6 136.2, 128.4 136.1, 127.8 136.2 C 126.2 136.3, 125 134.9, 125.3 133.2 C 125.6 132.1, 126.2 131.6, 127.4 131.5 C 128.2 131.4, 128.4 131.3, 128.4 130.8 C 128.6 129.8, 127.3 129.4, 125.9 129.9 M 138.8 130 C 137.2 130.7, 137.6 132.1, 139.2 131.4 C 139.8 131.2, 140.1 131.2, 140.6 131.4 C 141.7 131.9, 141.3 132.5, 139.4 132.9 C 136.5 133.5, 136.4 137.5, 139.4 137.7 C 140 137.7, 140.7 137.7, 140.9 137.5 C 141.1 137.3, 141.4 137.3, 141.8 137.5 C 143 138.1, 143.3 137.6, 143.3 134.5 C 143.3 131.4, 143 130.5, 141.8 130 C 140.5 129.5, 139.9 129.5, 138.8 130 M 165.4 130 C 163.8 130.9, 163.6 131.3, 163.6 133.8 C 163.6 136, 163.6 136, 164.6 136.9 C 166 138.2, 169.2 138.1, 169 136.7 C 168.9 136.2, 168.8 136.1, 167.8 136.2 C 166.7 136.3, 165.5 135.8, 165.5 135.2 C 165.5 134.7, 166.1 134.5, 167.4 134.5 C 169 134.5, 169.5 134.2, 169.5 133.1 C 169.5 131.7, 168.9 130.6, 167.8 130 C 166.5 129.4, 166.3 129.4, 165.4 130 M 119 129.9 C 116.9 130.7, 117 133.4, 119.3 134.5 C 120.8 135.3, 120.6 136.1, 119 136.1 C 117.3 136.2, 116.8 136.6, 117.6 137.4 C 117.9 137.6, 118.5 137.8, 119.4 137.8 C 121.3 137.8, 122.4 136.8, 122.2 135.2 C 122 134.2, 121.4 133.3, 120.9 133.3 C 120.8 133.3, 120.3 133, 119.9 132.6 C 118.9 131.9, 119.3 131.4, 120.8 131.4 C 121.7 131.4, 121.9 131.3, 122 130.9 C 122.1 130, 120.4 129.4, 119 129.9 M 158.7 130.1 C 156.8 131.2, 157.2 133.5, 159.4 134.6 C 160.8 135.3, 160.5 136.1, 158.9 136.1 C 157.9 136.1, 157.6 136.2, 157.6 136.6 C 157.4 137.4, 158 137.8, 159.4 137.8 C 161.1 137.8, 162.3 136.8, 162.3 135.4 C 162.3 134.6, 161.5 133.3, 160.9 133.3 C 160.8 133.3, 160.3 133, 159.9 132.6 C 158.9 131.9, 159.3 131.4, 160.8 131.4 C 161.9 131.4, 162.3 130.8, 161.7 130.1 C 161.3 129.6, 159.6 129.7, 158.7 130.1 M 112.7 131.8 C 112.2 132.5, 112.4 132.9, 113.2 133.1 C 114.4 133.3, 115 132.1, 114 131.5 C 113.3 131.1, 113.1 131.2, 112.7 131.8 M 165.9 131.6 C 165.3 132.2, 165.4 132.7, 166.1 133 C 167.3 133.5, 168.2 132.5, 167.2 131.7 C 166.6 131.2, 166.4 131.1, 165.9 131.6 M 104.8 131.9 C 103.8 133, 104.4 136, 105.5 136 C 106.7 136, 107.4 132.3, 106.3 131.8 C 105.6 131.4, 105.1 131.4, 104.8 131.9 M 201.2 132.9 C 200.5 133.7, 200.4 134.5, 200.9 135.4 C 201.6 137, 203.2 136, 202.9 134.1 C 202.7 132.7, 201.9 132.2, 201.2 132.9 M 208.8 133.8 C 208.1 134.8, 208.1 134.8, 208.8 135.6 C 209.4 136.4, 210.1 136.4, 210.6 135.7 C 211.2 134.9, 211.1 134.3, 210.3 133.6 C 209.5 132.8, 209.3 132.8, 208.8 133.8 M 83.4 134.4 C 82.7 135.1, 83 136.1, 83.9 136.1 C 84.7 136.1, 85.5 135.1, 85.2 134.4 C 85 133.9, 83.9 133.9, 83.4 134.4 M 139.3 134.7 C 138.5 136, 140.1 136.8, 141.1 135.4 C 141.5 134.9, 141.5 134.7, 141.3 134.4 C 140.8 133.8, 139.8 133.9, 139.3 134.7"/>
+    <rect class="cov cov-stem" x="38" y="33.6" width="27" height="108"/>
+    <rect class="cov cov-bar" x="8" y="10" width="156" height="23.6"/>
+    <g class="roll"><circle cx="12" cy="24" r="14" fill="#97004a"/><circle cx="12" cy="24" r="9" fill="none" stroke="#c8005f" stroke-width="2.4"/><circle cx="12" cy="24" r="3.4" fill="#c8005f"/></g>
+  </svg>
+</div>
+
+<header id="hdr">
+  <div class="in">
+    <a href="#top" id="hlogo" aria-label="Teppich Küng, zum Seitenanfang">
+      <svg class="logo" viewBox="6 8 580 138">
+<path class="kg-T" fill-rule="evenodd" d="M 12.8 14.4 C 12.5 15, 12.4 33, 12.8 33.4 C 12.9 33.5, 19.2 33.5, 26.9 33.6 C 34.6 33.6, 41 33.7, 41.2 33.8 C 41.3 34, 41.4 57.3, 41.5 85.7 L 41.6 137.4 51.4 137.4 L 61.1 137.4 61.2 85.8 C 61.2 49.8, 61.3 34.1, 61.5 33.9 C 61.7 33.7, 76.3 33.6, 109.7 33.6 C 148 33.5, 157.6 33.5, 157.8 33.2 C 158.1 32.8, 158.1 14.7, 157.8 14.3 C 157.6 14.1, 143 14, 85.4 13.9 C 13.2 13.9, 13.2 13.9, 12.8 14.4 M 121 16.8 C 120.8 17, 120.8 18.6, 120.8 22.3 C 120.8 28, 120.8 28.4, 122.1 27.8 C 122.7 27.5, 122.8 27.4, 122.8 24.9 C 122.8 22.5, 122.8 22.2, 123.3 22 C 124.3 21.4, 124.8 22.3, 124.8 25 C 124.8 27.8, 125 28.3, 126.1 27.8 C 126.7 27.5, 126.8 27.5, 126.8 24.4 C 126.8 21.4, 126.8 21.4, 125.9 20.5 C 125.2 19.8, 125 19.7, 124.1 19.9 C 123 20.1, 122.8 19.8, 122.8 18.2 C 122.8 17.1, 122.7 17, 122.1 16.7 C 121.3 16.4, 121.4 16.4, 121 16.8 M 109.8 17.1 C 109.1 17.9, 109.5 18.6, 110.6 18.6 C 111.5 18.6, 111.6 18.5, 111.7 18.1 C 111.8 17.3, 111.3 16.8, 110.6 16.8 C 110.3 16.8, 109.9 16.9, 109.8 17.1 M 77.1 17.5 C 76.4 18.2, 76.9 19.3, 77.9 19.3 C 78.9 19.3, 79 19.8, 79.1 23.8 C 79.1 27.6, 79.1 27.6, 79.8 27.9 C 81.1 28.3, 81.3 27.8, 81.3 23.8 C 81.2 19.8, 81.3 19.3, 82.6 19.2 C 83.3 19.1, 83.4 19.1, 83.4 18.3 C 83.4 17.4, 83.4 17.4, 80.4 17.3 C 78.2 17.3, 77.3 17.3, 77.1 17.5 M 85.8 20.4 C 83.1 22.5, 83.7 27, 86.8 28 C 88.4 28.5, 89.8 28, 90 26.9 C 90 26.2, 90 26.2, 88.8 26.3 C 87.5 26.5, 86.5 26.1, 86.5 25.4 C 86.5 24.9, 87.1 24.8, 88.5 24.8 C 90.3 24.8, 90.5 24.6, 90.5 23.5 C 90.5 20.7, 87.7 18.9, 85.8 20.4 M 95.7 20 C 95.4 20.2, 94.8 20.2, 94.1 20.1 C 93.5 20.1, 93 20.1, 92.9 20.2 C 92.8 20.3, 92.8 22.8, 92.7 25.6 C 92.7 30.4, 92.7 30.9, 93.1 31.2 C 94.1 31.9, 94.8 31.2, 94.8 29.4 C 94.8 27.9, 95 27.7, 96 28 C 98.8 29.1, 100.5 23.4, 98.1 20.7 C 97.2 19.7, 96.5 19.5, 95.7 20 M 103.7 20 C 103.4 20.2, 102.8 20.2, 102.1 20.1 C 101.5 20.1, 101 20.1, 100.9 20.2 C 100.8 20.3, 100.8 22.8, 100.7 25.6 C 100.7 30.4, 100.7 30.9, 101.2 31.2 C 102.1 31.9, 102.8 31.2, 102.8 29.4 C 102.8 27.9, 103 27.7, 104 28 C 105.8 28.7, 107.1 26.9, 107.1 23.8 C 107.1 21.8, 107.1 21.8, 106.1 20.8 C 105.1 19.7, 104.5 19.6, 103.7 20 M 116 20 C 113.4 20.8, 112.4 23.8, 113.9 26.4 C 115.2 28.5, 118.8 28.9, 118.8 26.8 C 118.8 26.2, 118.6 26.2, 117.3 26.2 C 116.2 26.3, 115.5 25.5, 115.5 24 C 115.5 22.4, 116 21.8, 117.4 21.7 C 118.3 21.6, 118.6 21.5, 118.7 21.3 C 118.9 20.3, 117.3 19.5, 116 20 M 110 20.3 C 109.8 20.6, 109.6 25.7, 109.7 27.4 C 109.8 27.9, 110.7 28.1, 111.2 27.8 C 111.8 27.4, 112 20.9, 111.5 20.3 C 111.1 19.9, 110.4 19.9, 110 20.3 M 86.9 21.8 C 86.3 22.1, 86.4 23, 87.1 23.1 C 88.2 23.4, 88.7 22.5, 88 21.8 C 87.6 21.4, 87.5 21.4, 86.9 21.8 M 95 22.1 C 94.7 22.4, 94.7 25.1, 95 25.8 C 95.7 27.1, 97 25.9, 97 23.9 C 97 22, 96 21.1, 95 22.1 M 103 22.1 C 102.7 22.4, 102.7 25.1, 103 25.8 C 103.4 26.5, 104.5 26.4, 104.8 25.6 C 105.1 24.8, 105.1 22.8, 104.7 22.2 C 104.5 21.7, 103.5 21.6, 103 22.1"/>
+<path class="kg-K" fill-rule="evenodd" d="M 76 41.4 C 75.8 41.6, 75.8 56.6, 75.8 79 L 75.9 116.4 86.4 116.4 C 92.2 116.5, 97 116.4, 97.2 116.3 C 97.5 116.1, 97.5 112.6, 97.5 98.8 C 97.5 81.8, 97.5 81.5, 98 81.5 C 98.3 81.5, 98.7 82, 99.2 82.8 C 99.7 83.6, 100.2 84.3, 100.4 84.5 C 100.6 84.7, 100.8 84.9, 100.8 85 C 100.8 85.2, 101.4 86.1, 102.1 87.1 C 102.9 88.1, 103.5 89, 103.5 89.2 C 103.5 89.3, 104 89.9, 104.5 90.7 C 105 91.4, 105.5 92.1, 105.5 92.2 C 105.5 92.3, 106 92.9, 106.5 93.7 C 107 94.4, 107.5 95, 107.5 95.1 C 107.5 95.2, 107.9 95.8, 108.3 96.5 C 108.8 97.1, 111.8 101.6, 115.1 106.5 C 122.8 118.1, 121.6 116.9, 125.8 116.8 C 127.6 116.8, 133.3 116.7, 138.4 116.7 C 149.6 116.6, 149.1 116.7, 147.3 114.2 C 145 111, 143.4 108.6, 143.2 108.3 C 143.1 108, 142.3 106.9, 141.4 105.6 C 139.9 103.6, 138.1 101, 137 99.3 C 136.5 98.6, 134.3 95.4, 131.7 91.8 C 130.6 90.2, 129.4 88.5, 129.1 88 C 128.8 87.5, 128 86.4, 127.4 85.6 C 125.3 82.5, 123.4 79.7, 123.1 79.3 C 123 79.1, 122.4 78.2, 121.8 77.4 C 120.5 75.6, 120.5 75.6, 121.8 74 C 122.4 73.2, 123.1 72.3, 123.3 72 C 123.5 71.6, 124.5 70.3, 125.5 69.1 C 126.5 67.9, 127.3 66.9, 127.3 66.8 C 127.3 66.7, 127.9 65.9, 128.6 65 C 129.4 64.1, 130 63.3, 130 63.2 C 130 63, 130.5 62.3, 131.1 61.5 C 131.7 60.8, 134 57.8, 136.2 54.9 C 138.3 52, 141.4 47.9, 142.9 45.9 C 144.5 43.8, 145.7 41.9, 145.7 41.7 C 145.6 41.2, 145 41.2, 133.6 41.2 C 126.9 41.2, 121.3 41.3, 121.2 41.4 C 121 41.5, 119.9 42.9, 118.8 44.4 C 117.7 45.9, 116.5 47.5, 116.2 47.9 C 115.9 48.2, 115.2 49.2, 114.6 50 C 114.1 50.8, 113.2 52, 112.6 52.7 C 111.5 54.1, 109.5 56.9, 107.1 60 C 106.3 61.1, 105.1 62.7, 104.5 63.5 C 103.9 64.3, 103.2 65.2, 103 65.5 C 102.8 65.8, 101.9 67.1, 100.9 68.3 C 100 69.6, 99.1 70.8, 98.9 71.1 C 98.6 71.8, 98.3 72, 97.8 71.8 C 97.6 71.7, 97.5 69, 97.5 56.6 C 97.5 44.4, 97.4 41.5, 97.2 41.4 C 96.5 41.1, 76.2 41.1, 76 41.4"/>
+<path class="kg-u" fill-rule="evenodd" d="M 162.9 41 C 162.3 41.4, 162.3 54.4, 162.9 54.6 C 163.7 54.9, 179.1 54.8, 179.4 54.5 C 179.7 54.2, 179.8 52.4, 179.8 47.7 C 179.8 41.2, 179.8 41.2, 179.1 41 C 178.2 40.7, 163.5 40.7, 162.9 41 M 191.1 41 C 190.8 41.3, 190.8 43.1, 190.8 47.8 C 190.8 52.4, 190.8 54.2, 191.1 54.5 C 191.5 54.9, 207 54.9, 207.4 54.5 C 207.7 54.2, 207.8 52.4, 207.8 47.7 C 207.8 41.2, 207.8 41.2, 207.1 41 C 206.1 40.6, 191.4 40.7, 191.1 41 M 156.9 61.1 C 156.5 61.4, 156.5 62.4, 156.6 81.5 C 156.7 101.6, 156.7 101.6, 157.3 104 C 158.7 109, 160.3 111.7, 163.5 114.1 C 167.6 117.2, 172.4 118.3, 179 117.7 C 181.2 117.5, 184.6 116.5, 185.3 115.9 C 185.5 115.7, 185.8 115.5, 186.1 115.5 C 187.3 115.2, 191.9 111.3, 193 109.5 C 193.1 109.3, 193.4 109.3, 193.6 109.3 C 194 109.5, 194 109.9, 194 112.7 C 193.9 114.5, 194 116.1, 194.1 116.2 C 194.4 116.6, 212.5 116.6, 212.9 116.2 C 213.2 116, 213.3 109.5, 213.3 88.6 C 213.3 61.8, 213.2 61.3, 212.8 61 C 212 60.6, 192.9 60.7, 192.5 61.1 C 192.3 61.4, 192.2 65.1, 192.3 75.1 C 192.3 93.7, 192 96, 189.4 98.6 C 187.8 100.1, 187.2 100.4, 184.4 100.4 C 181.6 100.3, 180.8 100.1, 179.7 98.7 C 177.6 96.3, 177.5 95.2, 177.5 76.7 C 177.5 61.5, 177.5 61.5, 176.9 61.1 C 176.2 60.6, 157.6 60.5, 156.9 61.1"/>
+<path class="kg-n" fill-rule="evenodd" d="M 265.8 59.5 C 265.5 59.6, 264.9 59.7, 264.6 59.6 C 263.9 59.4, 260.8 59.9, 259.3 60.4 C 257.6 61, 254.5 62.5, 254.5 62.8 C 254.5 62.9, 254.4 63, 254.2 63 C 253.8 63, 251.1 65.2, 249.8 66.7 C 248.1 68.6, 247.9 68.4, 248 64.5 C 248.1 62.8, 248 61.2, 247.9 61 C 247.6 60.5, 229.4 60.6, 228.9 61.1 C 228.2 61.8, 228.3 115.9, 229 116.2 C 229.7 116.6, 249.7 116.6, 249.9 116.2 C 249.9 116, 250 108.6, 250.1 99.6 C 250.1 83.4, 250.1 83.4, 250.8 81.6 C 252.2 78.4, 254.2 77, 257.6 76.8 C 261 76.7, 263.1 78.1, 264.1 81.2 C 264.6 82.6, 264.6 83.4, 264.7 99.2 C 264.8 110.7, 264.9 116, 265 116.2 C 265.4 116.7, 285.6 116.7, 286 116.2 C 286.5 115.5, 286.2 81, 285.7 76.6 C 285.2 73, 285.2 72.8, 283.7 69.4 C 282.6 66.8, 278.3 62, 277.1 62 C 277 62, 276.6 61.8, 276.3 61.5 C 274.9 60.6, 271.9 59.8, 269.4 59.6 C 268.4 59.6, 267.3 59.5, 267 59.4 C 266.7 59.3, 266.1 59.4, 265.8 59.5"/>
+<path class="kg-g" fill-rule="evenodd" d="M 317.6 59.4 C 313.7 59.9, 312.5 60.1, 311.6 60.5 C 311 60.8, 310.3 61, 310.1 61 C 309.8 61, 309.3 61.2, 308.9 61.5 C 308.6 61.8, 308.2 62, 308.1 62 C 307.3 62, 301.3 67.3, 301.3 68 C 301.3 68.1, 301 68.5, 300.6 69 C 300 69.7, 298 73.4, 298 73.9 C 298 74, 297.8 74.6, 297.5 75.2 C 297.2 75.8, 297 76.4, 297 76.6 C 297 76.8, 296.8 77.4, 296.6 78 C 294.6 83.6, 295.1 96.6, 297.6 101.9 C 298 102.6, 298.3 103.3, 298.3 103.3 C 298.3 103.4, 298.8 104.3, 299.4 105.4 C 304.8 114.6, 313.8 118.4, 325.9 116.6 C 328.1 116.3, 332.9 114.2, 334.2 113 C 335.2 112, 335.5 112.5, 335.5 115.2 C 335.5 123.5, 333.6 126, 327.5 126 C 324.6 126, 321.5 124.6, 321.5 123.4 C 321.5 123.2, 321.3 122.9, 321 122.7 C 320.4 122.1, 299.8 122, 299.3 122.5 C 298.9 123, 298.9 123.7, 299.4 124.5 C 299.6 124.9, 299.8 125.6, 299.9 126 C 300 126.5, 300.3 127.2, 300.5 127.5 C 300.7 127.8, 301.1 128.6, 301.4 129.1 C 302.4 131, 308 135.8, 309.3 135.8 C 309.5 135.8, 309.9 135.9, 310.1 136.1 C 310.7 136.5, 314.2 137.5, 316.9 138.2 C 321.7 139.3, 338.4 138.6, 341.2 137.1 C 341.6 136.9, 342.1 136.8, 342.3 136.8 C 342.6 136.8, 343.4 136.5, 344.1 136.2 C 351.5 133.2, 355 128.3, 356.5 118.9 C 357.2 114.1, 357.3 61.4, 356.5 61 C 355.8 60.6, 337.6 60.7, 337.3 61.1 C 337.2 61.2, 337.2 62.6, 337.2 64 C 337.3 67.4, 337.2 67.5, 335.2 65.5 C 333.3 63.5, 332.7 63.1, 330.4 61.8 C 327.3 60.2, 321 59, 317.6 59.4 M 325.4 76 C 325.1 76.1, 324.5 76.2, 324.1 76.2 C 322.5 76.3, 320 78.3, 319 80.2 C 317.1 83.9, 317.1 92.5, 318.9 96.5 C 320.5 99.8, 323 101.4, 326.8 101.2 C 330.6 101, 332.9 99.3, 334.4 95.9 C 335.6 92.7, 335.7 84.7, 334.5 82.3 C 334.3 81.8, 334 81.1, 333.9 80.8 C 333.5 79, 330.3 76.5, 328.2 76.2 C 327.5 76.1, 326.8 76, 326.4 75.9 C 326.1 75.8, 325.6 75.9, 325.4 76"/>
+<path class="kg-name" fill-rule="evenodd" d="M 525.1 91.8 C 524.7 92.2, 524.6 94.8, 525 95.2 C 525.2 95.4, 526 95.5, 526.8 95.5 C 528.5 95.5, 528.7 95.3, 528.5 93.1 C 528.4 91.6, 528.4 91.6, 526.9 91.5 C 525.9 91.5, 525.3 91.6, 525.1 91.8 M 530.7 91.7 C 530.5 91.9, 530.5 94.6, 530.6 95.1 C 530.8 95.6, 533.2 95.7, 533.7 95.2 C 534.2 94.7, 534.1 91.8, 533.6 91.7 C 533.1 91.5, 530.9 91.5, 530.7 91.7 M 397.8 92.1 C 393.9 93, 392.1 95.2, 392.1 99 C 392.1 103.5, 393.6 104.7, 401.4 106.5 C 401.9 106.7, 402.7 106.9, 403.2 107.1 C 403.6 107.3, 404.1 107.5, 404.2 107.5 C 404.7 107.5, 406.3 109.3, 406.3 109.8 C 406.3 113.2, 400.2 114.2, 397.7 111.2 C 395.7 108.9, 396 109, 394.1 109.2 C 392 109.3, 391.7 109.6, 391.9 110.7 C 392.5 113.9, 395.3 116.3, 399.2 116.8 C 405.2 117.5, 409.8 115.5, 410.7 111.7 C 411.8 107.3, 410.1 104.2, 406 103 C 405.4 102.8, 404.8 102.6, 404.6 102.5 C 404.5 102.4, 403.6 102.2, 402.6 102 C 401.6 101.8, 400.7 101.6, 400.6 101.5 C 400.5 101.3, 400.2 101.3, 399.9 101.3 C 398.7 101.3, 396.8 99.6, 396.8 98.5 C 396.7 96.6, 400.6 94.9, 402.7 96 C 404.5 96.9, 404.7 97, 405.5 98.8 C 405.8 99.3, 409.9 99.4, 410.1 98.9 C 410.6 97.6, 407.8 93, 406.5 93 C 406.3 93, 405.9 92.8, 405.8 92.7 C 405.1 91.8, 400.6 91.5, 397.8 92.1 M 514.3 92.5 C 512 92.6, 512 92.6, 510.4 94.3 C 506.5 98.4, 503.2 101.8, 502.9 101.8 C 502.8 101.9, 502.7 100.4, 502.7 97.5 C 502.8 94.5, 502.7 93.1, 502.5 92.9 C 502.1 92.4, 498.8 92.3, 498.3 92.8 C 498.1 93, 498 96, 498 104.5 C 498 117.7, 497.8 116.5, 500.6 116.5 C 502.8 116.5, 502.8 116.5, 502.8 111.9 C 502.8 108, 502.8 108, 503.8 106.8 C 505.1 105.4, 505.5 105.5, 506.7 107.3 C 507.2 108, 508.1 109.2, 508.6 110 C 509.2 110.8, 510.3 112.3, 511.1 113.5 C 513.2 116.5, 513.1 116.5, 516 116.5 C 519 116.5, 519.2 116.3, 517.8 114.5 C 517.3 113.8, 516.6 112.9, 516.3 112.5 C 515.5 111.3, 512.1 106.6, 510.9 105 C 508.5 101.9, 508.4 102.5, 512.7 98.2 C 516.9 93.9, 517.8 92.8, 517.2 92.5 C 517 92.4, 516.8 92.3, 516.8 92.3 C 516.7 92.3, 515.6 92.4, 514.3 92.5 M 414.7 93.1 C 414.4 94, 414.4 95.8, 414.8 96.3 C 415.1 96.7, 415.5 96.8, 417 96.7 L 418.9 96.6 418.9 94.8 C 419 92.6, 419 92.5, 416.7 92.5 C 415.1 92.5, 415 92.5, 414.7 93.1 M 423.8 92.8 C 423.5 93.3, 423.4 115.7, 423.8 116.2 C 424.1 116.6, 427.8 116.6, 428.2 116.2 C 428.6 115.8, 428.6 94.1, 428.3 93.1 C 428 92.5, 427.9 92.5, 426 92.5 C 424.7 92.5, 424 92.6, 423.8 92.8 M 454.1 98.2 C 453.4 98.4, 453.1 98.5, 451.6 99.3 C 450 100.2, 448.6 103.2, 449.4 104.1 C 450.3 105, 453.5 104.5, 453.7 103.3 C 453.8 102.4, 455.1 101.8, 456.7 101.8 C 458.9 101.8, 460.1 103.4, 458.9 104.7 C 458.6 105, 457.8 105.2, 454 105.9 C 450.4 106.5, 449 107.9, 448.7 110.8 C 448.4 115.4, 450.7 117.4, 455.4 116.8 C 456.7 116.6, 457.2 116.4, 457.9 115.8 C 458.7 115, 459.8 114.7, 459.8 115.4 C 459.8 116.2, 460.5 116.5, 462.3 116.5 C 465 116.5, 465.1 116.4, 464.2 114.4 C 463.8 113.4, 463.7 112.8, 463.8 107.2 C 463.8 100.2, 463.7 100, 460.9 98.8 C 459.3 98.2, 455.6 97.8, 454.1 98.2 M 565.4 98.2 C 565 98.2, 564.5 98.4, 564.3 98.6 C 564 98.8, 563.6 99, 563.4 99.1 C 561.5 99.7, 559.8 103.8, 559.8 107.5 C 559.8 114.2, 565 118.3, 570.3 115.6 C 572.1 114.7, 572.3 114.7, 572.3 115.9 C 572.3 119.5, 568 121.4, 565.6 118.8 C 565 118.1, 561 118, 560.5 118.6 C 559.8 119.5, 561.7 121.9, 564 123 C 567 124.4, 572.9 123.6, 574.8 121.5 C 576.7 119.5, 576.8 119.2, 576.8 108.7 C 576.8 98.1, 576.9 98.9, 574.5 98.8 C 573.1 98.8, 572.9 98.8, 572.7 99.4 C 572.3 100.2, 571.9 100.2, 570.8 99.3 C 569.4 98.1, 567.9 97.8, 565.4 98.2 M 475.9 98.7 C 475.5 98.9, 474.8 99.3, 474.4 99.6 C 473.7 100.1, 473 100, 473 99.4 C 473 99.2, 472.8 99, 472.6 99 C 470.7 98.8, 469 98.8, 468.7 99 C 468.3 99.3, 468.1 115.6, 468.5 116.2 C 468.9 116.6, 472.6 116.6, 473 116.2 C 473.2 115.9, 473.3 114.2, 473.3 110.6 C 473.2 107.7, 473.3 105, 473.4 104.6 C 473.6 103.7, 475.1 102.1, 475.5 102.4 C 475.6 102.5, 476 102.4, 476.3 102.3 C 477 101.8, 478.4 102.4, 479 103.3 C 479.5 104.1, 479.5 104.5, 479.5 110 C 479.4 113.3, 479.5 116, 479.6 116.2 C 479.9 116.6, 483.6 116.6, 483.9 116.2 C 484.2 116, 484.3 114.1, 484.3 109.5 C 484.3 101.2, 484 100.2, 481.2 98.8 C 479.9 98.1, 477 98.1, 475.9 98.7 M 548.4 98.5 C 548.3 98.6, 547.9 98.9, 547.4 99.1 C 547 99.3, 546.4 99.6, 546.2 99.8 C 545.8 100.1, 545.6 100, 545.2 99.5 C 544.7 98.8, 541.3 98.5, 540.8 99.1 C 540.6 99.3, 540.5 102.2, 540.6 107.9 L 540.6 116.4 542.4 116.5 C 545.5 116.6, 545.3 117.1, 545.3 110.9 C 545.3 108, 545.4 105.2, 545.5 104.7 C 546 102.8, 548.5 101.6, 550.2 102.5 C 551.5 103.1, 551.5 103.1, 551.5 110.2 C 551.5 117, 551.3 116.5, 554 116.5 C 556.5 116.5, 556.3 117, 556.3 109.3 C 556.2 100.8, 556 100.1, 553.4 98.7 C 552.3 98.2, 548.7 98, 548.4 98.5 M 415 99 C 414.5 99.3, 414.3 115.6, 414.8 116.2 C 415.1 116.5, 418.1 116.6, 418.7 116.3 C 419.1 116, 419.1 99.5, 418.8 99.2 C 418.4 98.8, 415.5 98.7, 415 99 M 430.8 99.2 C 430.7 99.4, 431.5 101.9, 433.1 106.1 C 433.5 107.1, 433.9 108.4, 434.1 109.1 C 434.3 109.7, 434.6 110.4, 434.7 110.6 C 434.8 110.7, 435 111.3, 435.1 111.8 C 435.2 112.2, 435.5 113, 435.8 113.5 C 436 114.1, 436.3 114.8, 436.3 115.1 C 436.3 116.1, 437 116.5, 439.1 116.5 C 441.3 116.5, 441.8 116.2, 442.3 114.3 C 442.6 113.7, 443.1 112.2, 443.5 111 C 443.9 109.8, 444.5 108.3, 444.8 107.5 C 445.1 106.7, 445.4 105.7, 445.5 105.3 C 445.7 104.8, 445.9 104, 446.1 103.6 C 446.3 103.2, 446.5 102.7, 446.5 102.5 C 446.5 102.4, 446.7 101.8, 447 101.2 C 448.1 99, 447.5 98.6, 443.4 99 C 442.9 99, 442.4 100, 442.1 101.5 C 442 102, 441.8 102.8, 441.6 103.2 C 441.4 103.6, 441.3 104.1, 441.3 104.4 C 441.3 104.7, 441 105.6, 440.8 106.3 C 440.5 107, 440.2 108, 440.1 108.6 C 439.8 110.3, 438.5 110.7, 438.5 109 C 438.5 108.7, 438.3 107.7, 438 106.9 C 437.8 106.1, 437.3 104.5, 437 103.4 C 436.2 100.6, 435.8 99.3, 435.4 99.1 C 434.9 98.8, 430.9 98.8, 430.8 99.2 M 521.8 99.1 C 521.4 99.4, 521.4 112.7, 521.7 112.9 C 521.8 112.9, 522 113.3, 522.1 113.8 C 522.3 114.7, 524 116.4, 525 116.6 C 527.4 117.1, 530.2 116.6, 531.2 115.6 C 532 114.9, 532.8 114.8, 532.8 115.5 C 532.8 115.7, 532.9 116, 533 116.2 C 533.5 116.6, 536.5 116.6, 537 116.2 C 537.4 115.8, 537.4 99.4, 537 99.1 C 536.5 98.8, 533.1 98.8, 532.8 99 C 532.6 99.3, 532.5 100.7, 532.5 104.8 C 532.5 111.1, 532.4 111.6, 530.8 112.4 C 529.3 113.2, 528.3 113.2, 527.2 112.3 C 526.4 111.6, 526.4 111.6, 526.3 105.5 C 526.3 102.1, 526.1 99.3, 526 99.2 C 525.7 98.8, 522.1 98.8, 521.8 99.1 M 567 102.3 C 565.4 102.9, 564.7 104.3, 564.7 107.1 C 564.6 110.9, 565.6 112.3, 568.4 112.3 C 569.9 112.3, 570 112.2, 570.8 111.3 C 574.2 107.5, 571.3 100.8, 567 102.3 M 458.2 108.1 C 457.9 108.3, 457.2 108.5, 456.5 108.6 C 453.6 109, 452.3 110.8, 453.5 112.5 C 454.1 113.3, 454.1 113.3, 455.8 113.2 C 458.4 113.1, 459.3 112, 459.2 109.6 C 459.1 107.8, 458.9 107.5, 458.2 108.1"/>
+<path class="kg-since" fill-rule="evenodd" d="M 95 126.5 C 94.7 126.7, 94.7 127.7, 94.7 131.9 C 94.8 137.2, 94.9 137.8, 95.7 137.8 C 96.6 137.8, 96.8 137.2, 96.8 134.6 C 96.8 131.8, 97.1 131.1, 98.3 131.8 C 98.8 132, 98.8 132.2, 98.7 134.7 C 98.6 137.4, 98.8 137.7, 99.8 137.8 C 100.6 137.8, 100.8 137.2, 100.8 134.4 C 100.8 130.6, 100.1 129.6, 97.8 129.8 C 96.9 129.9, 96.9 129.9, 96.8 128.4 C 96.7 126.4, 96.1 125.8, 95 126.5 M 130 126.6 C 129.5 127.2, 129.8 137.3, 130.3 137.6 C 131.3 138.2, 131.6 137.5, 131.7 135.1 C 131.8 131.8, 132.1 131.1, 133.3 131.8 C 133.7 132, 133.7 132.4, 133.8 134.7 C 133.9 137.5, 134.2 138.2, 135.2 137.6 C 135.6 137.4, 135.6 136.9, 135.7 134.3 C 135.8 131.3, 135.8 131.3, 135 130.5 C 134.3 129.8, 134.2 129.7, 133.1 129.8 C 131.9 129.9, 131.9 129.9, 131.8 128.4 C 131.7 126.4, 130.9 125.6, 130 126.6 M 145.7 127 C 145.3 127.4, 145 128, 145 128.3 C 145 128.6, 144.8 129.2, 144.5 129.7 C 143.9 130.7, 143.9 131.1, 144.5 131.6 C 144.9 132, 145 132.4, 145.1 134.7 C 145.1 137.5, 145.4 138.2, 146.4 137.6 C 146.8 137.4, 146.9 136.9, 146.9 134.5 C 147 132.1, 147.1 131.7, 147.5 131.5 C 148.1 131.2, 148.1 130.4, 147.5 129.9 C 146.8 129.3, 146.9 128.2, 147.7 127.9 C 148.9 127.3, 148.5 126.3, 147.1 126.3 C 146.5 126.3, 146.1 126.5, 145.7 127 M 172.1 126.7 C 171.7 127, 171.5 127.7, 171.8 128.1 C 172.2 128.7, 173.5 128.5, 173.8 128 C 174.3 127.2, 172.9 126.1, 172.1 126.7 M 75.1 127.3 C 74.5 127.7, 74.6 137.4, 75.3 137.6 C 76.4 138, 76.8 137.6, 76.8 135.7 C 76.8 133.4, 77 132.9, 78.2 133.1 C 79 133.2, 79.3 133.1, 79.6 132.8 C 80.3 132, 79.9 131.5, 78.5 131.5 C 77.1 131.5, 76.8 131.2, 76.8 130.1 C 76.8 129.1, 77.3 128.6, 78.3 128.8 C 79.7 129.1, 80.7 127.9, 79.5 127.2 C 78.9 126.9, 75.7 127, 75.1 127.3 M 138.6 127.4 C 138.3 128, 138.7 128.5, 139.3 128.5 C 139.7 128.4, 139.9 128.2, 139.9 127.8 C 139.9 127, 138.8 126.7, 138.6 127.4 M 140.8 127.4 C 140.6 128.1, 140.9 128.5, 141.7 128.4 C 142.2 128.4, 142.4 128.3, 142.4 127.8 C 142.4 127, 141.1 126.7, 140.8 127.4 M 193 127.5 C 190.3 129.4, 191.2 133.6, 194.3 133.8 C 195.9 133.9, 196.1 134.3, 195.2 135.4 C 194.6 136, 194.3 136.1, 193.4 136.1 C 192 136.1, 191.4 136.7, 192 137.3 C 192.2 137.6, 192.8 137.8, 193.8 137.8 C 195.9 137.8, 197 136.8, 197.6 134.2 C 198.8 129.5, 196 125.5, 193 127.5 M 200.8 127.3 C 199.2 128.1, 198.2 131.8, 198.9 135.1 C 199.3 137.2, 201.8 138.5, 203.4 137.4 C 206.1 135.5, 205.1 131, 202 131 C 199.7 131, 200.7 128.8, 203.1 128.7 C 204.4 128.6, 204.8 128.3, 204.3 127.5 C 204 127, 201.8 126.9, 200.8 127.3 M 208.4 127.3 C 206.8 128.1, 206.2 130.3, 207.3 131.4 C 207.8 132, 207.8 132, 207.3 132.8 C 205.6 135.1, 207 137.8, 209.9 137.8 C 212.7 137.8, 214.1 134.8, 212.2 132.9 C 211.5 132.3, 211.4 132.1, 211.7 131.8 C 212.8 130.2, 212.9 128.7, 211.8 127.7 C 211.2 127.1, 209.3 126.9, 208.4 127.3 M 185.2 128.3 C 183.7 129.7, 183.7 130.3, 185.2 130.4 C 185.9 130.4, 185.9 130.4, 186 133.8 C 186.1 137.6, 186.4 138.3, 187.4 137.6 C 187.9 137.3, 188.2 129.3, 187.9 127.8 C 187.7 126.9, 186.6 127.1, 185.2 128.3 M 150.4 128.4 C 150.2 128.6, 149.8 129.1, 149.6 129.5 C 149.4 129.9, 149.1 130.3, 149 130.3 C 148.5 130.3, 148.8 131.1, 149.4 131.6 C 150 132, 150 132.2, 150 133.8 C 149.9 136.5, 149.9 136.5, 150.6 137.1 C 151.6 138.1, 153.5 137.9, 153.5 136.8 C 153.5 136.7, 153.2 136.4, 152.8 136.2 C 151.8 135.7, 151.6 131.9, 152.6 131.5 C 153.4 131.1, 153.4 130.5, 152.8 130.1 C 152.5 129.9, 152.2 129.4, 152.1 128.9 C 151.8 128, 151.1 127.7, 150.4 128.4 M 175.3 128.6 C 175.1 128.9, 174.8 129.3, 174.7 129.6 C 174.6 129.9, 174.2 130, 173.3 130 C 171.7 130, 171.8 130, 171.8 134 C 171.8 137.5, 171.9 137.9, 173.1 137.7 C 173.7 137.5, 173.7 137.4, 173.8 134.6 C 173.9 131.8, 173.9 131.6, 174.4 131.6 C 174.8 131.6, 174.9 131.8, 175 134 C 175.2 137.1, 175.5 137.8, 177.1 137.8 C 178.5 137.8, 179.1 136.7, 177.9 136.3 C 176.7 135.8, 176.5 132.4, 177.6 131.5 C 178.4 131, 178.4 130.6, 177.8 130.1 C 177.6 129.9, 177.3 129.4, 177.1 129 C 176.8 127.9, 176.1 127.8, 175.3 128.6 M 193.6 129.2 C 193.3 130, 193.4 131.5, 193.8 131.9 C 194.9 133, 196.2 131.3, 195.6 129.6 C 195.3 128.7, 193.9 128.4, 193.6 129.2 M 208.8 129.2 C 208.4 129.9, 208.9 131.1, 209.7 131.2 C 210.3 131.3, 210.8 130.5, 210.7 129.6 C 210.6 128.7, 209.2 128.4, 208.8 129.2 M 82.8 129.9 C 81.2 130.7, 81.5 132.1, 83 131.5 C 83.7 131.3, 84.1 131.3, 84.6 131.5 C 85.5 131.8, 85.3 132.3, 84.1 132.7 C 82.4 133.1, 81.6 133.7, 81.3 134.5 C 80.4 136.6, 82.7 138.6, 84.8 137.5 C 85.1 137.3, 85.4 137.3, 85.8 137.5 C 87.1 138.1, 87.3 137.5, 87.2 134.2 C 87.1 131.1, 86.9 130.6, 85.5 129.8 C 84.6 129.4, 83.8 129.4, 82.8 129.9 M 90.6 130 C 88 131, 87.5 134.9, 89.5 137 C 91 138.3, 94.1 138, 93.6 136.5 C 93.5 136.1, 93.3 136, 92.5 136.2 C 91.2 136.4, 90.1 135.2, 90.3 133.6 C 90.5 132.1, 91 131.5, 92.3 131.4 C 93.7 131.3, 93.9 130.5, 92.8 129.9 C 92.4 129.7, 92 129.5, 92 129.5 C 91.9 129.5, 91.3 129.8, 90.6 130 M 103.7 130.1 C 102.6 130.8, 102.4 131.4, 102.4 133.9 C 102.4 136.6, 103.8 138.2, 105.5 137.6 C 106.5 137.2, 106.9 137.4, 106.6 138.3 C 106.4 139, 105.1 139.5, 104 139.2 C 103.4 139, 103.1 139, 102.8 139.4 C 101.4 140.7, 105.8 141.6, 107.4 140.3 C 108.6 139.3, 108.8 138.5, 108.8 134.4 C 108.8 129.9, 108.8 129.9, 107.3 130.1 C 106.5 130.2, 106 130.1, 105.6 129.9 C 105 129.4, 104.8 129.4, 103.7 130.1 M 112.4 129.9 C 111.1 130.6, 110.8 131, 110.5 132.4 C 109.8 135.7, 111.1 137.8, 113.9 137.8 C 115.6 137.8, 116.3 137.3, 115.8 136.5 C 115.6 136.2, 115.3 136.2, 114.5 136.2 C 113.8 136.3, 113.3 136.2, 113 135.9 C 112 135, 112.5 134.5, 114.2 134.5 C 116.3 134.5, 116.8 133.9, 116.2 131.9 C 115.9 131.2, 115.5 130.7, 114.9 130.2 C 113.7 129.4, 113.4 129.4, 112.4 129.9 M 125.9 129.9 C 123.1 130.9, 122.4 134.6, 124.6 136.9 C 125.9 138.3, 129 138, 128.7 136.6 C 128.6 136.2, 128.4 136.1, 127.8 136.2 C 126.2 136.3, 125 134.9, 125.3 133.2 C 125.6 132.1, 126.2 131.6, 127.4 131.5 C 128.2 131.4, 128.4 131.3, 128.4 130.8 C 128.6 129.8, 127.3 129.4, 125.9 129.9 M 138.8 130 C 137.2 130.7, 137.6 132.1, 139.2 131.4 C 139.8 131.2, 140.1 131.2, 140.6 131.4 C 141.7 131.9, 141.3 132.5, 139.4 132.9 C 136.5 133.5, 136.4 137.5, 139.4 137.7 C 140 137.7, 140.7 137.7, 140.9 137.5 C 141.1 137.3, 141.4 137.3, 141.8 137.5 C 143 138.1, 143.3 137.6, 143.3 134.5 C 143.3 131.4, 143 130.5, 141.8 130 C 140.5 129.5, 139.9 129.5, 138.8 130 M 165.4 130 C 163.8 130.9, 163.6 131.3, 163.6 133.8 C 163.6 136, 163.6 136, 164.6 136.9 C 166 138.2, 169.2 138.1, 169 136.7 C 168.9 136.2, 168.8 136.1, 167.8 136.2 C 166.7 136.3, 165.5 135.8, 165.5 135.2 C 165.5 134.7, 166.1 134.5, 167.4 134.5 C 169 134.5, 169.5 134.2, 169.5 133.1 C 169.5 131.7, 168.9 130.6, 167.8 130 C 166.5 129.4, 166.3 129.4, 165.4 130 M 119 129.9 C 116.9 130.7, 117 133.4, 119.3 134.5 C 120.8 135.3, 120.6 136.1, 119 136.1 C 117.3 136.2, 116.8 136.6, 117.6 137.4 C 117.9 137.6, 118.5 137.8, 119.4 137.8 C 121.3 137.8, 122.4 136.8, 122.2 135.2 C 122 134.2, 121.4 133.3, 120.9 133.3 C 120.8 133.3, 120.3 133, 119.9 132.6 C 118.9 131.9, 119.3 131.4, 120.8 131.4 C 121.7 131.4, 121.9 131.3, 122 130.9 C 122.1 130, 120.4 129.4, 119 129.9 M 158.7 130.1 C 156.8 131.2, 157.2 133.5, 159.4 134.6 C 160.8 135.3, 160.5 136.1, 158.9 136.1 C 157.9 136.1, 157.6 136.2, 157.6 136.6 C 157.4 137.4, 158 137.8, 159.4 137.8 C 161.1 137.8, 162.3 136.8, 162.3 135.4 C 162.3 134.6, 161.5 133.3, 160.9 133.3 C 160.8 133.3, 160.3 133, 159.9 132.6 C 158.9 131.9, 159.3 131.4, 160.8 131.4 C 161.9 131.4, 162.3 130.8, 161.7 130.1 C 161.3 129.6, 159.6 129.7, 158.7 130.1 M 112.7 131.8 C 112.2 132.5, 112.4 132.9, 113.2 133.1 C 114.4 133.3, 115 132.1, 114 131.5 C 113.3 131.1, 113.1 131.2, 112.7 131.8 M 165.9 131.6 C 165.3 132.2, 165.4 132.7, 166.1 133 C 167.3 133.5, 168.2 132.5, 167.2 131.7 C 166.6 131.2, 166.4 131.1, 165.9 131.6 M 104.8 131.9 C 103.8 133, 104.4 136, 105.5 136 C 106.7 136, 107.4 132.3, 106.3 131.8 C 105.6 131.4, 105.1 131.4, 104.8 131.9 M 201.2 132.9 C 200.5 133.7, 200.4 134.5, 200.9 135.4 C 201.6 137, 203.2 136, 202.9 134.1 C 202.7 132.7, 201.9 132.2, 201.2 132.9 M 208.8 133.8 C 208.1 134.8, 208.1 134.8, 208.8 135.6 C 209.4 136.4, 210.1 136.4, 210.6 135.7 C 211.2 134.9, 211.1 134.3, 210.3 133.6 C 209.5 132.8, 209.3 132.8, 208.8 133.8 M 83.4 134.4 C 82.7 135.1, 83 136.1, 83.9 136.1 C 84.7 136.1, 85.5 135.1, 85.2 134.4 C 85 133.9, 83.9 133.9, 83.4 134.4 M 139.3 134.7 C 138.5 136, 140.1 136.8, 141.1 135.4 C 141.5 134.9, 141.5 134.7, 141.3 134.4 C 140.8 133.8, 139.8 133.9, 139.3 134.7"/>
+      </svg>
+    </a>
+    <nav>
+      <a href="#parkett">Parkett</a>
+      <a href="#teppich">Teppich und Bodenbeläge</a>
+      <a href="#vorhang">Vorhangsysteme</a>
+      <a href="#polster">Polsterarbeiten</a>
+      <a href="#besuch">Lageplan</a>
+      <a class="tel" href="tel:+41412601487">041 260 14 87</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker fade">Fachgeschäft seit 1968 · Emmen</div>
+    <h1><span><i>Ihr Spezialist</i></span><span><i>für <em>Raum&shy;gestaltung.</em></i></span></h1>
+    <div class="row fade">
+      <p class="lead">Parkett, Teppich und Bodenbeläge, Vorhangsysteme und Polsterarbeiten. Als KMU-Betrieb haben wir für Sie immer eine passende Lösung.</p>
+      <a class="badge" id="badge" href="#besuch" style="text-decoration:none"><i></i><span id="badgetxt">Montag bis Freitag geöffnet</span></a>
+    </div>
+    <div class="pick fade">
+      <b>Bitte wählen Sie Ihr Thema</b>
+      <div class="tiles">
+        <a class="tile" href="#parkett"><div class="tx m-parkett"></div><span><small>01</small>Parkett</span></a>
+        <a class="tile" href="#teppich"><div class="tx m-teppich"></div><span><small>02</small>Teppich und Bodenbeläge</span></a>
+        <a class="tile" href="#vorhang"><div class="tx m-vorhang"></div><span><small>03</small>Vorhang&shy;systeme</span></a>
+        <a class="tile" href="#polster"><div class="tx m-polster"></div><span><small>04</small>Polster&shy;arbeiten</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="themen">
+  <div class="wrap">
+
+    <article class="topic" id="parkett">
+      <div>
+        <div class="no rv">01</div>
+        <h2 class="rv">Parkett</h2>
+        <p class="rv">Parkettarbeiten aller Art, schwimmend oder geklebt verlegt.</p>
+        <h3 class="rv">Das machen wir</h3>
+        <ul class="tags rv"><li>Verlegen</li><li>Pflegen</li><li>Schleifen, Versiegeln</li><li>Ölen</li><li>Treppenarbeiten</li><li>Sockelleisten-Montage</li></ul>
+        <h3 class="rv">Parkettarten</h3>
+        <ul class="tags soft rv"><li>Klebeparkett</li><li>Massivholzparkett</li><li>Fertigparkett</li><li>Korkparkett</li></ul>
+        <a class="ask rv" href="mailto:info@teppichkueng.ch?subject=Anfrage%20Parkett">Parkett anfragen</a>
+      </div>
+      <div class="vis rv">
+        <div class="stage s-parkett" id="sParkett" aria-hidden="true"></div>
+        <div class="thumbs"><img src="img/parkett.jpg" alt="Wohnzimmer mit Parkettboden" loading="lazy"><img src="img/parkett-2.jpg" alt="Treppe mit dunklem Parkett" loading="lazy"><img src="img/parkett-3.jpg" alt="Heller Raum mit Parkett" loading="lazy"></div>
+      </div>
+    </article>
+
+    <article class="topic" id="teppich">
+      <div>
+        <div class="no rv">02</div>
+        <h2 class="rv">Teppich und Boden&shy;beläge</h2>
+        <p class="rv">In unserem Sortiment führen wir je nach Beanspruchung den passenden Bodenbelag. Wir führen sämtliche Produkte von namhaften Teppichherstellern in Europa. Unser Eigensortiment ist innerhalb kurzer Zeit lieferbar und preisgünstig.</p>
+        <h3 class="rv">Teppicharten</h3>
+        <ul class="tags rv"><li>Nadelfilz</li><li>Kugelgarn</li><li>Schlingenteppiche</li><li>Velours</li><li>Teppichplatten</li><li>Rasenteppiche</li><li>Schmutzschleusen</li></ul>
+        <h3 class="rv">Pflegeleichte Beläge für Bad, Küche, Büro und Laden</h3>
+        <ul class="tags soft rv"><li>Linoleum</li><li>Novilon</li><li>PVC-Beläge und Platten</li><li>Design-Vinyl</li><li>Fugenlose Boden- und Wandbeschichtungen</li></ul>
+        <a class="ask rv" href="mailto:info@teppichkueng.ch?subject=Anfrage%20Teppich%20%2F%20Bodenbelag">Bodenbelag anfragen</a>
+      </div>
+      <div class="vis rv">
+        <div class="stage s-teppich" id="sTeppich" aria-hidden="true"><div class="wall">seit<br>1968</div><div class="floor"></div><div class="carpet m-teppich"></div><div class="rollc"></div></div>
+        <div class="thumbs"><img src="img/teppiche-2.jpg" alt="Teppich mit Karomuster" loading="lazy"><img src="img/teppiche.jpg" alt="Teppichplatten in Grautönen" loading="lazy"></div>
+      </div>
+    </article>
+
+    <article class="topic" id="vorhang">
+      <div>
+        <div class="no rv">03</div>
+        <h2 class="rv">Vorhang&shy;systeme</h2>
+        <p class="rv">Innenbeschattungen geben Ihren Räumen das besondere Ambiente. Gerne beraten wir Sie persönlich für alle Arten von kreativem Sonnenschutz.</p>
+        <p class="rv">Sonnenschutz auf jedes Mass nach Ihren Vorstellungen und Wünschen. Ausmass und Montage bei Ihnen zu Hause nach Bedarf.</p>
+        <h3 class="rv">Systeme</h3>
+        <ul class="tags rv"><li>Faltstoren</li><li>Rollos</li><li>Alu- und Holzjalousien</li><li>Flächenvorhänge</li><li>Lamellenvorhänge</li><li>Verdunklungsvorhänge</li><li>Bühnenvorhänge</li></ul>
+        <a class="ask rv" href="mailto:info@teppichkueng.ch?subject=Anfrage%20Vorhangsystem">Beratung anfragen</a>
+      </div>
+      <div class="vis rv">
+        <div class="stage s-vorhang" id="sVorhang" aria-hidden="true"><div class="rail"></div></div>
+        <div class="thumbs"><img src="img/vorhang-1.jpg" alt="Faltstore am Fenster" loading="lazy"><img src="img/vorhang-2.jpg" alt="Plissee in Blau und Braun" loading="lazy"><img src="img/vorhang-3.jpg" alt="Flächenvorhang im Wohnzimmer" loading="lazy"></div>
+      </div>
+    </article>
+
+    <article class="topic" id="polster">
+      <div>
+        <div class="no rv">04</div>
+        <h2 class="rv">Polster&shy;arbeiten</h2>
+        <p class="rv"><b style="color:var(--ink)">Aus Alt mach Neu.</b> In unserem Polsteratelier verwandeln wir Ihre alten Polstermöbel wieder in wahre Schmuckstücke.</p>
+        <p class="rv">Durch die tägliche Nutzung verlieren Polstermöbel und Stühle nach einigen Jahren oft ihren Glanz. Ob Massanfertigung, Neubezug oder Aufpolsterung: Wir fertigen nach Ihren Wünschen.</p>
+        <ul class="tags rv" style="margin-top:22px"><li>Massanfertigung</li><li>Neubezug</li><li>Aufpolsterung</li></ul>
+        <a class="ask rv" href="mailto:info@teppichkueng.ch?subject=Anfrage%20Polsterarbeit">Polsterarbeit anfragen</a>
+      </div>
+      <div class="vis rv">
+        <div class="stage s-polster m-polster" id="sPolster" aria-hidden="true">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="none"><path id="naht" d="M22 22 H378 V278 H22 Z" fill="none" stroke="#ffd9e9" stroke-width="2.5" stroke-dasharray="9 7" vector-effect="non-scaling-stroke"/></svg>
+          <div class="lbl">Aus Alt<br>mach Neu.</div>
+        </div>
+        <div class="thumbs"><img src="img/polsterarbeiten.jpg" alt="Zwei neu bezogene Sessel" loading="lazy"><img src="img/polsterarbeiten-2.jpg" alt="Sessel mit gepunktetem Bezug" loading="lazy"><img src="img/polsterarbeiten-3.jpg" alt="Barhocker mit neuem Polster" loading="lazy"></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="objekte">
+  <div class="wrap">
+    <div class="kicker rv">Wo wir arbeiten</div>
+    <div class="objs" id="objs"><span>Wohnungsbau. </span><span>Ladenbau. </span><span>Schulhäuser. </span><span>Spitäler. </span><span>Hotels und Gastronomie. </span><span>Büros. </span><span>Altbau&shy;sanierungen.</span></div>
+    <p class="rv">Wir empfehlen uns für sämtliche Bodenbeläge in Neubau, Umbau und Renovation. Unsere Fachleute sind stets bemüht, eine saubere, zuverlässige Arbeit abzugeben, termingerecht und flexibel.</p>
+  </div>
+</section>
+
+<section id="besuch">
+  <div class="wrap visit">
+    <div>
+      <div class="kicker rv">Öffnungszeiten</div>
+      <h2 class="rv">Kommen Sie vorbei.</h2>
+      <table class="hours rv" id="hours">
+        <tr data-d="1"><td>Montag</td><td>8:00–12:00 · 13:30–18:30</td></tr>
+        <tr data-d="2"><td>Dienstag</td><td>8:00–12:00 · 13:30–18:30</td></tr>
+        <tr data-d="3"><td>Mittwoch</td><td>8:00–12:00 · 13:30–18:30</td></tr>
+        <tr data-d="4"><td>Donnerstag</td><td>8:00–12:00 · 13:30–18:30</td></tr>
+        <tr data-d="5"><td>Freitag</td><td>8:00–12:00 · 13:30–18:30</td></tr>
+        <tr data-d="6"><td>Samstag</td><td>nach Vereinbarung</td></tr>
+      </table>
+    </div>
+    <div class="shop rv">
+      <img src="img/aussenansicht.jpg" alt="Aussenansicht des Geschäfts an der Pestalozzistrasse 2 in Emmen" loading="lazy" width="300" height="225">
+      <b>Teppich Küng<br>Pestalozzistrasse 2<br>6032 Emmen</b>
+      <a class="map" href="https://www.google.com/maps/search/?api=1&query=Teppich+K%C3%BCng+Pestalozzistrasse+2+6032+Emmen" target="_blank" rel="noopener">Lageplan öffnen</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap contact">
+    <div>
+      <div class="kicker rv">Kontakt</div>
+      <h2 class="rv">Für eine Beratung stehen wir Ihnen gerne zur Verfügung.</h2>
+      <a class="big rv" href="tel:+41412601487">041 260 14 87</a><br>
+      <a class="mail rv" href="mailto:info@teppichkueng.ch">info@teppichkueng.ch</a>
+      <p class="addr rv">Silvan Küng · Pestalozzistrasse 2 · 6032 Emmen<br>Fax 041 260 52 87</p>
+    </div>
+    <form id="form" class="rv">
+      <h3>Kurz beschreiben, wir melden uns.</h3>
+      <label>Thema
+        <select name="thema"><option>Parkett</option><option>Teppich / Bodenbelag</option><option>Vorhangsystem</option><option>Polsterarbeit</option></select>
+      </label>
+      <label>Name<input name="name" autocomplete="name" required></label>
+      <label>Telefon<input name="tel" type="tel" autocomplete="tel"></label>
+      <label>Nachricht<textarea name="msg" placeholder="Zum Beispiel: Parkett im Wohnzimmer schleifen und ölen, etwa 30 m²."></textarea></label>
+      <button type="submit">Anfrage senden</button>
+      <small>Öffnet Ihr Mailprogramm mit der fertigen Nachricht.</small>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Teppich Küng · Pestalozzistrasse 2 · 6032 Emmen</span>
+    <span><a href="tel:+41412601487">041 260 14 87</a> · <button type="button" id="replay">Animation nochmals abspielen</button></span>
+  </div>
+</footer>
+
+<div class="draft"><i></i><span><b>Entwurf</b> · nicht veröffentlicht</span></div>
+
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var logoOnly=/[?&]logo\b/.test(location.search);
+  var body=document.body, intro=document.getElementById('intro'), isvg=intro.querySelector('svg'), hlogo=document.getElementById('hlogo');
+  if(logoOnly) body.classList.add('logo-only');
+
+  var timers=[];
+  function play(){
+    timers.forEach(clearTimeout); timers=[];
+    body.classList.add('intro-on'); body.classList.remove('ready');
+    intro.classList.remove('gone','fly','play','done'); isvg.style.transform=''; intro.style.background='';
+    void intro.offsetWidth; intro.classList.add('play');
+    if(logoOnly) return;
+    timers.push(setTimeout(function(){
+      var a=isvg.getBoundingClientRect(), b=hlogo.getBoundingClientRect(), s=b.width/a.width;
+      intro.classList.add('fly','done'); isvg.style.transform='translate('+(b.left-a.left)+'px,'+(b.top-a.top)+'px) scale('+s+')';
+      intro.style.background='transparent'; body.classList.add('ready');
+    }, reduce?300:3350));
+    timers.push(setTimeout(function(){ body.classList.remove('intro-on'); intro.classList.add('gone'); }, reduce?400:4130));
+  }
+  intro.style.transition='background .6s ease';
+  play();
+  document.getElementById('replay').addEventListener('click',function(){ scrollTo({top:0,behavior:'instant'}); setTimeout(play,60); });
+
+  // ----- Öffnungszeiten (Zeitzone Zürich) -----
+  (function(){
+    var p={}; new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Zurich',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()).forEach(function(x){ p[x.type]=x.value; });
+    var d={Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6,Sun:0}[p.weekday], m=(+p.hour%24)*60+(+p.minute);
+    var row=document.querySelector('#hours tr[data-d="'+d+'"]'); if(row) row.classList.add('today');
+    var badge=document.getElementById('badge'), txt=document.getElementById('badgetxt'), wd=d>=1&&d<=5, t;
+    if(wd&&((m>=480&&m<720)||(m>=810&&m<1110))){ badge.classList.add('is-open'); t='Jetzt geöffnet, bis '+(m<720?'12:00':'18:30')+' Uhr'; }
+    else if(wd&&m<480) t='Öffnet heute um 8:00 Uhr';
+    else if(wd&&m<810) t='Mittagspause, ab 13:30 Uhr wieder offen';
+    else if(d===6) t='Samstag nach Vereinbarung';
+    else t='Geschlossen, '+((d===5||d===0)?'Montag':'morgen')+' ab 8:00 Uhr';
+    txt.textContent=t;
+  })();
+
+  // ----- Bühnen aufbauen -----
+  var sParkett=document.getElementById('sParkett'), tones=['#b9834a','#a8743d','#c59560','#9c6a35','#b07b44','#cda06a'], planks=[];
+  for(var r=0;r<6;r++){ var row=document.createElement('div'); row.className='r'; for(var c=0;c<5;c++){ var pl=document.createElement('div'); pl.className='pl'; pl.style.background='linear-gradient(90deg,rgba(255,255,255,.1),transparent 40%,rgba(0,0,0,.08)),'+tones[(r*3+c*5)%6]; row.appendChild(pl); planks.push(pl); } sParkett.appendChild(row); }
+  var sVorhang=document.getElementById('sVorhang'), slats=[]; for(var k=0;k<12;k++){ var sl=document.createElement('div'); sl.className='sl'; sVorhang.appendChild(sl); slats.push(sl); }
+  var sTeppich=document.getElementById('sTeppich'), carpet=sTeppich.querySelector('.carpet'), rollc=sTeppich.querySelector('.rollc');
+  var sPolster=document.getElementById('sPolster'), nahtSvg=sPolster.querySelector('svg');
+  var objs=[].slice.call(document.querySelectorAll('#objs span')), objsBox=document.getElementById('objs');
+
+  function prog(el,a,b){ var r=el.getBoundingClientRect(), vh=innerHeight; return Math.min(1,Math.max(0,(vh*a-r.top)/(vh*(a-b)))); }
+  function draw(pP,pT,pV,pS){
+    var n=Math.round(pP*planks.length); planks.forEach(function(p,i){ p.classList.toggle('on', i<n); });
+    var w=6+pT*72; carpet.style.width=w+'%'; var size=22-pT*13; rollc.style.width=size+'%'; rollc.style.left=(w-size*.5)+'%'; rollc.style.transform='rotate('+(pT*900)+'deg)';
+    slats.forEach(function(s,i){ var q=Math.min(1,Math.max(0,pV*1.5-i*.04)); s.style.transform='scaleX('+(1-q*.86)+')'; });
+    nahtSvg.style.clipPath='inset(0 '+(100-pS*100)+'% 0 0)';
+  }
+  if(reduce) draw(1,1,1,1);
+
+  // Reveal
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+
+  var hdr=document.getElementById('hdr'), navs=[].slice.call(document.querySelectorAll('nav a:not(.tel)')), secs=navs.map(function(a){ return document.querySelector(a.getAttribute('href')); }), tick=false;
+  function frame(){
+    tick=false; var y=scrollY, vh=innerHeight;
+    hdr.classList.toggle('solid', y>30);
+    var c2=-1; secs.forEach(function(sc,i){ if(sc.getBoundingClientRect().top<vh*.45) c2=i; });
+    navs.forEach(function(l,i){ l.classList.toggle('on', i===c2); });
+    if(reduce) return;
+    draw(prog(sParkett,.95,.3),prog(sTeppich,.95,.25),prog(sVorhang,.9,.2),prog(sPolster,.9,.3));
+    var po=prog(objsBox,.9,.35), m=Math.ceil(po*objs.length); objs.forEach(function(s,i){ s.classList.toggle('lit', i<m); });
+  }
+  function onScroll(){ if(!tick){ tick=true; requestAnimationFrame(frame); } }
+  addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',onScroll); frame();
+
+  document.getElementById('form').addEventListener('submit',function(e){
+    e.preventDefault(); var f=e.target;
+    var b='Guten Tag Herr Küng\n\n'+(f.msg.value||'')+'\n\nName: '+f.name.value+'\nTelefon: '+f.tel.value+'\n';
+    location.href='mailto:info@teppichkueng.ch?subject='+encodeURIComponent('Anfrage '+f.thema.value)+'&body='+encodeURIComponent(b);
+  });
+})();
+</script>
+</body>
+</html>
