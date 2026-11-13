@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Steinbildhauer-Atelier Andreas Hungerbühler · Bürglen TG</title>
+<meta name="description" content="Steinbildhauer-Atelier Andreas Hungerbühler in Bürglen TG: Grabmale, Skulpturen in Stein und Bronze, Brunnen, Bauarbeiten und Steinbildhauer-Kurse.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --yel:#f3ea00; --yel-d:#d6cd00; --stone:#55555a; --ink:#262629; --mute:#66666a; --line:#d9d5cb; --paper:#f1eee6; --white:#fff; --night:#18181a;
+  --pad:clamp(20px,5vw,72px); --max:1240px;
+  --serif:"Fraunces",Georgia,serif; --sans:"Inter",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.65 var(--sans);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,p,ul{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.kicker{font:600 12.5px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--stone)}
+.kicker::before{content:"";display:inline-block;width:26px;height:6px;background:var(--yel);margin-right:12px;vertical-align:1px}
+
+/* Logo */
+.logo .ah-sq{fill:var(--yel)}
+.logo .ah-st{fill:var(--stone)}
+.logo .ah-dust{fill:#a8a8a2}
+.logo .ah-dust .d{opacity:0}
+
+/* ---------- Intro ---------- */
+#intro{position:fixed;inset:0;z-index:60;background:var(--paper);display:grid;place-items:center}
+#intro svg{width:min(70vw,400px);height:auto;overflow:visible;transform-origin:0 0;will-change:transform}
+#intro.fly svg{transition:transform .75s cubic-bezier(.7,0,.2,1)}
+#intro.gone{display:none}
+#intro .ah-sq{opacity:0;transform:translateY(-26px) scale(.94);transform-box:fill-box;transform-origin:50% 100%}
+#intro .ah-st{clip-path:inset(0 0 100% 0)}
+#intro .ah-st1{clip-path:inset(0 100% 0 0)}
+#intro .ah-st3,#intro .ah-st4{clip-path:inset(0 0 100% 0)}
+#intro .it{opacity:0;fill:var(--ink);font-family:Fraunces,Georgia,serif;font-weight:600}
+#intro .it2{opacity:0;fill:var(--stone);font-family:Inter,sans-serif;font-weight:600;letter-spacing:.2em}
+#intro.play .ah-sq{animation:block .55s cubic-bezier(.3,1.4,.5,1) .1s forwards}
+#intro.play .ah-st{animation:chisel .42s cubic-bezier(.55,0,.25,1) forwards}
+#intro.play .ah-st1{animation-name:chiselx;animation-delay:.85s}
+#intro.play .ah-st2{animation-delay:1.3s}
+#intro.play .ah-st3{animation-delay:1.55s}
+#intro.play .ah-st4{animation-delay:1.8s}
+#intro.play .ah-st5{animation-delay:2s}
+#intro.play .ah-dust .d{animation:dust .7s ease-out forwards}
+#intro.play .d1{--dx:-5px;--dy:-9px;animation-delay:1.3s}
+#intro.play .d2{--dx:6px;--dy:-6px;animation-delay:1.36s}
+#intro.play .d3{--dx:-1px;--dy:-11px;animation-delay:1.42s}
+#intro.play .d4{--dx:-4px;--dy:-8px;animation-delay:1.8s}
+#intro.play .d5{--dx:5px;--dy:-7px;animation-delay:1.86s}
+#intro.play .d6{--dx:-3px;--dy:-9px;animation-delay:2s}
+#intro.play .d7{--dx:6px;--dy:-6px;animation-delay:2.06s}
+#intro.play .d8{--dx:-6px;--dy:-3px;animation-delay:.85s}
+#intro.play .d9{--dx:2px;--dy:-8px;animation-delay:.95s}
+#intro.play .it{animation:fade .6s ease 2.5s forwards}
+#intro.play .it2{animation:fade .6s ease 2.7s forwards}
+#intro.done .it,#intro.done .it2{opacity:0!important;animation:none;transition:opacity .25s}
+@keyframes block{to{opacity:1;transform:none}}
+@keyframes chisel{to{clip-path:inset(0 0 0 0)}}
+@keyframes chiselx{to{clip-path:inset(0 0 0 0)}}
+@keyframes dust{0%{opacity:.9;transform:translate(0,0)}100%{opacity:0;transform:translate(var(--dx),var(--dy))}}
+@keyframes fade{to{opacity:1}}
+
+/* ---------- Header ---------- */
+header{position:fixed;left:0;right:0;top:0;z-index:40;transition:background .3s,box-shadow .3s}
+header .in{max-width:var(--max);margin:0 auto;padding:12px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:16px}
+header.solid{background:rgba(241,238,230,.94);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--line)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex:none}
+#hlogo{display:block;width:clamp(48px,5vw,60px);transition:width .3s;flex:none}
+header.solid #hlogo{width:46px}
+#hlogo svg{display:block;width:100%;height:auto;overflow:visible}
+body.intro-on #hlogo{visibility:hidden}
+.wm{font:600 17px/1.15 var(--serif);letter-spacing:-.005em}
+.wm small{display:block;font:600 10.5px/1.3 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-top:3px}
+nav{display:flex;align-items:center;gap:clamp(12px,2vw,26px);font:600 14px/1 var(--sans);letter-spacing:.03em}
+nav a{text-decoration:none;padding:8px 0;position:relative}
+nav a:not(.tel)::after{content:"";position:absolute;left:0;right:0;bottom:1px;height:3px;background:var(--yel);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+nav a:hover::after,nav a.on::after{transform:scaleX(1)}
+nav .tel{background:var(--ink);color:#fff;padding:12px 15px;white-space:nowrap}
+nav .tel:hover{background:#000}
+@media(max-width:1020px){nav a:not(.tel){display:none}}
+@media(max-width:520px){.wm small{display:none}.wm{font-size:15px}nav .tel{padding:10px 11px;font-size:13px}}
+
+/* ---------- Hero ---------- */
+.hero{padding:clamp(110px,12vw,150px) 0 0;position:relative;overflow:hidden}
+.hero .g{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(26px,5vw,80px);align-items:center}
+.hero h1{font:600 clamp(44px,7.2vw,108px)/.98 var(--serif);letter-spacing:-.03em;margin:22px 0 24px}
+.hero h1 span{display:block;overflow:hidden;padding-bottom:.1em;margin-bottom:-.1em}
+.hero h1 span i{display:block;font-style:normal;transform:translateY(110%);transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+body.ready .hero h1 span i{transform:none}
+body.ready .hero h1 span:nth-child(2) i{transition-delay:.1s}
+.hero h1 em{font-style:italic;font-weight:500;box-shadow:inset 0 -.28em 0 var(--yel)}
+.hero p.lead{font-size:clamp(17px,1.5vw,20px);max-width:29em;color:#3f3f43}
+.hero .row{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:10px;background:#fff;padding:11px 15px;font:600 14.5px/1.2 var(--sans);text-decoration:none}
+.badge i{width:10px;height:10px;background:var(--yel);box-shadow:0 0 0 1px var(--stone);flex:none}
+.fade{opacity:0;transform:translateY(16px);transition:opacity .7s ease .35s,transform .7s ease .35s}
+body.ready .fade{opacity:1;transform:none}
+.hphoto{position:relative;padding:0 0 22px 22px}
+.hphoto::before{content:"";position:absolute;left:0;bottom:0;width:78%;height:82%;background:var(--yel)}
+.hphoto img{position:relative;width:100%;height:auto;aspect-ratio:615/461;object-fit:cover;background:var(--stone)}
+.hphoto figcaption{position:absolute;left:44px;bottom:-12px;background:var(--ink);color:#fff;font:500 12.5px/1 var(--sans);padding:9px 12px;letter-spacing:.04em}
+.hphoto{margin:0}
+.pick{margin-top:clamp(52px,6vw,84px)}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;position:relative;z-index:2;margin-bottom:calc(clamp(34px,5vw,64px) * -1)}
+.tile{position:relative;display:block;text-decoration:none;color:#fff;aspect-ratio:1/1.1;overflow:hidden;background:var(--night)}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.tile:hover img{transform:scale(1.06)}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,20,22,.88) 0,rgba(20,20,22,.2) 46%,transparent 70%)}
+.tile span{position:absolute;left:16px;right:14px;bottom:15px;z-index:2;font:600 clamp(19px,2vw,28px)/1.05 var(--serif);letter-spacing:-.01em}
+.tile small{display:block;font:600 11.5px/1 var(--sans);letter-spacing:.18em;margin-bottom:8px;color:var(--yel)}
+.tile:focus-visible{outline:4px solid var(--yel);outline-offset:2px}
+@media(max-width:900px){.hero .g{grid-template-columns:1fr}.hphoto{max-width:560px}}
+@media(max-width:760px){.tiles{grid-template-columns:1fr 1fr}.tile{aspect-ratio:1/.9}}
+
+/* ---------- Abschnitte ---------- */
+section.s{padding:clamp(80px,11vw,150px) 0 clamp(60px,8vw,110px)}
+.hd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:end;margin-bottom:clamp(30px,4vw,56px)}
+.hd .no{font:600 15px/1 var(--serif);color:var(--mute);letter-spacing:.1em}
+.hd h2{font:600 clamp(40px,6.2vw,92px)/.98 var(--serif);letter-spacing:-.03em;margin:14px 0 0}
+.hd p{color:var(--mute);max-width:32em}
+.hd p+p{margin-top:12px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;list-style:none;padding:0;margin-top:18px}
+.tags li{border:1.5px solid var(--stone);padding:7px 11px;font:500 14.5px/1.15 var(--sans);background:transparent}
+.tags.soft li{border-color:var(--line);color:var(--mute)}
+.ask{display:inline-block;margin-top:24px;font:600 15px/1 var(--sans);text-decoration:none;color:var(--ink);background:var(--yel);padding:15px 19px;transition:background .2s,transform .2s}
+.ask:hover{background:var(--yel-d);transform:translateY(-2px)}
+@media(max-width:860px){.hd{grid-template-columns:1fr;align-items:start}}
+
+/* Grabmal: ruhig, nur sanftes Einblenden */
+#grabmal{border-top:1px solid var(--line)}
+.gal4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.gal4 figure{margin:0}
+.gal4 img{width:100%;aspect-ratio:3/4;object-fit:cover;background:var(--stone)}
+.gal4 figcaption{font:400 13.5px/1.4 var(--sans);color:var(--mute);margin-top:8px}
+.calm{margin-top:clamp(30px,4vw,50px);max-width:44em;font:500 clamp(20px,2.2vw,27px)/1.45 var(--serif);color:#3f3f43}
+@media(max-width:760px){.gal4{grid-template-columns:1fr 1fr}}
+
+/* Skulpturen: Block wird beim Scrollen abgetragen */
+#skulpturen{background:var(--night);color:#fff}
+#skulpturen .kicker,#skulpturen .hd .no{color:#b9b9b4}
+#skulpturen .hd p{color:#b9b9b4}
+#skulpturen .tags li{border-color:#4a4a4e;color:#e4e4df}
+.peelwrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,5vw,80px);align-items:start}
+.peel{position:sticky;top:96px;aspect-ratio:3/4;max-width:420px;width:100%;background:#000;overflow:hidden;justify-self:center}
+.peel img.main{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.peel .cells{position:absolute;inset:0;display:grid;grid-template-columns:repeat(8,1fr);grid-template-rows:repeat(10,1fr)}
+.peel .cells i{background:linear-gradient(135deg,#8b8b86,#6e6e6a);box-shadow:inset 0 0 0 .5px rgba(0,0,0,.25);transition:opacity .35s ease,transform .45s cubic-bezier(.2,.8,.3,1)}
+.peel .cells i.off{opacity:0;transform:translate(6px,10px) scale(.72) rotate(6deg)}
+.peel .cap{position:absolute;left:12px;bottom:12px;z-index:2;font:600 11.5px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;background:var(--yel);color:var(--ink);padding:7px 9px;transition:opacity .4s}
+.peel.full .cap{opacity:0}
+.sthumbs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.sthumbs img{width:100%;aspect-ratio:3/4;object-fit:cover;background:#000}
+.sthumbs .ph{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.sthumbs .ph.in{opacity:1;transform:none}
+.sthumbs .ph:nth-child(3n+2){transition-delay:.08s}.sthumbs .ph:nth-child(3n){transition-delay:.16s}
+.sright p{color:#b9b9b4;max-width:34em;margin-bottom:22px}
+@media(max-width:860px){.peelwrap{grid-template-columns:1fr}}
+
+/* Brunnen: Bilderband läuft beim Scrollen */
+#brunnen{overflow:hidden}
+.band{overflow:hidden;margin-top:6px}
+.track{display:flex;gap:12px;will-change:transform;width:max-content;padding-left:var(--pad)}
+.track figure{margin:0;flex:none}
+.track img{height:clamp(240px,30vw,360px);width:auto;background:var(--stone)}
+.track figcaption{font:400 13.5px/1.4 var(--sans);color:var(--mute);margin-top:8px}
+
+/* Kurse: Block wird in acht Terminen zur Form */
+#kurse{background:#e6e2d8}
+.kgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:center}
+.forge{position:relative;aspect-ratio:4/3;background:var(--paper);overflow:hidden}
+.forge svg{position:absolute;inset:0;width:100%;height:100%}
+.forge .lbl{position:absolute;left:5%;bottom:6%;font:600 clamp(18px,2.4vw,30px)/1 var(--serif)}
+.steps{position:absolute;right:5%;bottom:6%;display:flex;gap:5px}
+.steps i{width:clamp(14px,2vw,24px);height:clamp(14px,2vw,24px);border:1.5px solid var(--stone);transition:background .25s}
+.steps i.on{background:var(--ink)}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:0 24px;margin-top:22px}
+.facts div{border-top:1px solid #c7c2b6;padding:12px 0}
+.facts b{display:block;font:600 11.5px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
+.facts span{font-weight:500}
+.kthumbs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin-top:clamp(28px,4vw,44px)}
+.kthumbs img{width:100%;aspect-ratio:1;object-fit:cover;background:var(--stone)}
+@media(max-width:860px){.kgrid{grid-template-columns:1fr}.kthumbs{grid-template-columns:repeat(3,1fr)}}
+
+/* ---------- Bau ---------- */
+#bau{background:var(--stone);color:#fff;padding:clamp(60px,9vw,120px) 0}
+#bau .kicker{color:#d8d8d2}
+.objs{margin-top:22px;font:600 clamp(28px,4.8vw,70px)/1.1 var(--serif);letter-spacing:-.025em}
+.objs span{display:inline;color:rgba(255,255,255,.26);transition:color .35s ease}
+.objs span.lit{color:#fff}
+.objs span.lit:nth-child(3n+1){color:var(--yel)}
+#bau p{color:#e3e3de;max-width:38em;margin-top:28px}
+
+/* ---------- Besuch ---------- */
+#besuch{padding:clamp(70px,10vw,140px) 0}
+.visit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,6vw,90px);align-items:center}
+.visit h2{font:600 clamp(38px,5.2vw,72px)/1 var(--serif);letter-spacing:-.03em;margin:14px 0 22px}
+.visit .row{border-top:1px solid var(--line);padding:14px 0;display:grid;grid-template-columns:150px 1fr;gap:12px}
+.visit .row:last-of-type{border-bottom:1px solid var(--line)}
+.visit .row b{font:600 12px/1.6 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.shop img{width:100%;max-width:560px;height:auto;aspect-ratio:615/461;object-fit:cover;background:var(--stone)}
+.shop a.map{display:inline-block;margin-top:14px;font-weight:600;text-underline-offset:4px;text-decoration-color:var(--yel);text-decoration-thickness:3px}
+@media(max-width:800px){.visit{grid-template-columns:1fr}.visit .row{grid-template-columns:1fr;gap:2px}}
+
+/* ---------- Kontakt ---------- */
+#kontakt{background:var(--yel);color:var(--ink);padding:clamp(70px,10vw,130px) 0}
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,6vw,90px)}
+#kontakt .kicker{color:var(--ink)}
+#kontakt .kicker::before{background:var(--ink)}
+.contact h2{font:600 clamp(36px,5vw,70px)/1.03 var(--serif);letter-spacing:-.03em;margin:14px 0 22px}
+.contact .big{display:inline-block;font:600 clamp(34px,4.6vw,62px)/1 var(--serif);letter-spacing:-.03em;text-decoration:none;margin:18px 0 6px}
+.contact .mail{font-size:18px;text-underline-offset:4px;overflow-wrap:anywhere}
+.contact .addr{margin-top:22px;font-size:16px}
+form{background:#fff;color:var(--ink);padding:clamp(22px,3vw,36px);display:grid;gap:16px;align-content:start}
+form h3{font:600 24px/1.15 var(--serif);letter-spacing:-.01em}
+label{display:grid;gap:6px;font:600 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+input,select,textarea{font:400 16px/1.4 var(--sans);color:var(--ink);background:var(--paper);border:1px solid var(--line);padding:12px 13px;border-radius:0;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--ink);outline-offset:0;border-color:var(--ink)}
+textarea{min-height:110px;resize:vertical}
+form button{font:600 16px/1 var(--sans);background:var(--ink);color:#fff;border:0;padding:17px 20px;cursor:pointer;transition:background .2s}
+form button:hover{background:#000}
+form small{color:var(--mute);font-size:13.5px}
+@media(max-width:860px){.contact{grid-template-columns:1fr}}
+
+footer{background:var(--night);color:#b9b9b4;font-size:14.5px;padding:24px 0 80px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 30px;justify-content:space-between;align-items:center}
+footer a{text-underline-offset:3px}
+footer button{font:inherit;color:inherit;background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+#grabmal .rv{transform:none;transition:opacity 1s ease}
+
+.draft{position:fixed;left:14px;bottom:14px;z-index:50;background:#18181a;color:#fff;font:500 13px/1 var(--sans);padding:9px 13px;display:flex;gap:8px;align-items:center;border-radius:2px}
+.draft i{width:8px;height:8px;background:var(--yel)}
+
+body.logo-only header,body.logo-only main,body.logo-only footer,body.logo-only .draft{display:none}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv,.fade,.hero h1 span i,.sthumbs .ph{opacity:1!important;transform:none!important;transition:none!important}
+  .objs span{color:#fff}
+}
+</style>
+</head>
+<body class="intro-on">
+
+<div id="intro" aria-hidden="true">
+  <svg class="logo" viewBox="-4 -4 145 150" role="img" aria-label="Logo Steinbildhauer-Atelier Andreas Hungerbühler">
+<rect class="ah-sq" x="20" y="15.5" width="91.25" height="90.75"/>
+<polygon class="ah-st ah-st2" points="33.75,6.25 40,10 51.25,37.5 67.5,66.25 91.25,114.5 88,114.5 63.75,75 40,27.5 31.25,15.5"/>
+<polygon class="ah-st ah-st3" points="32,17.5 31.25,23.75 26.25,47.5 11.25,82.5 19.5,90.5 25,65 30.5,37.5 31.5,21.25"/>
+<polygon class="ah-st ah-st4" points="64.5,2 66.5,2 68.5,65.5 65.5,61.25"/>
+<polygon class="ah-st ah-st5" points="117.5,1 119,2.5 122.5,50 125.5,112.5 115.75,113.75 116.5,50"/>
+<path class="ah-st ah-st1" d="M0,59.5 C25,42.5 55,35 80,36.5 C107.5,37.5 125,43.75 137,51.25 C125,47.5 107.5,42.5 82.5,43 C50,42 22.5,53.75 6.25,65.5 Z"/>
+<g class="ah-dust"><circle class="d d1" cx="34" cy="8" r="1.4"/><circle class="d d2" cx="34" cy="8" r="1"/><circle class="d d3" cx="34" cy="8" r="1.2"/><circle class="d d4" cx="65.5" cy="4" r="1.2"/><circle class="d d5" cx="65.5" cy="4" r="1"/><circle class="d d6" cx="118" cy="3" r="1.3"/><circle class="d d7" cx="118" cy="3" r="1"/><circle class="d d8" cx="2" cy="59" r="1.2"/><circle class="d d9" cx="12" cy="52" r="1"/></g>
+    <text class="it" x="68.5" y="131" text-anchor="middle" font-size="12">Andreas Hungerbühler</text>
+    <text class="it2" x="68.5" y="144" text-anchor="middle" font-size="6">STEINBILDHAUER-ATELIER</text>
+  </svg>
+</div>
+
+<header id="hdr">
+  <div class="in">
+    <a href="#top" class="brand" aria-label="Andreas Hungerbühler, zum Seitenanfang">
+      <span id="hlogo"><svg class="logo" viewBox="0 0 137 115">
+<rect class="ah-sq" x="20" y="15.5" width="91.25" height="90.75"/>
+<polygon class="ah-st ah-st2" points="33.75,6.25 40,10 51.25,37.5 67.5,66.25 91.25,114.5 88,114.5 63.75,75 40,27.5 31.25,15.5"/>
+<polygon class="ah-st ah-st3" points="32,17.5 31.25,23.75 26.25,47.5 11.25,82.5 19.5,90.5 25,65 30.5,37.5 31.5,21.25"/>
+<polygon class="ah-st ah-st4" points="64.5,2 66.5,2 68.5,65.5 65.5,61.25"/>
+<polygon class="ah-st ah-st5" points="117.5,1 119,2.5 122.5,50 125.5,112.5 115.75,113.75 116.5,50"/>
+<path class="ah-st ah-st1" d="M0,59.5 C25,42.5 55,35 80,36.5 C107.5,37.5 125,43.75 137,51.25 C125,47.5 107.5,42.5 82.5,43 C50,42 22.5,53.75 6.25,65.5 Z"/>
+<g class="ah-dust"><circle class="d d1" cx="34" cy="8" r="1.4"/><circle class="d d2" cx="34" cy="8" r="1"/><circle class="d d3" cx="34" cy="8" r="1.2"/><circle class="d d4" cx="65.5" cy="4" r="1.2"/><circle class="d d5" cx="65.5" cy="4" r="1"/><circle class="d d6" cx="118" cy="3" r="1.3"/><circle class="d d7" cx="118" cy="3" r="1"/><circle class="d d8" cx="2" cy="59" r="1.2"/><circle class="d d9" cx="12" cy="52" r="1"/></g>
+      </svg></span>
+      <span class="wm">Andreas Hungerbühler<small>Steinbildhauer-Atelier</small></span>
+    </a>
+    <nav>
+      <a href="#grabmal">Grabmale</a>
+      <a href="#skulpturen">Skulpturen</a>
+      <a href="#brunnen">Brunnen</a>
+      <a href="#kurse">Kurse</a>
+      <a href="#bau">Bau</a>
+      <a href="#besuch">Besuch</a>
+      <a class="tel" href="tel:+41716333191">071 633 31 91</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="g">
+      <div>
+        <div class="kicker fade">Atelier · Bürglen TG</div>
+        <h1><span><i>Neue Ideen</i></span><span><i>in <em>Naturstein.</em></i></span></h1>
+        <p class="lead fade">Kreativität und exaktes Handwerk: Grabmale, Skulpturen in Stein und Bronze, Brunnen und Arbeiten am Bau. Individuelle Einzelanfertigungen, angepasst an Ihre persönlichen Bedürfnisse.</p>
+        <div class="row fade">
+          <a class="badge" href="#besuch"><i></i><span>Jederzeit nach telefonischer Vereinbarung</span></a>
+        </div>
+      </div>
+      <figure class="hphoto fade">
+        <img src="img/werkstatt01.jpg" alt="Werkstatt von Andreas Hungerbühler in Bürglen" width="615" height="461">
+        <figcaption>Die Werkstatt in Bürglen</figcaption>
+      </figure>
+    </div>
+    <div class="pick fade">
+      <div class="tiles">
+        <a class="tile" href="#grabmal"><img src="img/grab-g041.jpg" alt="" loading="lazy"><span><small>01</small>Grabmale</span></a>
+        <a class="tile" href="#skulpturen"><img src="img/kunst-k003.jpg" alt="" loading="lazy"><span><small>02</small>Skulpturen</span></a>
+        <a class="tile" href="#brunnen"><img src="img/brunnen-b041.jpg" alt="" loading="lazy"><span><small>03</small>Brunnen</span></a>
+        <a class="tile" href="#kurse"><img src="img/kurs-k008.jpg" alt="" loading="lazy"><span><small>04</small>Kurse</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="grabmal">
+  <div class="wrap">
+    <div class="hd">
+      <div>
+        <div class="no rv">01</div>
+        <h2 class="rv">Grabmale</h2>
+      </div>
+      <div>
+        <p class="rv">Die Abbildungen sollen Ihnen Einblick in mein bisheriges Schaffen geben und gleichzeitig neue Ideen liefern, die wir zusammen erarbeiten und umsetzen können.</p>
+        <p class="rv">Ich berate Sie persönlich, vom Grabdenkmal bis zur Zweitinschrift.</p>
+      </div>
+    </div>
+    <div class="gal4 rv">
+      <figure><img src="img/grab-g041.jpg" alt="Grabmal mit Reliefdarstellung von Maria mit Kind" loading="lazy" width="320" height="428"></figure>
+      <figure><img src="img/grab-g151.jpg" alt="Schlichtes Grabmal aus Stein mit Aussparung" loading="lazy" width="320" height="428"></figure>
+      <figure><img src="img/grab-g393.jpg" alt="Grabmal mit Kreuzmotiv" loading="lazy" width="320" height="428"></figure>
+      <figure><img src="img/grab-l001.jpg" alt="Grablaternen" loading="lazy" width="320" height="428"></figure>
+    </div>
+    <h3 class="kicker rv" style="margin:36px 0 0;font-weight:600">Auswahl</h3>
+    <ul class="tags rv">
+      <li>Persönlich und künstlerisch gestaltete Grabmale</li>
+      <li>Geschliffene Grabmale mit verschiedenen Motiven</li>
+      <li>Rosen, Ähren, Tiere und pflanzliche Motive</li>
+      <li>Christliche und figürliche Grabmale</li>
+      <li>Grabmale aus Naturstein-Felsen</li>
+      <li>Bronze oder Chromstahl</li>
+      <li>Verschiedene Kreuzmotive</li>
+    </ul>
+    <ul class="tags soft rv"><li>Zweitinschrift</li><li>Reinigung</li><li>Weihwassergefässe</li><li>Laternen</li></ul>
+    <a class="ask rv" href="mailto:stein-bildhauer@thurweb.ch?subject=Anfrage%20Grabmal">Beratung anfragen</a>
+  </div>
+</section>
+
+<section class="s" id="skulpturen">
+  <div class="wrap">
+    <div class="hd">
+      <div>
+        <div class="no rv">02</div>
+        <h2 class="rv">Skulpturen in Stein und Bronze</h2>
+      </div>
+      <div>
+        <p class="rv">Für mich ist Steinbildhauer der schönste Beruf der Welt. Ich liebe es, immer wieder neue Ideen in Naturstein umzusetzen und Neues zu erschaffen.</p>
+      </div>
+    </div>
+    <div class="peelwrap">
+      <div class="peel" id="peel">
+        <img class="main" src="img/kunst-k014.jpg" alt="Weiblicher Torso aus Stein" width="320" height="428">
+        <div class="cells" id="cells" aria-hidden="true"></div>
+        <div class="cap">Naturstein</div>
+      </div>
+      <div class="sright">
+        <p class="rv">Beim Scrollen wird der Block abgetragen, bis die Form sichtbar ist. Eine Auswahl aus dem Atelier:</p>
+        <div class="sthumbs" id="sth">
+          <img class="ph" src="img/kunst-k001.jpg" alt="Schlanke Skulptur aus hellem Stein auf Sockel" loading="lazy" width="320" height="428">
+          <img class="ph" src="img/kunst-k003.jpg" alt="Dunkle Steinskulptur" loading="lazy" width="320" height="428">
+          <img class="ph" src="img/kunst-k005.jpg" alt="Runde, helle Steinfigur" loading="lazy" width="320" height="428">
+          <img class="ph" src="img/kunst-k012.jpg" alt="Zwei verschlungene Torsi aus hellem Stein" loading="lazy" width="320" height="428">
+          <img class="ph" src="img/kunst-k013.jpg" alt="Torso aus violettem Stein" loading="lazy" width="320" height="428">
+          <img class="ph" src="img/kunst-k019.jpg" alt="Helle Skulptur mit runden Formen" loading="lazy" width="320" height="428">
+        </div>
+        <a class="ask rv" href="mailto:stein-bildhauer@thurweb.ch?subject=Anfrage%20Skulpturen">Zu Skulpturen anfragen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="brunnen">
+  <div class="wrap">
+    <div class="hd">
+      <div>
+        <div class="no rv">03</div>
+        <h2 class="rv">Brunnen</h2>
+      </div>
+      <div>
+        <p class="rv">Brunnen für Gemeinde, Überbauung und Garten, einzeln angefertigt aus Naturstein.</p>
+      </div>
+    </div>
+  </div>
+  <div class="band"><div class="track" id="track">
+    <figure><img src="img/brunnen-b001.jpg" alt="Brunnen Gemeinde Bürglen" loading="lazy" width="320" height="427"><figcaption>Brunnen Gemeinde Bürglen</figcaption></figure>
+    <figure><img src="img/brunnen-b038.jpg" alt="Brunnenanlage Überbauung Embrach" loading="lazy" width="427" height="320"><figcaption>Überbauung Embrach</figcaption></figure>
+    <figure><img src="img/brunnen-b041.jpg" alt="Brunnenschale mit Steinkugeln" loading="lazy" width="427" height="320"><figcaption>Überbauung Embrach</figcaption></figure>
+    <figure><img src="img/brunnen-b050.jpg" alt="Neblerbrunnen" loading="lazy" width="320" height="427"><figcaption>Neblerbrunnen</figcaption></figure>
+    <figure><img src="img/brunnen-b045.jpg" alt="Trogbrunnen in einem Garten in Müllheim" loading="lazy" width="320" height="427"><figcaption>Müllheim, privat</figcaption></figure>
+    <figure><img src="img/brunnen-b046.jpg" alt="Trogbrunnen aus grobem Granit" loading="lazy" width="427" height="320"><figcaption>Müllheim, privat</figcaption></figure>
+    <figure><img src="img/brunnen-b060.jpg" alt="Steinbrunnen mit Pumpe" loading="lazy" width="320" height="427"><figcaption>Verschiedene Brunnen</figcaption></figure>
+    <figure><img src="img/brunnen-b063.jpg" alt="Brunnen mit Hahn" loading="lazy" width="320" height="427"><figcaption>Verschiedene Brunnen</figcaption></figure>
+    <figure><img src="img/brunnen-b064.jpg" alt="Etagenbrunnen aus hellem Stein" loading="lazy" width="320" height="427"><figcaption>Verschiedene Brunnen</figcaption></figure>
+  </div></div>
+</section>
+
+<section class="s" id="kurse">
+  <div class="wrap">
+    <div class="hd">
+      <div>
+        <div class="no rv">04</div>
+        <h2 class="rv">Steinbildhauer-Kurse</h2>
+      </div>
+      <div>
+        <p class="rv">Kurse für Anfänger und Fortgeschrittene im Atelier in Bürglen. Bringen Sie eine Idee mit, vielleicht eine Skizze oder Bilder, und hauen Sie sie in Stein.</p>
+      </div>
+    </div>
+    <div class="kgrid">
+      <div class="forge rv" id="forge" aria-hidden="true">
+        <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet"><polygon id="blk" fill="#7c7c78" points=""/><polygon id="blk2" fill="#a2a29c" points=""/></svg>
+        <div class="lbl" id="flbl">Termin 1 von 8</div>
+        <div class="steps" id="steps"></div>
+      </div>
+      <div>
+        <div class="facts rv">
+          <div><b>Kursdauer</b><span>8 × 3 Lektionen</span></div>
+          <div><b>Kursort</b><span>Weinfelderstrasse 16, Bürglen</span></div>
+          <div><b>Nachmittagskurs</b><span>14.00–17.00 Uhr</span></div>
+          <div><b>Abendkurs</b><span>19.30–22.30 Uhr</span></div>
+          <div><b>Start</b><span>Wenn sich 5 bis 6 Personen angemeldet haben</span></div>
+          <div><b>Flexibel</b><span>Die 8 Termine lassen sich auf 12 Wochen verteilen</span></div>
+        </div>
+        <p class="rv" style="color:var(--mute);margin-top:18px;max-width:34em">Einen kleinen Einsteiger-Werkzeugsatz und verschiedene Natursteine können Sie bei Kursbeginn erwerben. Dem Kurs können beliebig viele Abende nahtlos angehängt werden.</p>
+        <a class="ask rv" href="mailto:stein-bildhauer@thurweb.ch?subject=Anfrage%20Steinbildhauer-Kurs">Zum Kurs anfragen</a>
+      </div>
+    </div>
+    <div class="kthumbs rv">
+      <img src="img/kurs-k008.jpg" alt="Schnecke aus hellem Stein" loading="lazy" width="320" height="427">
+      <img src="img/kurs-k064.jpg" alt="Steinschale in Grau" loading="lazy" width="320" height="427">
+      <img src="img/kurs-k116.jpg" alt="Ovale Steinschale" loading="lazy" width="320" height="427">
+      <img src="img/kurs-k120.jpg" alt="Katze aus Stein" loading="lazy" width="320" height="427">
+      <img src="img/kurs-k025.jpg" alt="Helle Skulptur in Form einer Knospe" loading="lazy" width="320" height="427">
+      <img src="img/kurs-k081.jpg" alt="Kleine Bärenfigur aus Stein" loading="lazy" width="320" height="427">
+    </div>
+  </div>
+</section>
+
+<section id="bau">
+  <div class="wrap">
+    <div class="kicker rv">Bau · Seit 1988 renoviert</div>
+    <div class="objs" id="objs"><span>Hafenbahnhof Kreuzlingen. </span><span>Stammhaus Rentenanstalt Zürich. </span><span>Uni Zürich. </span><span>Bahnhöfe am Untersee und Bodensee. </span><span>Schulhäuser im Kanton Thurgau. </span><span>Kirchen im Kanton Thurgau. </span><span>Raiffeisen-Bank Bürglen. </span><span>Schloss Bürglen. </span><span>Villen in den Kantonen Thurgau, St. Gallen und Zürich.</span></div>
+    <p class="rv">Seit 1988 habe ich die verschiedensten Bauten renoviert. Dies sind einige Beispiele.</p>
+  </div>
+</section>
+
+<section id="besuch">
+  <div class="wrap visit">
+    <div>
+      <div class="kicker rv">Besuch</div>
+      <h2 class="rv">Rufen Sie an oder kommen Sie vorbei.</h2>
+      <div class="row rv"><b>Atelier</b><span>Jederzeit nach telefonischer Vereinbarung, auch morgens, abends und samstags.</span></div>
+      <div class="row rv"><b>Ausstellung</b><span>Geschenke können Montag bis Freitag, 13.30–18.30 Uhr, in der Ausstellung in Bürglen gekauft werden.</span></div>
+      <div class="row rv"><b>Adresse</b><span>Weinfelderstrasse 16<br>8575 Bürglen</span></div>
+    </div>
+    <div class="shop rv">
+      <img src="img/ausstellung01.jpg" alt="Ausstellung in Bürglen" loading="lazy" width="615" height="461">
+      <a class="map" href="https://www.google.com/maps/search/?api=1&query=Weinfelderstrasse+16+8575+B%C3%BCrglen" target="_blank" rel="noopener">Lageplan öffnen</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap contact">
+    <div>
+      <div class="kicker rv">Kontakt</div>
+      <h2 class="rv">Ich berate Sie persönlich.</h2>
+      <a class="big rv" href="tel:+41716333191">071 633 31 91</a><br>
+      <a class="mail rv" href="tel:+41792716692">Mobil 079 271 66 92</a><br>
+      <a class="mail rv" href="mailto:stein-bildhauer@thurweb.ch">stein-bildhauer@thurweb.ch</a>
+      <p class="addr rv">Andreas Hungerbühler · Weinfelderstrasse 16 · 8575 Bürglen</p>
+    </div>
+    <form id="form" class="rv">
+      <h3>Kurz beschreiben, ich melde mich.</h3>
+      <label>Thema
+        <select name="thema"><option>Grabmal</option><option>Skulptur</option><option>Brunnen</option><option>Steinbildhauer-Kurs</option><option>Arbeiten am Bau</option></select>
+      </label>
+      <label>Name<input name="name" autocomplete="name" required></label>
+      <label>Telefon<input name="tel" type="tel" autocomplete="tel"></label>
+      <label>Nachricht<textarea name="msg"></textarea></label>
+      <button type="submit">Anfrage senden</button>
+      <small>Öffnet Ihr Mailprogramm mit der fertigen Nachricht.</small>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Steinbildhauer-Atelier Andreas Hungerbühler · Weinfelderstrasse 16 · 8575 Bürglen</span>
+    <span><a href="tel:+41716333191">071 633 31 91</a> · <button type="button" id="replay">Animation nochmals abspielen</button></span>
+  </div>
+</footer>
+
+<div class="draft"><i></i><span><b>Entwurf</b> · nicht veröffentlicht</span></div>
+
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var logoOnly=/[?&]logo\b/.test(location.search);
+  var body=document.body, intro=document.getElementById('intro'), isvg=intro.querySelector('svg'), hlogo=document.getElementById('hlogo');
+  if(logoOnly) body.classList.add('logo-only');
+
+  var timers=[];
+  function play(){
+    timers.forEach(clearTimeout); timers=[];
+    body.classList.add('intro-on'); body.classList.remove('ready');
+    intro.classList.remove('gone','fly','play','done'); isvg.style.transform=''; intro.style.background='';
+    void intro.offsetWidth; intro.classList.add('play');
+    if(logoOnly) return;
+    timers.push(setTimeout(function(){
+      var a=isvg.getBoundingClientRect(), b=hlogo.getBoundingClientRect(), u=a.width/145, ox=a.left+4*u, oy=a.top+4*u, s2=b.width/(137*u);
+      intro.classList.add('fly','done'); isvg.style.transform='translate('+(b.left-ox)+'px,'+(b.top-oy)+'px) scale('+s2+')';
+      intro.style.background='transparent'; body.classList.add('ready');
+    }, reduce?300:3350));
+    timers.push(setTimeout(function(){ body.classList.remove('intro-on'); intro.classList.add('gone'); }, reduce?400:4130));
+  }
+  intro.style.transition='background .6s ease';
+  play();
+  document.getElementById('replay').addEventListener('click',function(){ scrollTo({top:0,behavior:'instant'}); setTimeout(play,60); });
+
+  // ----- Skulpturen: Block abtragen -----
+  var peelwrap=document.querySelector('.peelwrap'), cells=document.getElementById('cells'), peel=document.getElementById('peel'), cl=[], seed=7;
+  function rnd(){ seed=(seed*9301+49297)%233280; return seed/233280; }
+  for(var i=0;i<80;i++){ var c=document.createElement('i'); c.style.filter='brightness('+(0.9+rnd()*0.2)+')'; cells.appendChild(c); cl.push(c); }
+  var order=cl.map(function(c,i){ return {i:i,r:rnd()+(Math.floor(i/8)/10)*.35}; }).sort(function(a,b){ return a.r-b.r; }).map(function(o){ return o.i; });
+  function peelTo(p){ var n=Math.round(p*80); for(var k=0;k<80;k++) cl[order[k]].classList.toggle('off',k<n); peel.classList.toggle('full',p>.5); }
+
+  // ----- Brunnen: Bilderband -----
+  var band=document.querySelector('#brunnen .band'), track=document.getElementById('track');
+  function bandTo(p){ var max=Math.max(0,track.scrollWidth-band.clientWidth+40); track.style.transform='translateX('+(-p*max)+'px)'; }
+
+  // ----- Kurse: Block wird zur Form -----
+  var blk=document.getElementById('blk'), blk2=document.getElementById('blk2'), flbl=document.getElementById('flbl'), stepsEl=document.getElementById('steps'), steps=[];
+  for(var s=0;s<8;s++){ var si=document.createElement('i'); stepsEl.appendChild(si); steps.push(si); }
+  var A=[[110,60],[200,50],[290,62],[300,150],[292,240],[200,252],[108,240],[100,150]]; // Block (roh)
+  var A2=[[150,48],[200,38],[246,52],[262,100],[252,170],[270,222],[200,262],[130,222]]; // Form
+  var B=[[200,70],[250,72],[298,110],[290,190],[250,238],[200,246],[150,238],[110,190]];
+  function mix(a,b,t){ return a.map(function(p,i){ return [p[0]+(b[i][0]-p[0])*t, p[1]+(b[i][1]-p[1])*t]; }); }
+  function pts(a){ return a.map(function(p){ return p[0].toFixed(1)+','+p[1].toFixed(1); }).join(' '); }
+  function forgeTo(p){
+    var n=Math.min(8,Math.floor(p*8)+1), t=Math.min(1,Math.max(0,p));
+    var e=t*t*(3-2*t);
+    blk.setAttribute('points',pts(mix(A,B,e)));
+    blk2.setAttribute('points',pts(mix(A,B,e).map(function(q,i){ return [q[0]*.72+200*.28+10*(1-e), q[1]*.72+150*.28-6*(1-e)]; })));
+    flbl.textContent='Termin '+n+' von 8';
+    steps.forEach(function(x,i){ x.classList.toggle('on',i<n); });
+  }
+  forgeTo(0); peelTo(0); bandTo(0);
+
+  // ----- Bau: Orte leuchten auf -----
+  var objs=[].slice.call(document.querySelectorAll('#objs span')), objsBox=document.getElementById('objs');
+
+  function prog(el,a,b){ var r=el.getBoundingClientRect(), vh=innerHeight; return Math.min(1,Math.max(0,(vh*a-r.top)/(vh*(a-b)))); }
+
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  document.querySelectorAll('.rv,.sthumbs .ph').forEach(function(el){ io.observe(el); });
+
+  var hdr=document.getElementById('hdr'), navs=[].slice.call(document.querySelectorAll('nav a:not(.tel)')), secs=navs.map(function(a){ return document.querySelector(a.getAttribute('href')); }), tick=false;
+  var forge=document.getElementById('forge');
+  function frame(){
+    tick=false; var y=scrollY, vh=innerHeight;
+    hdr.classList.toggle('solid', y>30);
+    var c2=-1; secs.forEach(function(sc,i){ if(sc.getBoundingClientRect().top<vh*.45) c2=i; });
+    navs.forEach(function(l,i){ l.classList.toggle('on', i===c2); });
+    if(reduce){ peelTo(1); forgeTo(1); return; }
+    peelTo(prog(peelwrap,.8,.05));
+    bandTo(prog(band,.95,.1));
+    forgeTo(prog(forge,.85,.15));
+    var po=prog(objsBox,.9,.35), m=Math.ceil(po*objs.length); objs.forEach(function(s,i){ s.classList.toggle('lit', i<m); });
+  }
+  function onScroll(){ if(!tick){ tick=true; requestAnimationFrame(frame); } }
+  addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',onScroll); frame();
+
+  document.getElementById('form').addEventListener('submit',function(e){
+    e.preventDefault(); var f=e.target;
+    var b='Guten Tag Herr Hungerbühler\n\n'+(f.msg.value||'')+'\n\nName: '+f.name.value+'\nTelefon: '+f.tel.value+'\n';
+    location.href='mailto:stein-bildhauer@thurweb.ch?subject='+encodeURIComponent('Anfrage '+f.thema.value)+'&body='+encodeURIComponent(b);
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Carrosserie Carlo Buriola · Russikon ZH</title>
+<meta name="description" content="Carrosserie Carlo Buriola in Russikon: Dellen drücken, Reparaturen auf der Richtbank, Scheiben ersetzen und tönen, Styling, Oldtimer-Restaurationen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#e3151d; --red-d:#b30f16; --navy:#12198a; --navy-d:#0b1160; --ink:#0f1220; --mute:#566074; --line:#dde1ea; --paper:#f4f6fa; --white:#fff;
+  --pad:clamp(20px,5vw,72px); --max:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 "Archivo",system-ui,sans-serif;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,p,ul{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.kicker{font:700 13.5px/1 "Archivo",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+
+/* Logo */
+.logo .cb-c{fill:var(--red)}
+.logo .cb-stem,.logo .cb-bowl{fill:var(--navy)}
+.logo .cb-word{fill:var(--ink)}
+
+/* ---------- Intro ---------- */
+#intro{position:fixed;inset:0;z-index:60;background:#fff;display:grid;place-items:center}
+#intro svg{width:min(88vw,720px);height:auto;overflow:visible;transform-origin:0 0;will-change:transform}
+#intro.fly svg{transition:transform .75s cubic-bezier(.7,0,.2,1)}
+#intro.gone{display:none}
+#intro .cb-c,#intro .cb-stem,#intro .cb-bowl{clip-path:inset(0 100% 0 0)}
+#intro .cb-stem{clip-path:inset(0 0 100% 0)}
+#intro .cb-word{opacity:0;transform:translateX(-70px)}
+#intro .trail{fill:none;stroke:var(--red);stroke-width:2.4;stroke-linecap:round;opacity:0}
+#intro.play .cb-c{animation:wipeR .75s cubic-bezier(.5,0,.2,1) .15s forwards}
+#intro.play .cb-stem{animation:wipeD .55s cubic-bezier(.5,0,.3,1) .85s forwards}
+#intro.play .cb-bowl{animation:wipeR .7s cubic-bezier(.5,0,.2,1) 1.3s forwards}
+#intro.play .cb-word{animation:drive .8s cubic-bezier(.2,.8,.2,1) 1.95s forwards}
+#intro.play .trail{animation:streak .9s ease-out 1.9s forwards}
+@keyframes wipeR{to{clip-path:inset(0 0 0 0)}}
+@keyframes wipeD{to{clip-path:inset(0 0 0 0)}}
+@keyframes drive{0%{opacity:0;transform:translateX(-90px)}25%{opacity:1}100%{opacity:1;transform:none}}
+@keyframes streak{0%{opacity:0;stroke-dasharray:0 330;stroke-dashoffset:0}20%{opacity:.9}100%{opacity:0;stroke-dasharray:330 330;stroke-dashoffset:-330}}
+
+/* ---------- Header ---------- */
+header{position:fixed;left:0;right:0;top:0;z-index:40;transition:background .3s,box-shadow .3s}
+header .in{max-width:var(--max);margin:0 auto;padding:12px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:16px}
+header.solid{background:rgba(255,255,255,.95);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--line)}
+#hlogo{display:block;width:clamp(190px,22vw,290px);transition:width .3s;flex:none}
+header.solid #hlogo{width:clamp(160px,17vw,230px)}
+#hlogo svg{display:block;width:100%;height:auto;overflow:visible}
+body.intro-on #hlogo{visibility:hidden}
+nav{display:flex;align-items:center;gap:clamp(12px,2vw,28px);font:700 14.5px/1 "Archivo",sans-serif;letter-spacing:.04em}
+nav a{text-decoration:none;padding:8px 0;position:relative}
+nav a:not(.tel)::after{content:"";position:absolute;left:0;right:0;bottom:1px;height:3px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+nav a:hover::after,nav a.on::after{transform:scaleX(1)}
+nav .tel{background:var(--red);color:#fff;padding:12px 15px;white-space:nowrap}
+nav .tel:hover{background:var(--red-d)}
+@media(max-width:980px){nav a:not(.tel){display:none}}
+
+/* ---------- Hero ---------- */
+.hero{background:#fff;padding:clamp(120px,13vw,170px) 0 0;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:linear-gradient(90deg,var(--red) 0 50%,var(--navy) 50%)}
+.hero h1{font:900 clamp(40px,7.2vw,112px)/.96 "Archivo",sans-serif;letter-spacing:-.04em;margin:22px 0 26px;max-width:11em}
+.hero h1 span{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.hero h1 span i{display:block;font-style:normal;transform:translateY(110%);transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+body.ready .hero h1 span i{transform:none}
+body.ready .hero h1 span:nth-child(2) i{transition-delay:.08s}
+body.ready .hero h1 span:nth-child(3) i{transition-delay:.16s}
+.hero h1 em{font-style:italic;color:var(--red)}
+.hero .row{display:flex;flex-wrap:wrap;gap:18px 40px;align-items:center;justify-content:space-between}
+.hero p.lead{font-size:clamp(17px,1.5vw,20px);max-width:32em;color:#38405a}
+.badge{display:inline-flex;align-items:center;gap:10px;background:var(--paper);padding:11px 15px;font:600 15px/1.2 "Archivo",sans-serif;text-decoration:none}
+.badge i{width:10px;height:10px;border-radius:50%;background:var(--red);flex:none}
+.fade{opacity:0;transform:translateY(16px);transition:opacity .7s ease .35s,transform .7s ease .35s}
+body.ready .fade{opacity:1;transform:none}
+.pick{margin-top:clamp(34px,4.4vw,56px)}
+.pick>b{display:block;font:700 13.5px/1 "Archivo",sans-serif;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;position:relative;z-index:2;margin-bottom:calc(clamp(34px,5vw,64px) * -1)}
+.tile{position:relative;display:block;text-decoration:none;color:#fff;aspect-ratio:1/.52;overflow:hidden;background:var(--ink)}
+.tile .tx{position:absolute;inset:-12px;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.tile:hover .tx{transform:translate(10px,-10px) scale(1.04)}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,12,24,.82) 0,rgba(10,12,24,.2) 50%,transparent 75%)}
+.tile span{position:absolute;left:16px;right:14px;bottom:14px;z-index:2;font:800 clamp(17px,1.9vw,25px)/1.08 "Archivo",sans-serif;letter-spacing:-.015em}
+.tile small{display:block;font:600 12.5px/1 "Archivo",sans-serif;letter-spacing:.16em;opacity:.8;margin-bottom:8px}
+.tile:focus-visible{outline:4px solid var(--red);outline-offset:2px}
+.t-dell{background:radial-gradient(circle at 30% 40%,rgba(255,255,255,.5) 0 10px,rgba(0,0,0,.35) 40px,transparent 60px),radial-gradient(circle at 70% 60%,rgba(255,255,255,.4) 0 8px,rgba(0,0,0,.3) 34px,transparent 52px),linear-gradient(120deg,#b81018,#e3151d 60%,#8e0c12)}
+.t-richt{background:repeating-linear-gradient(135deg,rgba(255,255,255,.1) 0 2px,transparent 2px 26px),linear-gradient(135deg,#12198a,#0b1160)}
+.t-glas{background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.55) 41% 44%,transparent 45% 60%,rgba(255,255,255,.3) 61% 62%,transparent 63%),linear-gradient(160deg,#4f8fc2,#1d3f66)}
+.t-tint{background:linear-gradient(90deg,#d8e6f2,#1a2030 85%)}
+.t-style{background:linear-gradient(90deg,transparent 38%,#fff 38% 44%,transparent 44% 50%,#fff 50% 56%,transparent 56%),#161a28}
+.t-old{background:radial-gradient(circle at 75% 30%,rgba(255,255,255,.35),transparent 40%),repeating-linear-gradient(90deg,rgba(0,0,0,.14) 0 1px,transparent 1px 24px),linear-gradient(120deg,#2f5d46,#1c3a2b)}
+@media(max-width:760px){.tiles{grid-template-columns:1fr 1fr}.tile{aspect-ratio:1/.85}}
+
+/* ---------- Themen ---------- */
+#themen{padding:clamp(90px,12vw,170px) 0 clamp(30px,5vw,60px)}
+.topic{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(24px,5vw,80px);align-items:center;padding:clamp(40px,6vw,84px) 0;border-top:1px solid var(--line);scroll-margin-top:70px}
+.topic:first-child{border-top:0;padding-top:0}
+.topic:nth-child(even) .vis{order:-1}
+.topic .no{font:800 15px/1 "Archivo",sans-serif;letter-spacing:.14em;color:var(--red)}
+.topic h2{font:900 clamp(34px,4.8vw,68px)/1 "Archivo",sans-serif;letter-spacing:-.035em;margin:14px 0 18px}
+.topic p{color:var(--mute);max-width:34em}
+.topic p+p{margin-top:12px}
+.topic h3{font:700 13.5px/1 "Archivo",sans-serif;letter-spacing:.14em;text-transform:uppercase;margin:24px 0 12px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;list-style:none;padding:0}
+.tags li{border:1.5px solid var(--ink);padding:7px 11px;font:600 14.5px/1.1 "Archivo",sans-serif;background:#fff}
+.tags.soft li{border-color:var(--line);color:var(--mute)}
+.ask{display:inline-block;margin-top:24px;font:700 15px/1 "Archivo",sans-serif;text-decoration:none;color:#fff;background:var(--red);padding:15px 19px;transition:background .2s,transform .2s}
+.ask:hover{background:var(--red-d);transform:translateY(-2px)}
+.vis{min-width:0}
+.stage{position:relative;aspect-ratio:4/3;overflow:hidden;background:linear-gradient(#e9eef6 0,#d6dde9 62%,#b9c2d2 62.5%,#aab3c4 100%)}
+.stage svg.sc{position:absolute;inset:0;width:100%;height:100%}
+.stage .lbl{position:absolute;left:5%;top:6%;font:900 clamp(22px,3vw,40px)/1 "Archivo",sans-serif;letter-spacing:-.03em;color:var(--ink)}
+.stage .lbl small{display:block;font:700 12.5px/1 "Archivo",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:6px;margin-top:8px}
+.thumbs img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--line)}
+@media(max-width:860px){.topic{grid-template-columns:1fr}.topic:nth-child(even) .vis{order:0}}
+
+/* Bühnen */
+.cwin{fill:#dbe9f5}
+.tire{fill:#161925}.hub{fill:#cfd3dc}
+.shadow{fill:rgba(15,18,32,.22)}
+.s-dell .dent{transform-box:fill-box;transform-origin:center;opacity:calc(1.05 - var(--p,0)*1.25);transform:scale(calc(1 - var(--p,0)*.55))}
+.s-richt .tilt{transform-origin:200px 196px;transform:rotate(calc((1 - var(--p,0)) * -7deg)) translateY(calc((1 - var(--p,0)) * 6px))}
+.s-richt .ok{opacity:0;transition:opacity .4s}
+.s-richt.done .ok{opacity:1}
+.s-glas .new{clip-path:inset(0 calc((1 - var(--p,0)) * 100%) 0 0)}
+.s-tint .tintw{opacity:calc(var(--p,0) * .88)}
+.s-tint .sun{transform-origin:332px 62px;transform:rotate(calc(var(--p,0) * 120deg))}
+.s-style .foil{clip-path:inset(0 calc((1 - var(--p,0)) * 100%) 0 0)}
+.s-old .rust{transform-box:fill-box;transform-origin:center;opacity:calc(1.05 - var(--p,0)*1.3);transform:scale(calc(1 - var(--p,0)*.4))}
+.s-old .shine{transform:translateX(calc(var(--p,0) * 420px - 120px))}
+
+/* ---------- Rundum ---------- */
+#rundum{background:var(--ink);color:#fff;padding:clamp(60px,9vw,120px) 0}
+#rundum .kicker{color:#ff6b72}
+.objs{margin-top:22px;font:900 clamp(30px,5.4vw,82px)/1.06 "Archivo",sans-serif;letter-spacing:-.035em}
+.objs span{display:inline;color:rgba(255,255,255,.22);transition:color .35s ease}
+.objs span.lit{color:#fff}
+.objs span.lit:nth-child(3n+1){color:#ff6b72}
+#rundum p{color:#c4c9d8;max-width:38em;margin-top:28px}
+.wk{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:clamp(30px,4vw,52px)}
+.wk img{width:100%;aspect-ratio:4/3;object-fit:cover}
+@media(max-width:700px){.wk{grid-template-columns:1fr 1fr}}
+
+/* ---------- Kontakt ---------- */
+#kontakt{background:var(--red);color:#fff;padding:clamp(70px,10vw,130px) 0}
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,6vw,90px)}
+#kontakt .kicker{color:#ffd3d5}
+.contact h2{font:900 clamp(34px,5vw,72px)/1.03 "Archivo",sans-serif;letter-spacing:-.03em;margin:14px 0 22px}
+.contact .big{display:inline-block;font:900 clamp(34px,5vw,66px)/1 "Archivo",sans-serif;letter-spacing:-.035em;text-decoration:none;margin:22px 0 8px}
+.contact .mid{display:inline-block;font:800 clamp(20px,2.4vw,30px)/1.2 "Archivo",sans-serif;text-decoration:none;margin:4px 0 14px}
+.contact .mail{font-size:18px;text-underline-offset:4px;overflow-wrap:anywhere}
+.contact .addr{margin-top:22px;color:#ffe3e4;font-size:16px}
+.contact .addr a{text-underline-offset:4px}
+form{background:#fff;color:var(--ink);padding:clamp(22px,3vw,36px);display:grid;gap:16px;align-content:start}
+form h3{font:800 24px/1.15 "Archivo",sans-serif;letter-spacing:-.015em}
+label{display:grid;gap:6px;font:700 12.5px/1 "Archivo",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+input,select,textarea{font:400 16px/1.4 "Archivo",sans-serif;color:var(--ink);background:var(--paper);border:1px solid var(--line);padding:12px 13px;border-radius:0;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--navy);outline-offset:0;border-color:var(--navy)}
+textarea{min-height:110px;resize:vertical}
+form button{font:700 16px/1 "Archivo",sans-serif;background:var(--navy);color:#fff;border:0;padding:17px 20px;cursor:pointer;transition:background .2s}
+form button:hover{background:var(--navy-d)}
+form small{color:var(--mute);font-size:13.5px}
+@media(max-width:860px){.contact{grid-template-columns:1fr}}
+
+footer{background:var(--ink);color:#b4bacb;font-size:14.5px;padding:24px 0 80px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 30px;justify-content:space-between;align-items:center}
+footer a{text-underline-offset:3px}
+footer button{font:inherit;color:inherit;background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+.draft{position:fixed;left:14px;bottom:14px;z-index:50;background:#0f1220;color:#fff;font:500 13px/1 "Archivo",sans-serif;padding:9px 13px;display:flex;gap:8px;align-items:center;border-radius:2px}
+.draft i{width:8px;height:8px;border-radius:50%;background:var(--red)}
+
+body.logo-only header,body.logo-only main,body.logo-only footer,body.logo-only .draft{display:none}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv,.fade,.hero h1 span i{opacity:1!important;transform:none!important;transition:none!important}
+  .objs span{color:#fff}
+}
+</style>
+</head>
+<body class="intro-on">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <path id="cbody" d="M28 140 L28 120 Q28 106 46 102 L110 92 L142 58 Q148 52 158 52 L250 52 Q262 52 270 60 L304 92 L354 100 Q372 104 372 120 L372 140 Z"/>
+  <path id="cglass" d="M120 90 L146 62 L206 62 L206 90 Z M214 62 L250 62 L286 90 L214 90 Z"/>
+  <g id="wheels"><circle class="tire" cx="98" cy="142" r="27"/><circle class="hub" cx="98" cy="142" r="11"/><circle class="tire" cx="302" cy="142" r="27"/><circle class="hub" cx="302" cy="142" r="11"/></g>
+  <g id="car"><ellipse class="shadow" cx="200" cy="172" rx="170" ry="9"/><use href="#cbody" style="fill:var(--car,#8f98aa)"/><use href="#cglass" class="cwin"/><use href="#wheels"/></g>
+  <path id="obody" d="M26 142 Q22 118 52 112 L96 108 Q118 62 176 58 L226 58 Q262 60 280 100 L338 106 Q378 110 376 142 Z"/>
+  <radialGradient id="dentg" cx=".38" cy=".38" r=".7"><stop offset="0" stop-color="#fff" stop-opacity=".85"/><stop offset=".45" stop-color="#6c7588" stop-opacity=".55"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+  <clipPath id="bclip"><use href="#cbody"/></clipPath>
+  <clipPath id="oclip"><use href="#obody"/></clipPath>
+</defs></svg>
+
+<div id="intro" aria-hidden="true">
+  <svg class="logo" viewBox="12 44 416 54" role="img" aria-label="Logo Carrosserie Carlo Buriola">
+<g transform="translate(8 38) scale(.1)"><path class="cb-c" d="M70 565 C90 430 250 300 400 298 L488 305 L482 350 C330 345 200 410 140 498 L372 505 L350 565 Z"/><path class="cb-stem" d="M655 85 L690 85 L487 505 L480 565 L390 565 Z"/><path class="cb-bowl" d="M575 300 C700 320 830 430 860 565 L390 565 L400 503 L805 503 C770 430 660 375 550 352 Z"/></g>
+<text class="cb-word" x="111" y="94" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-style="italic" font-size="19" textLength="314" lengthAdjust="spacingAndGlyphs">Carrosserie Carlo Buriola</text>
+    <path class="trail" d="M14 99 H426"/>
+  </svg>
+</div>
+
+<header id="hdr">
+  <div class="in">
+    <a href="#top" id="hlogo" aria-label="Carrosserie Carlo Buriola, zum Seitenanfang">
+      <svg class="logo" viewBox="12 44 416 54">
+<g transform="translate(8 38) scale(.1)"><path class="cb-c" d="M70 565 C90 430 250 300 400 298 L488 305 L482 350 C330 345 200 410 140 498 L372 505 L350 565 Z"/><path class="cb-stem" d="M655 85 L690 85 L487 505 L480 565 L390 565 Z"/><path class="cb-bowl" d="M575 300 C700 320 830 430 860 565 L390 565 L400 503 L805 503 C770 430 660 375 550 352 Z"/></g>
+<text class="cb-word" x="111" y="94" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-style="italic" font-size="19" textLength="314" lengthAdjust="spacingAndGlyphs">Carrosserie Carlo Buriola</text>
+      </svg>
+    </a>
+    <nav>
+      <a href="#dellen">Dellen drücken</a>
+      <a href="#reparaturen">Reparaturen</a>
+      <a href="#scheiben-ersetzen">Scheiben</a>
+      <a href="#styling">Styling</a>
+      <a href="#oldtimer">Oldtimer</a>
+      <a class="tel" href="tel:+41449550550">044 955 05 50</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker fade">Carrosserie · Russikon ZH</div>
+    <h1><span><i>Ihr Partner für</i></span><span><i><em>qualifizierte</em></i></span><span><i>Carrosserie&shy;arbeiten.</i></span></h1>
+    <div class="row fade">
+      <p class="lead">Dank modernsten technischen Einrichtungen und erfahrenen, gut ausgebildeten Mitarbeitern meistern wir jede Aufgabe professionell, schnell und preisgünstig.</p>
+      <a class="badge" href="#rundum"><i></i><span>Markenunabhängig</span></a>
+    </div>
+    <div class="pick fade">
+      <b>Bitte wählen Sie Ihr Thema</b>
+      <div class="tiles">
+        <a class="tile" href="#dellen"><div class="tx t-dell"></div><span><small>01</small>Dellen drücken</span></a>
+        <a class="tile" href="#reparaturen"><div class="tx t-richt"></div><span><small>02</small>Reparaturen</span></a>
+        <a class="tile" href="#scheiben-ersetzen"><div class="tx t-glas"></div><span><small>03</small>Scheiben ersetzen</span></a>
+        <a class="tile" href="#scheiben-toenen"><div class="tx t-tint"></div><span><small>04</small>Scheiben tönen</span></a>
+        <a class="tile" href="#styling"><div class="tx t-style"></div><span><small>05</small>Styling</span></a>
+        <a class="tile" href="#oldtimer"><div class="tx t-old"></div><span><small>06</small>Oldtimer-Restaurationen</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="themen">
+  <div class="wrap">
+
+    <article class="topic" id="dellen">
+      <div>
+        <div class="no rv">01</div>
+        <h2 class="rv">Dellen drücken</h2>
+        <p class="rv">Diese Methode eignet sich hervorragend für Parkschäden, Hagelschäden und sonstige Schäden ohne Lackschaden.</p>
+        <p class="rv">Mit dieser Ausbeultechnik ist es möglich, Beulen in der Fahrzeugcarrosserie kostengünstig, effizient und umweltfreundlich zu entfernen, ohne dass ein Lackieren notwendig ist. Voraussetzung ist natürlich, dass der Lack nicht beschädigt wurde.</p>
+        <p class="rv">Mit diversen Spezialeisen werden die Beulen an den verschiedensten Carrosserieteilen vorsichtig herausmassiert. Bei Dellen ohne Zugriff wird eine spezielle Klebetechnik angewendet.</p>
+        <a class="ask rv" href="mailto:info@buriola.ch?subject=Anfrage%20Dellen%20dr%C3%BCcken">Dellen anfragen</a>
+      </div>
+      <div class="vis rv">
+        <div class="stage s-dell" data-s="dell" aria-hidden="true">
+          <svg class="sc" viewBox="0 0 400 300"><g transform="translate(0 60) "><use href="#car"/>
+            <ellipse class="dent" cx="62" cy="120" rx="15" ry="10" fill="url(#dentg)"/><ellipse class="dent" cx="170" cy="112" rx="16" ry="10" fill="url(#dentg)"/><ellipse class="dent" cx="228" cy="116" rx="14" ry="9" fill="url(#dentg)"/><ellipse class="dent" cx="320" cy="116" rx="13" ry="9" fill="url(#dentg)"/><ellipse class="dent" cx="130" cy="122" rx="10" ry="7" fill="url(#dentg)"/>
+          </g></svg>
+          <div class="lbl"><small>Ohne Lackieren</small>Beulen raus.</div>
+        </div>
+        <div class="thumbs"><img src="img/dellen_druecken-1.jpg" alt="Rotes Fahrzeug mit Delle an der Seite" loading="lazy"><img src="img/dellen_druecken-2.jpg" alt="Rote Motorhaube, Delle wird bearbeitet" loading="lazy"><img src="img/dellen_druecken-3.jpg" alt="Tür mit Klebepunkten für die Klebetechnik" loading="lazy"><img src="img/dellen_druecken-4.jpg" alt="Kotflügel nach dem Ausbeulen" loading="lazy"></div>
+      </div>
+    </article>
+
+    <article class="topic" id="reparaturen">
+      <div>
+        <div class="no rv">02</div>
+        <h2 class="rv">Repara&shy;turen</h2>
+        <p class="rv">In unserer Werkstatt reparierte Fahrzeuge werden nach Vorschrift des Herstellers mit den fahrzeugspezifischen Lehren auf der Richtbank repariert. Die Genauigkeit wird daher garantiert.</p>
+        <p class="rv">Bei Unfallschäden jeglicher Art übernehmen wir für Sie das Schadensmanagement mit der Versicherung und garantieren Ihre Mobilität mit einem Ersatzwagen.</p>
+        <ul class="tags rv" style="margin-top:22px"><li>Richtbank</li><li>Schadensmanagement</li><li>Ersatzwagen</li></ul>
+        <a class="ask rv" href="mailto:info@buriola.ch?subject=Anfrage%20Reparatur">Reparatur anfragen</a>
+      </div>
+      <div class="vis rv">
+        <div class="stage s-richt" data-s="richt" aria-hidden="true">
+          <svg class="sc" viewBox="0 0 400 300">
+            <path d="M52 40 V250 M348 40 V250" stroke="#12198a" stroke-width="2" stroke-dasharray="7 6" opacity=".55"/>
+            <g transform="translate(0 60)"><g class="tilt"><use href="#car"/></g></g>
+            <rect x="30" y="238" width="340" height="12" fill="#e3151d"/><rect x="30" y="250" width="340" height="6" fill="#8e0c12"/>
+          </svg>
+          <div class="lbl"><small>Auf der Richtbank</small>Auf den Millimeter.</div>
+        </div>
+        <div class="thumbs"><img src="img/reparaturen-1.jpg" alt="Schwarzes Fahrzeug mit Frontschaden" loading="lazy"><img src="img/reparaturen-2.jpg" alt="Fahrzeug auf der Richtbank, Frontpartie offen" loading="lazy"><img src="img/reparaturen-3.jpg" alt="Fahrzeug mit freigelegter Front in der Werkstatt" loading="lazy"><img src="img/reparaturen-4.jpg" alt="Goldfarbener Kleinwagen mit Heckschaden" loading="lazy"><img src="img/reparaturen-5.jpg" alt="Kombi auf der Hebebühne" loading="lazy"><img src="img/reparaturen-6.jpg" alt="Sportwagen-Klassiker auf der Richtbank" loading="lazy"><img src="img/reparaturen-7.jpg" alt="Karosserieteil aus Aluminium" loading="lazy"><img src="img/reparaturen-8.jpg" alt="Rohkarosserie mit Radausschnitt" loading="lazy"><img src="img/reparaturen-9.jpg" alt="Karosserie an der Richtbank" loading="lazy"></div>
+      </div>
+    </article>
+
+    <article class="topic" id="scheiben-ersetzen">
+      <div>
+        <div class="no rv">03</div>
+        <h2 class="rv">Scheiben ersetzen</h2>
+        <p class="rv">Wenn eine Frontscheibe eine grössere Beschädigung aufweist oder im Sichtfeld beschädigt ist, wird sie fachmännisch und innert kürzester Zeit ersetzt.</p>
+        <ul class="tags rv" style="margin-top:22px"><li>Hohe Sicherheit durch neuste Klebetechniken</li><li>Keine Beschädigung von Armaturen und Lackierung</li><li>Geringe Ausfallzeiten</li></ul>
+        <a class="ask rv" href="mailto:info@buriola.ch?subject=Anfrage%20Scheibe%20ersetzen">Scheibe anfragen</a>
+      </div>
+      <div class="vis rv">
+        <div class="stage s-glas" data-s="glas" aria-hidden="true">
+          <svg class="sc" viewBox="0 0 400 300">
+            <g transform="translate(0 20) scale(.94) translate(12 0)"><path d="M50 250 L108 70 Q113 54 130 54 H270 Q287 54 292 70 L350 250 Z" fill="#232838"/>
+            <g class="old"><path d="M64 242 L116 76 Q119 68 130 68 H270 Q281 68 284 76 L336 242 Z" fill="#c9dcec"/><path d="M178 68 L170 120 L196 150 L186 206 M170 120 L128 132 M196 150 L248 142 L276 188 M196 150 L214 112 L238 68" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/><path d="M178 68 L170 120 L196 150 L186 206 M170 120 L128 132 M196 150 L248 142 L276 188 M196 150 L214 112 L238 68" fill="none" stroke="#5d6b80" stroke-width=".8" transform="translate(1.5 1.5)"/></g>
+            <g class="new"><path d="M64 242 L116 76 Q119 68 130 68 H270 Q281 68 284 76 L336 242 Z" fill="#cfe6f6"/><path d="M92 242 L160 68 H196 L128 242 Z M216 242 L250 68 H262 L232 242 Z" fill="#fff" opacity=".45"/></g>
+          </g></svg>
+          <div class="lbl"><small>Frontscheibe</small>Klar. Wieder.</div>
+        </div>
+        <div class="thumbs"><img src="img/scheiben_ersetzen-1.jpg" alt="Innenraum eines Fahrzeugs ohne Frontscheibe" loading="lazy"><img src="img/scheiben_ersetzen-2.jpg" alt="Frontscheibe wird mit Saugheber eingesetzt" loading="lazy"></div>
+      </div>
+    </article>
+
+    <article class="topic" id="scheiben-toenen">
+      <div>
+        <div class="no rv">04</div>
+        <h2 class="rv">Scheiben tönen</h2>
+        <p class="rv"><b style="color:var(--ink)">UV-Schutz.</b> Standard-Auto-Sicherheitsglas schützt lediglich vor UVB-Strahlen, nicht aber vor langwelligen und aggressiven UVA-Strahlen. Besonders gefährdet sind Mitreisende, die häufig im Fond sitzen, meist Kinder. 99 % der UV-Bestrahlung werden durch eine Folienbeschichtung der Heck- und hinteren Seitenscheiben abgehalten.</p>
+        <p class="rv"><b style="color:var(--ink)">Hitze-Schutz.</b> Durch grosse Glasflächen heizt sich der Innenraum stark auf. Mit Folie wird es im Fahrzeug spürbar kühler.</p>
+        <p class="rv"><b style="color:var(--ink)">Folienvielfalt.</b> Nicht jeder mag dunkel getönte Scheiben: Die Folien mit allen technischen Funktionen sind auch in neutraler Farbgebung erhältlich.</p>
+        <ul class="tags rv" style="margin-top:22px"><li>UV-Schutz</li><li>Reduktion von Hitze</li><li>Mehr Sicherheit bei Scheibenbruch</li><li>Hochwertige Tönungsfolien</li><li>Keine Blasen, keine Kratzer</li><li>Verschiedene Tönungsgrade</li></ul>
+        <a class="ask rv" href="mailto:info@buriola.ch?subject=Anfrage%20Scheiben%20t%C3%B6nen">Tönung anfragen</a>
+      </div>
+      <div class="vis rv">
+        <div class="stage s-tint" data-s="tint" aria-hidden="true">
+          <svg class="sc" viewBox="0 0 400 300">
+            <g class="sun"><circle cx="332" cy="62" r="17" fill="#f6b73c"/><path d="M332 28 V36 M332 88 V96 M298 62 H306 M358 62 H366 M308 38 L314 44 M350 80 L356 86 M356 38 L350 44 M308 86 L314 80" stroke="#f6b73c" stroke-width="3" stroke-linecap="round"/></g>
+            <g transform="translate(0 60)"><use href="#car" style="--car:#8f98aa"/><use href="#cglass" class="tintw" style="fill:#05070d"/></g>
+          </svg>
+          <div class="lbl"><small>UV abgehalten</small><span id="uvn">0</span> %</div>
+        </div>
+        <div class="thumbs"><img src="img/toenen-1.gif" alt="Getönte Heckscheibe an einem Fahrzeug" loading="lazy"></div>
+      </div>
+    </article>
+
+    <article class="topic" id="styling">
+      <div>
+        <div class="no rv">05</div>
+        <h2 class="rv">Styling</h2>
+        <h3 class="rv" style="margin-top:0">Fahrzeugumbau</h3>
+        <p class="rv">Für alle, die ihrem Auto ein ganz persönliches Design verleihen möchten, bieten wir ein vielfältiges Angebot an optischen Tuning-Möglichkeiten.</p>
+        <ul class="tags rv" style="margin-top:14px"><li>Flügeltüren</li><li>Spezial-Auspuffanlagen</li><li>Sportfahrwerk</li><li>Folieren</li></ul>
+        <h3 class="rv">Fahrzeugveredelung</h3>
+        <p class="rv">Lassen Sie Ihr Auto bei uns auffrischen: Ihr Fahrzeug behält sein schönes Aussehen und erstrahlt in neuem Glanz.</p>
+        <ul class="tags soft rv" style="margin-top:14px"><li>Lackreinigung</li><li>Polieren</li><li>Wachs-Versiegelung</li><li>Versiegelung von Kunststoffteilen</li></ul>
+        <a class="ask rv" href="mailto:info@buriola.ch?subject=Anfrage%20Styling">Styling anfragen</a>
+      </div>
+      <div class="vis rv">
+        <div class="stage s-style" data-s="style" aria-hidden="true">
+          <svg class="sc" viewBox="0 0 400 300">
+            <g transform="translate(0 60)"><use href="#car" style="--car:#8f98aa"/>
+              <g class="foil"><use href="#cbody" style="fill:#e3151d"/><use href="#cglass" class="cwin"/><use href="#wheels"/><path d="M120 52 L150 52 L112 140 L82 140 Z M168 52 L198 52 L160 140 L130 140 Z" fill="#fff" opacity=".9" clip-path="url(#bclip)"/></g>
+            </g>
+          </svg>
+          <div class="lbl"><small>Folieren</small>Neues Design.</div>
+        </div>
+        <div class="thumbs"><img src="img/styling-1.jpg" alt="Schwarzes Fahrzeug mit Flügeltüren" loading="lazy"><img src="img/styling-2.jpg" alt="Silberner Mini mit schwarzen Streifen" loading="lazy"><img src="img/styling-3.jpg" alt="Schwarzer Roadster mit weissen Streifen" loading="lazy"><img src="img/styling-4.jpg" alt="Rote Lackfläche nach dem Polieren" loading="lazy"><img src="img/styling-5.jpg" alt="Rotes Fahrzeug, Kotflügel" loading="lazy"><img src="img/styling-6.jpg" alt="Dunkler Lack bei der Aufbereitung" loading="lazy"><img src="img/styling-7.jpg" alt="Lackoberfläche mit Spiegelung" loading="lazy"><img src="img/styling-8.jpg" alt="Schwarzer Lack, glänzend" loading="lazy"><img src="img/styling-9.jpg" alt="Schwarzer Sportwagen in der Werkstatt" loading="lazy"></div>
+      </div>
+    </article>
+
+    <article class="topic" id="oldtimer">
+      <div>
+        <div class="no rv">06</div>
+        <h2 class="rv">Oldtimer-Restau&shy;rationen</h2>
+        <p class="rv">Fahren Sie einen Oldtimer und suchen Sie jemanden, der Ihr Schmuckstück auf Vordermann bringen soll? Dann sind wir genau der richtige Ansprechpartner für Sie.</p>
+        <p class="rv">Wir restaurieren Ihr Auto fachgerecht und liebevoll bis ins kleinste Detail. Ob eine Teil- oder Komplettrestauration notwendig ist, hängt von vielen Faktoren ab, und nicht zuletzt spielen auch die finanziellen Möglichkeiten eine Rolle.</p>
+        <ul class="tags rv" style="margin-top:22px"><li>Voll- und Teilrestaurationen</li><li>Teile-Anfertigungen</li><li>Rostreparaturen</li><li>Spezialanfertigungen</li><li>Verstärkungen</li><li>Neukonstruktionen</li></ul>
+        <a class="ask rv" href="mailto:info@buriola.ch?subject=Anfrage%20Oldtimer-Restauration">Restauration anfragen</a>
+      </div>
+      <div class="vis rv">
+        <div class="stage s-old" data-s="old" aria-hidden="true">
+          <svg class="sc" viewBox="0 0 400 300">
+            <g transform="translate(0 60)">
+              <ellipse class="shadow" cx="200" cy="172" rx="170" ry="9"/>
+              <use href="#obody" style="fill:#2f5d46"/>
+              <path d="M122 100 Q136 70 176 68 L208 68 L208 100 Z M216 68 Q246 70 262 100 L216 100 Z" class="cwin"/>
+              <g clip-path="url(#oclip)"><g class="shine"><path d="M0 40 H46 L16 150 H-30 Z" fill="#fff" opacity=".38"/><path d="M60 40 H72 L42 150 H30 Z" fill="#fff" opacity=".25"/></g></g>
+              <circle class="rust" cx="70" cy="122" r="12" fill="#8a4a1f"/><circle class="rust" cx="150" cy="118" r="9" fill="#a3541f"/><circle class="rust" cx="240" cy="110" r="13" fill="#8a4a1f"/><circle class="rust" cx="322" cy="122" r="10" fill="#a3541f"/><circle class="rust" cx="196" cy="128" r="7" fill="#6e3a17"/>
+              <circle cx="98" cy="142" r="27" fill="#161925"/><circle cx="98" cy="142" r="19" fill="#f3f3ef"/><circle cx="98" cy="142" r="10" fill="#cfd3dc"/>
+              <circle cx="302" cy="142" r="27" fill="#161925"/><circle cx="302" cy="142" r="19" fill="#f3f3ef"/><circle cx="302" cy="142" r="10" fill="#cfd3dc"/>
+            </g>
+          </svg>
+          <div class="lbl"><small>Restauration</small>Rost weg.</div>
+        </div>
+        <div class="thumbs"><img src="img/oldtimer-1.jpg" alt="Grüner Oldtimer mit Weisswandreifen" loading="lazy"><img src="img/oldtimer-2.jpg" alt="Rote Sportwagen-Karosserie auf der Hebebühne" loading="lazy"><img src="img/oldtimer-3.jpg" alt="Oldtimer in Restauration, teilweise abgedeckt" loading="lazy"><img src="img/oldtimer-4.jpg" alt="Rot-weisser Oldtimer auf dem Anhänger" loading="lazy"><img src="img/oldtimer-5.jpg" alt="Oldtimer in der Werkstatt" loading="lazy"><img src="img/oldtimer-6.jpg" alt="Karosserie im Rohzustand" loading="lazy"><img src="img/oldtimer-7.jpg" alt="Oldtimer-Karosserie in Arbeit" loading="lazy"><img src="img/oldtimer-8.jpg" alt="Oldtimer bei der Restauration" loading="lazy"><img src="img/oldtimer-9.jpg" alt="Restaurierter Oldtimer" loading="lazy"></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="rundum">
+  <div class="wrap">
+    <div class="kicker rv">Rundum</div>
+    <div class="objs" id="objs"><span>Kompetente Beratung. </span><span>Schadenmanagement. </span><span>Top-Qualität. </span><span>Abschleppdienst. </span><span>Ersatzfahrzeug.</span></div>
+    <p class="rv">Auf Grund äusserer Umwelteinflüsse wie Hagel, Steinschläge oder rücksichtslose Parkierer sowie Unachtsamkeit gibt es viele Ursachen, bei denen Ihr Fahrzeug im Lauf seines Lebens zu Schaden kommen kann. Wir arbeiten markenunabhängig.</p>
+    <div class="wk rv"><img src="img/werkstatt-1.jpg" alt="Werkstatt mit Fahrzeugen" loading="lazy"><img src="img/werkstatt-3.jpg" alt="Fahrzeug auf der Richtbank in der Werkstatt" loading="lazy"><img src="img/werkstatt-4.jpg" alt="Karosserie im Rohbau" loading="lazy"><img src="img/werkstatt-5.jpg" alt="Fahrzeuge in der Werkstatt" loading="lazy"></div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap contact">
+    <div>
+      <div class="kicker rv">Kontakt</div>
+      <h2 class="rv">Wir beraten Sie gerne.</h2>
+      <a class="big rv" href="tel:+41449550550">044 955 05 50</a><br>
+      <a class="mid rv" href="tel:+41786261992">Natel 078 626 19 92</a><br>
+      <a class="mail rv" href="mailto:info@buriola.ch">info@buriola.ch</a>
+      <p class="addr rv">Carrosserie Carlo Buriola<br>Schickmattweg 2 · 8332 Russikon<br><a href="https://www.google.com/maps/search/?api=1&query=Carrosserie+Carlo+Buriola+Schickmattweg+2+8332+Russikon" target="_blank" rel="noopener">Lageplan öffnen</a></p>
+    </div>
+    <form id="form" class="rv">
+      <h3>Kurz beschreiben, wir melden uns.</h3>
+      <label>Thema
+        <select name="thema"><option>Dellen drücken</option><option>Reparatur</option><option>Scheibe ersetzen</option><option>Scheiben tönen</option><option>Styling</option><option>Oldtimer-Restauration</option></select>
+      </label>
+      <label>Name<input name="name" autocomplete="name" required></label>
+      <label>Telefon<input name="tel" type="tel" autocomplete="tel"></label>
+      <label>Nachricht<textarea name="msg" placeholder="Zum Beispiel: Parkschaden an der Beifahrertür, kein Lackschaden."></textarea></label>
+      <button type="submit">Anfrage senden</button>
+      <small>Öffnet Ihr Mailprogramm mit der fertigen Nachricht.</small>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Carrosserie Carlo Buriola · Schickmattweg 2 · 8332 Russikon</span>
+    <span><a href="tel:+41449550550">044 955 05 50</a> · <button type="button" id="replay">Animation nochmals abspielen</button></span>
+  </div>
+</footer>
+
+<div class="draft"><i></i><span><b>Entwurf</b> · nicht veröffentlicht</span></div>
+
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var logoOnly=/[?&]logo\b/.test(location.search);
+  var body=document.body, intro=document.getElementById('intro'), isvg=intro.querySelector('svg'), hlogo=document.getElementById('hlogo');
+  if(logoOnly) body.classList.add('logo-only');
+
+  var timers=[];
+  function play(){
+    timers.forEach(clearTimeout); timers=[];
+    body.classList.add('intro-on'); body.classList.remove('ready');
+    intro.classList.remove('gone','fly','play','done'); isvg.style.transform=''; intro.style.background='';
+    void intro.offsetWidth; intro.classList.add('play');
+    if(logoOnly) return;
+    timers.push(setTimeout(function(){
+      var a=isvg.getBoundingClientRect(), b=hlogo.getBoundingClientRect(), s=b.width/a.width;
+      intro.classList.add('fly','done'); isvg.style.transform='translate('+(b.left-a.left)+'px,'+(b.top-a.top)+'px) scale('+s+')';
+      intro.style.background='transparent'; body.classList.add('ready');
+    }, reduce?300:3200));
+    timers.push(setTimeout(function(){ body.classList.remove('intro-on'); intro.classList.add('gone'); }, reduce?400:3980));
+  }
+  intro.style.transition='background .6s ease';
+  play();
+  document.getElementById('replay').addEventListener('click',function(){ scrollTo({top:0,behavior:'instant'}); setTimeout(play,60); });
+
+  // ----- Bühnen: Scroll-Fortschritt als --p -----
+  var stages={}; [].forEach.call(document.querySelectorAll('.stage'),function(s){ stages[s.getAttribute('data-s')]=s; });
+  var uvn=document.getElementById('uvn');
+  function prog(el,a,b){ var r=el.getBoundingClientRect(), vh=innerHeight; return Math.min(1,Math.max(0,(vh*a-r.top)/(vh*(a-b)))); }
+  function setAll(v){ for(var k in stages){ stages[k].style.setProperty('--p',v); } stages.richt.classList.toggle('done',v>.92); uvn.textContent=Math.round(v*99); }
+  var objs=[].slice.call(document.querySelectorAll('#objs span')), objsBox=document.getElementById('objs');
+  if(reduce) setAll(1);
+
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+
+  var hdr=document.getElementById('hdr'), navs=[].slice.call(document.querySelectorAll('nav a:not(.tel)')), secs=navs.map(function(a){ return document.querySelector(a.getAttribute('href')); }), tick=false;
+  function frame(){
+    tick=false; var y=scrollY, vh=innerHeight;
+    hdr.classList.toggle('solid', y>30);
+    var c2=-1; secs.forEach(function(sc,i){ if(sc.getBoundingClientRect().top<vh*.45) c2=i; });
+    if(document.getElementById('scheiben-toenen').getBoundingClientRect().top<vh*.45 && c2===2) c2=2;
+    navs.forEach(function(l,i){ l.classList.toggle('on', i===c2); });
+    if(reduce) return;
+    var pd=prog(stages.dell,.95,.3), pr=prog(stages.richt,.95,.3), pg=prog(stages.glas,.95,.3), pt=prog(stages.tint,.95,.3), ps=prog(stages.style,.95,.3), po=prog(stages.old,.95,.3);
+    stages.dell.style.setProperty('--p',pd); stages.richt.style.setProperty('--p',pr); stages.richt.classList.toggle('done',pr>.92);
+    stages.glas.style.setProperty('--p',pg); stages.tint.style.setProperty('--p',pt); uvn.textContent=Math.round(pt*99);
+    stages.style.style.setProperty('--p',ps); stages.old.style.setProperty('--p',po);
+    var pp=prog(objsBox,.9,.35), m=Math.ceil(pp*objs.length); objs.forEach(function(s,i){ s.classList.toggle('lit', i<m); });
+  }
+  function onScroll(){ if(!tick){ tick=true; requestAnimationFrame(frame); } }
+  addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',onScroll); frame();
+
+  document.getElementById('form').addEventListener('submit',function(e){
+    e.preventDefault(); var f=e.target;
+    var b='Guten Tag Herr Buriola\n\n'+(f.msg.value||'')+'\n\nName: '+f.name.value+'\nTelefon: '+f.tel.value+'\n';
+    location.href='mailto:info@buriola.ch?subject='+encodeURIComponent('Anfrage '+f.thema.value)+'&body='+encodeURIComponent(b);
+  });
+})();
+</script>
+</body>
+</html>

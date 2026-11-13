@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Garage Erwin Hofer AG · Service, Reparaturen, Occasionen · Obergösgen</title>
+<meta name="description" content="Garage Erwin Hofer AG in Obergösgen: Service und Reparaturen, Abgaswartung, Klimaservice, MFK-Bereitstellungen, Unfallreparaturen sowie An- und Verkauf von Occasionen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0d3b8c; --blue:#0b6ebd; --blue-d:#095594; --yel:#f4e62a; --sky:#dfe8f4; --sky-d:#bccae3; --ink:#0b1c3a; --mute:#4f5b74; --line:#d5dceb; --paper:#f8f9fc; --white:#fff;
+  --pad:clamp(20px,5vw,72px); --max:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 "Public Sans",system-ui,sans-serif;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,p,ul{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.kicker{font:700 13.5px/1 "Public Sans",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+
+/* Kachel-Muster */
+.m-service{background:repeating-linear-gradient(90deg,rgba(255,255,255,.14) 0 3px,transparent 3px 22px),repeating-radial-gradient(circle at 78% 62%,#1b1f2a 0 26px,#2d3340 26px 30px,#aeb6c4 30px 54px,#1b1f2a 54px 58px)}
+.m-pruef{background:repeating-conic-gradient(from -90deg at 50% 100%,#f4e62a 0 4deg,transparent 4deg 18deg),var(--navy)}
+.m-unfall{background:linear-gradient(160deg,transparent 0 55%,rgba(255,255,255,.18) 55% 57%,transparent 57%),repeating-linear-gradient(0deg,rgba(255,255,255,.12) 0 2px,transparent 2px 14px),var(--blue)}
+.m-occ{background:linear-gradient(0deg,#2b2f3a 0 30%,transparent 30%),repeating-linear-gradient(90deg,#f4e62a 0 40px,transparent 40px 80px) 0 70%/100% 4px no-repeat,linear-gradient(180deg,#0d3b8c,#0b6ebd)}
+
+.logo text{font-kerning:none}
+
+/* ---------- Intro ---------- */
+#intro{position:fixed;inset:0;z-index:60;background:var(--sky);display:grid;place-items:center}
+#intro svg{width:min(88vw,640px);height:auto;overflow:visible;transform-origin:0 0;will-change:transform}
+#intro.fly svg{transition:transform .75s cubic-bezier(.7,0,.2,1)}
+#intro.gone{display:none}
+#intro .cov{fill:var(--sky)}
+#intro .hf-line{stroke-dasharray:1;stroke-dashoffset:1}
+#intro .hf-body,#intro .hf-wheel{opacity:0}
+#intro .hf-tile{transform-origin:65px 65px;transform:scale(.6);opacity:0}
+#intro .hf-t1,#intro .hf-t2,#intro .hf-acc{opacity:0}
+#intro .hf-t1,#intro .hf-t2{transform:translateX(-26px)}
+#intro.play .hf-tile{animation:tile .45s cubic-bezier(.3,1.3,.5,1) .05s forwards}
+#intro.play .hf-l1{animation:draw .55s cubic-bezier(.5,0,.3,1) .5s forwards}
+#intro.play .hf-l2{animation:draw .6s cubic-bezier(.5,0,.3,1) .62s forwards}
+#intro.play .hf-l3{animation:draw .55s cubic-bezier(.5,0,.3,1) .76s forwards}
+#intro.play .hf-body{animation:fade .5s ease 1.05s forwards}
+#intro.play .hf-wheel{animation:fade .3s ease 1.3s forwards}
+#intro.play .cov-panel{animation:wipe .8s cubic-bezier(.6,0,.25,1) 1.45s forwards}
+#intro.play .hf-t1{animation:slide .5s cubic-bezier(.2,.8,.2,1) 1.85s forwards}
+#intro.play .hf-t2{animation:slide .5s cubic-bezier(.2,.8,.2,1) 2.05s forwards}
+#intro.play .hf-acc{animation:fade .5s ease 2.3s forwards}
+#intro.done .cov{display:none}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes tile{to{opacity:1;transform:none}}
+@keyframes wipe{to{transform:translateX(340px)}}
+@keyframes slide{to{opacity:1;transform:none}}
+@keyframes fade{to{opacity:1}}
+
+/* ---------- Header ---------- */
+header{position:fixed;left:0;right:0;top:0;z-index:40;transition:background .3s,box-shadow .3s}
+header .in{max-width:var(--max);margin:0 auto;padding:12px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:16px}
+header.solid{background:rgba(223,232,244,.95);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--sky-d)}
+#hlogo{display:block;width:clamp(170px,19vw,236px);transition:width .3s;flex:none}
+header.solid #hlogo{width:clamp(140px,14vw,176px)}
+#hlogo svg{display:block;width:100%;height:auto;overflow:visible}
+body.intro-on #hlogo{visibility:hidden}
+nav{display:flex;align-items:center;gap:clamp(12px,2vw,28px);font:700 14.5px/1 "Public Sans",sans-serif;letter-spacing:.04em}
+nav a{text-decoration:none;padding:8px 0;position:relative}
+nav a:not(.tel)::after{content:"";position:absolute;left:0;right:0;bottom:1px;height:3px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+nav a:hover::after,nav a.on::after{transform:scaleX(1)}
+nav .tel{background:var(--navy);color:#fff;padding:12px 15px;white-space:nowrap}
+nav .tel:hover{background:var(--blue)}
+@media(max-width:980px){nav a:not(.tel){display:none}}
+
+/* ---------- Hero ---------- */
+.hero{background:var(--sky);padding:clamp(120px,13vw,170px) 0 0;position:relative;overflow:hidden}
+.spd{position:absolute;right:0;height:3px;background:var(--blue);opacity:.35;transform:scaleX(0);transform-origin:right;transition:transform 1.1s cubic-bezier(.2,.8,.2,1) .2s;pointer-events:none}
+.spd.s1{top:30%;width:26%}.spd.s2{top:35%;width:18%;transition-delay:.35s}.spd.s3{top:40%;width:30%;transition-delay:.5s}@media(max-width:700px){.spd{display:none}}
+body.ready .spd{transform:none}
+.hero .wrap{position:relative}
+.hero h1{font:900 clamp(44px,8vw,124px)/.95 "Public Sans",sans-serif;letter-spacing:-.04em;margin:22px 0 26px;max-width:9.5em}
+.hero h1 span{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.hero h1 span i{display:block;font-style:normal;transform:translateY(110%);transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+body.ready .hero h1 span i{transform:none}
+body.ready .hero h1 span:nth-child(2) i{transition-delay:.08s}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero .row{display:flex;flex-wrap:wrap;gap:18px 40px;align-items:center;justify-content:space-between}
+.hero p.lead{font-size:clamp(17px,1.5vw,20px);max-width:30em;color:#2f3c57}
+.badge{display:inline-flex;align-items:center;gap:10px;background:#fff;padding:11px 15px;font:600 15px/1.2 "Public Sans",sans-serif}
+.badge i{width:10px;height:10px;border-radius:50%;background:#9aa0aa;flex:none}
+.badge.is-open i{background:#1e9e55;box-shadow:0 0 0 4px rgba(30,158,85,.2)}
+.fade{opacity:0;transform:translateY(16px);transition:opacity .7s ease .35s,transform .7s ease .35s}
+body.ready .fade{opacity:1;transform:none}
+.pick{margin-top:clamp(34px,4.4vw,56px)}
+.pick>b{display:block;font:700 13.5px/1 "Public Sans",sans-serif;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;position:relative;z-index:2;margin-bottom:calc(clamp(34px,5vw,64px) * -1)}
+.tile{position:relative;display:block;text-decoration:none;color:#fff;aspect-ratio:1/1.08;overflow:hidden;background:var(--ink)}
+.tile .tx{position:absolute;inset:-12px;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.tile:hover .tx{transform:translate(10px,-10px) scale(1.04)}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(6,16,40,.88) 0,rgba(6,16,40,.25) 46%,transparent 70%)}
+.tile span{position:absolute;left:16px;right:14px;bottom:15px;z-index:2;font:800 clamp(17px,1.9vw,25px)/1.08 "Public Sans",sans-serif;letter-spacing:-.015em}
+.tile small{display:block;font:600 12.5px/1 "Public Sans",sans-serif;letter-spacing:.16em;opacity:.85;margin-bottom:8px;color:var(--yel)}
+.tile:focus-visible{outline:4px solid var(--blue);outline-offset:2px}
+@media(max-width:760px){.tiles{grid-template-columns:1fr 1fr}.tile{aspect-ratio:1/.8}}
+
+/* ---------- Themen ---------- */
+#themen{padding:clamp(90px,12vw,170px) 0 clamp(30px,5vw,60px)}
+.topic{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(24px,5vw,80px);align-items:center;padding:clamp(40px,6vw,84px) 0;border-top:1px solid var(--line);scroll-margin-top:70px}
+.topic:first-child{border-top:0;padding-top:0}
+.topic:nth-child(even) .vis{order:-1}
+.topic .no{font:800 15px/1 "Public Sans",sans-serif;letter-spacing:.14em;color:var(--blue)}
+.topic h2{font:900 clamp(34px,4.8vw,68px)/1 "Public Sans",sans-serif;letter-spacing:-.035em;margin:14px 0 18px}
+.topic p{color:var(--mute);max-width:34em}
+.topic p+p{margin-top:12px}
+.topic h3{font:700 13.5px/1 "Public Sans",sans-serif;letter-spacing:.14em;text-transform:uppercase;margin:24px 0 12px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;list-style:none;padding:0}
+.tags li{border:1.5px solid var(--ink);padding:7px 11px;font:600 14.5px/1.1 "Public Sans",sans-serif;background:#fff}
+.tags.soft li{border-color:var(--line);color:var(--mute)}
+.ask{display:inline-block;margin-top:24px;font:700 15px/1 "Public Sans",sans-serif;text-decoration:none;color:var(--ink);background:var(--yel);padding:15px 19px;transition:background .2s,transform .2s}
+.ask:hover{background:#ffee3a;transform:translateY(-2px)}
+.vis{min-width:0}
+.stage{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--navy)}
+.stage svg{position:absolute;inset:0;width:100%;height:100%}
+.note{font-size:13px;color:var(--mute);margin-top:8px}
+@media(max-width:860px){.topic{grid-template-columns:1fr}.topic:nth-child(even) .vis{order:0}}
+.stage .cap{position:absolute;left:6%;bottom:6%;color:#fff;font:900 clamp(22px,3.2vw,44px)/1 "Public Sans",sans-serif;letter-spacing:-.03em}
+.stage .cap em{font-style:normal;color:var(--yel)}
+
+/* Service: Rad dreht, Strasse zieht vorbei */
+.s-service{background:linear-gradient(180deg,#0d3b8c 0,#0b6ebd 70%)}
+.s-service .road{fill:#202633}
+.s-service .rl{stroke:#f4e62a;stroke-width:5;stroke-dasharray:34 40}
+.s-service .sp{stroke:#fff;stroke-width:3;stroke-linecap:round;opacity:.8}
+/* Pruefung: Zeiger und Liste */
+.s-pruef{background:#0d3b8c}
+.s-pruef .rows{position:absolute;right:5%;top:12%;bottom:12%;width:44%;display:flex;flex-direction:column;justify-content:space-around}
+.s-pruef .rw{display:flex;align-items:center;gap:10px;color:#fff;font:700 clamp(12px,1.55vw,19px)/1.15 "Public Sans",sans-serif;opacity:.35;transition:opacity .3s}
+.s-pruef .rw b{flex:none;width:clamp(20px,2.4vw,30px);aspect-ratio:1;border-radius:50%;border:2px solid #fff;display:grid;place-items:center;font-size:.9em;transition:background .3s,color .3s,border-color .3s}
+.s-pruef .rw.on{opacity:1}
+.s-pruef .rw.on b{background:var(--yel);border-color:var(--yel);color:var(--ink)}
+/* Unfall: Delle wird ausgebeult */
+.s-unfall{background:linear-gradient(180deg,#dfe8f4,#bccae3)}
+.s-unfall .cap{color:var(--ink)}
+.s-unfall .cap em{color:var(--blue)}
+/* Occasionen: Auto faehrt ein */
+.s-occ{background:linear-gradient(180deg,#0d3b8c 0,#0b6ebd 66%)}
+.s-occ .tag{position:absolute;right:5%;top:8%;background:var(--yel);color:var(--ink);font:800 clamp(12px,1.6vw,19px)/1.15 "Public Sans",sans-serif;padding:10px 13px;opacity:0;transform:translateY(-10px);transition:opacity .4s,transform .4s}
+.s-occ .tag.on{opacity:1;transform:none}
+
+/* ---------- Werkstatt ---------- */
+#werkstatt{background:var(--ink);color:#fff;padding:clamp(60px,9vw,120px) 0}
+#werkstatt .kicker{color:var(--yel)}
+.objs{margin-top:22px;font:900 clamp(30px,5.4vw,82px)/1.06 "Public Sans",sans-serif;letter-spacing:-.035em}
+.objs span{display:inline;color:rgba(255,255,255,.22);transition:color .35s ease}
+.objs span.lit{color:#fff}
+.objs span.lit:nth-child(3n+1){color:var(--yel)}
+#werkstatt p{color:#bfc9de;max-width:38em;margin-top:28px}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,3vw,44px);margin-top:clamp(36px,5vw,64px);padding-top:30px;border-top:1px solid rgba(255,255,255,.18)}
+.facts h3{font:700 13.5px/1 "Public Sans",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--yel);margin-bottom:12px}
+.facts p{margin:0;font-size:16px}
+@media(max-width:800px){.facts{grid-template-columns:1fr}}
+
+/* ---------- Besuch ---------- */
+#besuch{padding:clamp(70px,10vw,140px) 0}
+.visit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,6vw,90px);align-items:start}
+.visit h2{font:900 clamp(34px,4.8vw,68px)/1 "Public Sans",sans-serif;letter-spacing:-.035em;margin:14px 0 22px}
+.hours{width:100%;border-collapse:collapse;font-size:17px;margin-top:8px}
+.hours td{padding:13px 0;border-top:1px solid var(--line);vertical-align:top}
+.hours tr:last-child td{border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.hours tr.today td{color:var(--blue)}
+.hint{color:var(--mute);font-size:15px;margin-top:14px}
+.shop{background:var(--sky);padding:clamp(18px,2.6vw,30px)}
+.shop img{width:100%}
+.shop b{display:block;font:800 22px/1.2 "Public Sans",sans-serif;letter-spacing:-.01em;margin-top:18px}
+.shop a.map{display:inline-block;margin-top:14px;font-weight:700;text-underline-offset:4px;text-decoration-color:var(--blue)}
+@media(max-width:800px){.visit{grid-template-columns:1fr}}
+
+/* ---------- Kontakt ---------- */
+#kontakt{background:var(--navy);color:#fff;padding:clamp(70px,10vw,130px) 0}
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,6vw,90px)}
+#kontakt .kicker{color:var(--yel)}
+.contact h2{font:900 clamp(34px,5vw,72px)/1.03 "Public Sans",sans-serif;letter-spacing:-.03em;margin:14px 0 22px}
+.contact .big{display:inline-block;font:900 clamp(36px,5vw,70px)/1 "Public Sans",sans-serif;letter-spacing:-.035em;text-decoration:none;margin:22px 0 8px}
+.contact .mail{font-size:18px;text-underline-offset:4px;overflow-wrap:anywhere}
+.contact .addr{margin-top:22px;color:#c9d6ef;font-size:16px}
+.contact .pann{margin-top:18px;background:rgba(255,255,255,.1);padding:14px 16px;font-size:16px}
+.contact .pann a{font-weight:800;white-space:nowrap}
+.team{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:8px;color:#c9d6ef;font-size:15.5px}
+.team b{color:#fff}
+form{background:#fff;color:var(--ink);padding:clamp(22px,3vw,36px);display:grid;gap:16px;align-content:start}
+form h3{font:800 24px/1.15 "Public Sans",sans-serif;letter-spacing:-.015em}
+label{display:grid;gap:6px;font:700 12.5px/1 "Public Sans",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+input,select,textarea{font:400 16px/1.4 "Public Sans",sans-serif;color:var(--ink);background:var(--paper);border:1px solid var(--line);padding:12px 13px;border-radius:0;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--blue);outline-offset:0;border-color:var(--blue)}
+textarea{min-height:110px;resize:vertical}
+form button{font:700 16px/1 "Public Sans",sans-serif;background:var(--navy);color:#fff;border:0;padding:17px 20px;cursor:pointer;transition:background .2s}
+form button:hover{background:var(--blue)}
+form small{color:var(--mute);font-size:13.5px}
+@media(max-width:860px){.contact{grid-template-columns:1fr}}
+
+footer{background:#081733;color:#aebbd6;font-size:14.5px;padding:24px 0 80px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 30px;justify-content:space-between;align-items:center}
+footer a{text-underline-offset:3px}
+footer button{font:inherit;color:inherit;background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+.draft{position:fixed;left:14px;bottom:14px;z-index:50;background:#0b1c3a;color:#fff;font:500 13px/1 "Public Sans",sans-serif;padding:9px 13px;display:flex;gap:8px;align-items:center;border-radius:2px}
+.draft i{width:8px;height:8px;border-radius:50%;background:var(--yel)}
+
+body.logo-only header,body.logo-only main,body.logo-only footer,body.logo-only .draft{display:none}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv,.fade,.hero h1 span i,.spd{opacity:1!important;transform:none!important;transition:none!important}
+  .objs span{color:#fff}
+}
+</style>
+</head>
+<body class="intro-on">
+
+<div id="intro" aria-hidden="true">
+  <svg class="logo" viewBox="0 0 460 130" role="img" aria-label="Logo Garage Erwin Hofer AG">
+<rect class="hf-tile" x="0" y="0" width="130" height="130" fill="#0d3b8c"/>
+<rect class="hf-panel" x="130" y="0" width="330" height="130" fill="#0b6ebd"/>
+<polygon class="hf-acc" points="290,0 460,0 460,34" fill="#bccae3"/>
+<polygon class="hf-acc" points="372,130 460,130 460,78" fill="#bccae3"/>
+<g class="hf-car" transform="translate(2,40) scale(.88)" fill="none" stroke="#fff" stroke-linecap="round">
+<path class="hf-body" d="M24,26.5 C44,28 56,14.5 80,14.5 C104,14.5 124,28 143,36 C124,28 106,21 84,19.5 C62,18.5 52,27 24,26.5Z" fill="#fff" stroke="none"/>
+<path class="hf-wheel" d="M116,31 C124,29 131,34 130,42 C129,48 123,50 116,47" stroke-width="2.4"/>
+<path class="hf-wheel" d="M133,40 L138,36" stroke-width="1.2"/>
+<path class="hf-line hf-l1" pathLength="1" d="M0,33.5 H97" stroke-width="2"/>
+<path class="hf-line hf-l2" pathLength="1" d="M18,40.5 H118" stroke-width="2"/>
+<path class="hf-line hf-l3" pathLength="1" d="M5,47.5 H110" stroke-width="2"/>
+</g>
+<g class="hf-word" font-family="'Arial Rounded MT Bold',Arial,Helvetica,sans-serif" font-weight="700" fill="#f4e62a"><text class="hf-t1" x="148" y="58" font-size="46" textLength="150" lengthAdjust="spacingAndGlyphs">garage</text><text class="hf-t2" x="148" y="106" font-size="46" textLength="296" lengthAdjust="spacingAndGlyphs">erwin hofer ag</text></g>
+    <rect class="cov cov-panel" x="130" y="-2" width="332" height="134"/>
+  </svg>
+</div>
+
+<header id="hdr">
+  <div class="in">
+    <a href="#top" id="hlogo" aria-label="Garage Erwin Hofer AG, zum Seitenanfang">
+      <svg class="logo" viewBox="0 0 460 130">
+<rect class="hf-tile" x="0" y="0" width="130" height="130" fill="#0d3b8c"/>
+<rect class="hf-panel" x="130" y="0" width="330" height="130" fill="#0b6ebd"/>
+<polygon class="hf-acc" points="290,0 460,0 460,34" fill="#bccae3"/>
+<polygon class="hf-acc" points="372,130 460,130 460,78" fill="#bccae3"/>
+<g class="hf-car" transform="translate(2,40) scale(.88)" fill="none" stroke="#fff" stroke-linecap="round">
+<path class="hf-body" d="M24,26.5 C44,28 56,14.5 80,14.5 C104,14.5 124,28 143,36 C124,28 106,21 84,19.5 C62,18.5 52,27 24,26.5Z" fill="#fff" stroke="none"/>
+<path class="hf-wheel" d="M116,31 C124,29 131,34 130,42 C129,48 123,50 116,47" stroke-width="2.4"/>
+<path class="hf-wheel" d="M133,40 L138,36" stroke-width="1.2"/>
+<path class="hf-line hf-l1" pathLength="1" d="M0,33.5 H97" stroke-width="2"/>
+<path class="hf-line hf-l2" pathLength="1" d="M18,40.5 H118" stroke-width="2"/>
+<path class="hf-line hf-l3" pathLength="1" d="M5,47.5 H110" stroke-width="2"/>
+</g>
+<g class="hf-word" font-family="'Arial Rounded MT Bold',Arial,Helvetica,sans-serif" font-weight="700" fill="#f4e62a"><text class="hf-t1" x="148" y="58" font-size="46" textLength="150" lengthAdjust="spacingAndGlyphs">garage</text><text class="hf-t2" x="148" y="106" font-size="46" textLength="296" lengthAdjust="spacingAndGlyphs">erwin hofer ag</text></g>
+      </svg>
+    </a>
+    <nav>
+      <a href="#service">Service</a>
+      <a href="#pruefung">Prüfungen</a>
+      <a href="#unfall">Unfall</a>
+      <a href="#occasionen">Occasionen</a>
+      <a href="#besuch">Anfahrt</a>
+      <a class="tel" href="tel:+41622911017">062 291 10 17</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <i class="spd s1"></i><i class="spd s2"></i><i class="spd s3"></i>
+  <div class="wrap">
+    <div class="kicker fade">Garage in Obergösgen · Eröffnung 1985</div>
+    <h1><span><i>Ihre Garage</i></span><span><i>mit <em>Beratung.</em></i></span></h1>
+    <div class="row fade">
+      <p class="lead">Betreuung der Kundschaft, kompetente Beratung und fachmännische Ausführung aller Service- und Reparaturarbeiten zu vorteilhaften Preisen.</p>
+      <a class="badge" id="badge" href="#besuch" style="text-decoration:none"><i></i><span id="badgetxt">Montag bis Samstag geöffnet</span></a>
+    </div>
+    <div class="pick fade">
+      <b>Bitte wählen Sie Ihr Thema</b>
+      <div class="tiles">
+        <a class="tile" href="#service"><div class="tx m-service"></div><span><small>01</small>Service und Reparaturen</span></a>
+        <a class="tile" href="#pruefung"><div class="tx m-pruef"></div><span><small>02</small>Abgaswartung, Klima, MFK</span></a>
+        <a class="tile" href="#unfall"><div class="tx m-unfall"></div><span><small>03</small>Unfall&shy;reparaturen</span></a>
+        <a class="tile" href="#occasionen"><div class="tx m-occ"></div><span><small>04</small>Occasionen</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="themen">
+  <div class="wrap">
+
+    <article class="topic" id="service">
+      <div>
+        <div class="no rv">01</div>
+        <h2 class="rv">Service und Repa&shy;raturen</h2>
+        <p class="rv">Die Service-Arbeiten an Personenwagen verschiedener Marken und Modelle werden gewissenhaft mit einer gut eingespielten Routine ausgeführt.</p>
+        <p class="rv">Auspuffanlage, Batterie oder Pneus: Dank flexibler Werkstatt-Disposition können Kundenwünsche auch sehr kurzfristig erfüllt werden. Bei der Pneu-Auswahl berät Sie die Garage persönlich.</p>
+        <h3 class="rv">Das machen wir</h3>
+        <ul class="tags rv"><li>Service und Reparaturen</li><li>Auspuffservice</li><li>Batterieservice</li><li>Pneuservice</li><li>Bremsprüfstand</li></ul>
+        <a class="ask rv" href="mailto:info@hofergarage.ch?subject=Anfrage%20Service%20%2F%20Reparatur">Service anfragen</a>
+      </div>
+      <div class="vis rv">
+        <div class="stage s-service" id="sService" aria-hidden="true">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+            <rect class="road" x="0" y="232" width="400" height="68"/>
+            <line class="rl" id="roadl" x1="-80" y1="268" x2="480" y2="268"/>
+            <g id="spds"><line class="sp" x1="30" y1="120" x2="140" y2="120"/><line class="sp" x1="10" y1="152" x2="120" y2="152"/><line class="sp" x1="50" y1="184" x2="130" y2="184"/></g>
+            <g transform="translate(250 150)"><g id="wheel"><circle r="84" fill="#161a24"/><circle r="64" fill="#c9d1de"/><circle r="52" fill="#e9eef6"/><g fill="#8794ab"><circle cx="0" cy="-30" r="7"/><circle cx="28.5" cy="-9.3" r="7"/><circle cx="17.6" cy="24.3" r="7"/><circle cx="-17.6" cy="24.3" r="7"/><circle cx="-28.5" cy="-9.3" r="7"/></g><circle r="14" fill="#f4e62a"/></g></g>
+          </svg>
+        </div>
+      </div>
+    </article>
+
+    <article class="topic" id="pruefung">
+      <div>
+        <div class="no rv">02</div>
+        <h2 class="rv">Abgas&shy;wartung, Klima und MFK</h2>
+        <p class="rv">Die Abgasmessung führt die Garage auf Wunsch auch ohne Voranmeldung durch. Reservieren Sie sich dafür 15 bis 30 Minuten Zeit.</p>
+        <p class="rv">Die Garage hat sich darauf spezialisiert, auch Fahrzeuge älteren Jahrgangs kostengünstig für die Prüfung durch die Motorfahrzeugkontrolle aufzubereiten. Lassen Sie sich eingehend beraten.</p>
+        <h3 class="rv">Das machen wir</h3>
+        <ul class="tags rv"><li>Abgaswartung</li><li>Klimaservice, alle Marken und Modelle</li><li>MFK-Bereitstellungen</li></ul>
+        <a class="ask rv" href="mailto:info@hofergarage.ch?subject=Anfrage%20Abgaswartung%20%2F%20MFK">Termin anfragen</a>
+      </div>
+      <div class="vis rv">
+        <div class="stage s-pruef" id="sPruef" aria-hidden="true">
+          <svg viewBox="0 0 340 300" preserveAspectRatio="xMidYMid meet" style="width:56%;left:0">
+            <path d="M40 210 A130 130 0 0 1 300 210" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="26"/>
+            <path d="M40 210 A130 130 0 0 1 170 80" fill="none" stroke="#bccae3" stroke-width="26"/>
+            <path d="M170 80 A130 130 0 0 1 300 210" fill="none" stroke="#f4e62a" stroke-width="26"/>
+            <g transform="translate(170 210)"><g id="needle"><path d="M-6 0 L0 -118 L6 0Z" fill="#fff"/><circle r="13" fill="#fff"/></g></g>
+          </svg>
+          <div class="rows" id="rows"><div class="rw"><b>&#10003;</b>Abgaswartung</div><div class="rw"><b>&#10003;</b>Klimaservice</div><div class="rw"><b>&#10003;</b>Bremsprüfstand</div><div class="rw"><b>&#10003;</b>MFK-Bereitstellung</div></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="topic" id="unfall">
+      <div>
+        <div class="no rv">03</div>
+        <h2 class="rv">Unfall&shy;reparaturen</h2>
+        <p class="rv">Die Garage bietet auch die Ausführung von Unfallreparaturen jeden Ausmasses an. Erwin Hofer bessert einfachere und zum Teil aufwändigere Blechschäden selber aus.</p>
+        <p class="rv">Aufwändigere Carrosseriearbeiten und Lackierungen werden an Carrosserie-Werkstätten mit Spritzwerk im Haus oder in unmittelbarer Nähe vergeben.</p>
+        <h3 class="rv">Dazu</h3>
+        <ul class="tags rv"><li>Hilfe bei Versicherungsmodalitäten</li><li>Bring- und Abholservice</li><li>Ersatzwagen</li></ul>
+        <p class="rv" style="margin-top:14px;font-size:15px">Bring- und Abholservice in der Region auf Wunsch kostenlos, Ersatzwagen gegen einen kleinen Unkostenbeitrag.</p>
+        <a class="ask rv" href="mailto:info@hofergarage.ch?subject=Anfrage%20Unfallreparatur">Schaden melden</a>
+      </div>
+      <div class="vis rv">
+        <div class="stage s-unfall" id="sUnfall" aria-hidden="true">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+            <path d="M40 110 Q120 40 200 40 L270 40 Q320 60 360 110Z" fill="#fff" opacity=".85"/>
+            <path id="panel" d="" fill="#0b6ebd"/>
+            <circle cx="105" cy="232" r="34" fill="#161a24"/><circle cx="105" cy="232" r="16" fill="#c9d1de"/>
+            <circle cx="295" cy="232" r="34" fill="#161a24"/><circle cx="295" cy="232" r="16" fill="#c9d1de"/>
+          </svg>
+        </div>
+      </div>
+    </article>
+
+    <article class="topic" id="occasionen">
+      <div>
+        <div class="no rv">04</div>
+        <h2 class="rv">Occasionen</h2>
+        <p class="rv">Ein ständiges, breites Angebot an Occasions-Fahrzeugen zu erschwinglichen Preisen: Ankauf und Verkauf von Fahrzeugen.</p>
+        <p class="rv"><b style="color:var(--ink)">Wir suchen:</b> 4 x 4 Fahrzeuge, Fahrzeuge mit Allradantrieb. Besuchen Sie die Garage, Sie erhalten ein attraktives Angebot.</p>
+        <a class="ask rv" href="mailto:info@hofergarage.ch?subject=Anfrage%20Occasion%20%2F%20Fahrzeugankauf">Occasion anfragen</a>
+      </div>
+      <div class="vis rv">
+        <div class="stage s-occ" id="sOcc" aria-hidden="true">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+            <rect x="0" y="232" width="400" height="68" fill="#202633"/>
+            <g id="car">
+              <g id="carlines" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".8"><line x1="-140" y1="150" x2="-30" y2="150"/><line x1="-160" y1="178" x2="-50" y2="178"/><line x1="-120" y1="206" x2="-40" y2="206"/></g>
+              <path d="M60 218 L78 170 Q104 128 160 126 L236 126 Q282 132 304 168 L336 178 Q350 184 350 204 L350 218 Z" fill="#fff"/>
+              <path d="M104 168 Q122 140 160 138 L196 138 L196 168Z M208 138 L238 138 Q268 142 282 168 L208 168Z" fill="#0d3b8c"/>
+              <circle cx="120" cy="222" r="26" fill="#161a24"/><circle cx="120" cy="222" r="11" fill="#c9d1de"/>
+              <circle cx="290" cy="222" r="26" fill="#161a24"/><circle cx="290" cy="222" r="11" fill="#c9d1de"/>
+            </g>
+          </svg>
+          <div class="tag" id="occtag">Ankauf und Verkauf</div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="werkstatt">
+  <div class="wrap">
+    <div class="kicker rv">Die Werkstatt</div>
+    <div class="objs" id="objs"><span>4 Arbeitsplätze. </span><span>Zwei Zweisäulenlifte. </span><span>Ein 4-Säulenlift. </span><span>Bremsprüfstand. </span><span>Spurprüfplatte. </span><span>Lichteinstellgerät. </span><span>Pneumontier- und Auswuchtmaschine.</span></div>
+    <p class="rv">Ein grosser, hell beleuchteter Raum, dazu ein getrennter Waschraum mit Hochdruckreinigung für Motoren- und Chassisreinigung. Die Garage verfügt über sämtliche gesetzlich vorgeschriebenen und branchenüblichen Werkstatteinrichtungen.</p>
+    <div class="facts">
+      <div class="rv"><h3>Eröffnung</h3><p>Im Februar 1985 fand die offizielle Eröffnung der Garage Erwin Hofer AG statt.</p></div>
+      <div class="rv"><h3>Lehrlingswesen</h3><p>Der Betrieb bildet seit 1988 laufend junge Berufsleute aus.</p></div>
+      <div class="rv"><h3>Mitsubishi</h3><p>Während mehr als 8 Jahren war Erwin Hofer Lokalvertreter für Mitsubishi. Heute wird die Garage ohne Markenvertretung geführt.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="besuch">
+  <div class="wrap visit">
+    <div>
+      <div class="kicker rv">Öffnungszeiten</div>
+      <h2 class="rv">Kommen Sie vorbei.</h2>
+      <table class="hours rv" id="hours">
+        <tr data-d="1,2,3,4"><td>Montag bis Donnerstag</td><td>7.30–11.45 · 13.30–18.00</td></tr>
+        <tr data-d="5"><td>Freitag</td><td>7.30–11.45 · 13.30–17.00</td></tr>
+        <tr data-d="6"><td>Samstag</td><td>8.00–11.45</td></tr>
+      </table>
+      <p class="hint rv">Samstags nach telefonischer Voranmeldung u. a. Klimaservice, amtliche Abgaswartung, Pneu- und Reifenservice und Bremsenkontrolle. In dringenden Fällen und für den Verkauf auch ausserhalb der Öffnungszeiten nach Absprache.</p>
+    </div>
+    <div class="shop rv">
+      <img src="img/aussenansicht.jpg" alt="Die Garage Erwin Hofer AG in Obergösgen" loading="lazy" width="615" height="410">
+      <b>Garage Erwin Hofer AG<br>Walkestrasse 51<br>4653 Obergösgen</b>
+      <a class="map" href="https://www.google.com/maps/search/?api=1&query=Garage+Erwin+Hofer+AG+Walkestrasse+51+4653+Oberg%C3%B6sgen" target="_blank" rel="noopener">Lageplan öffnen</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap contact">
+    <div>
+      <div class="kicker rv">Kontakt</div>
+      <h2 class="rv">Für Fragen und Auskünfte erreichen Sie uns hier.</h2>
+      <a class="big rv" href="tel:+41622911017">062 291 10 17</a><br>
+      <a class="mail rv" href="mailto:info@hofergarage.ch">info@hofergarage.ch</a>
+      <p class="pann rv">24-Stunden-Bereitschaftsdienst für Pannen ausserhalb der Öffnungszeiten: <a href="tel:+41796069438">079 606 94 38</a></p>
+      <p class="addr rv">Garage Erwin Hofer AG · Walkestrasse 51 · 4653 Obergösgen<br>Fax 062 291 14 19</p>
+      <ul class="team rv">
+        <li><b>Erwin Hofer</b> · praktisch mitarbeitender Geschäftsführer und Betriebsinhaber</li>
+        <li><b>Doris Hofer</b> · Administration / Buchhaltung</li>
+        <li><b>Stefan Andreas Hofer</b> · Kundenberater, zuständig für die Lehrlingsausbildung</li>
+        <li><b>Naim Shej</b> · Automobil-Fachmann</li>
+      </ul>
+    </div>
+    <form id="form" class="rv">
+      <h3>Kurz beschreiben, wir melden uns.</h3>
+      <label>Thema
+        <select name="thema"><option>Occasionsfahrzeug</option><option>Fahrzeugankauf</option><option>Abgaswartung</option><option>Auspuff-, Batterie- und Pneuservice</option><option>Bremskontrolle</option><option>Klimaservice</option><option>Service und Reparaturen</option><option>Lehrstelle</option></select>
+      </label>
+      <label>Name<input name="name" autocomplete="name" required></label>
+      <label>Telefon<input name="tel" type="tel" autocomplete="tel"></label>
+      <label>Nachricht<textarea name="msg" placeholder="Zum Beispiel: Wann kann ich für die Abgaswartung vorbeikommen?"></textarea></label>
+      <button type="submit">Anfrage senden</button>
+      <small>Öffnet Ihr Mailprogramm mit der fertigen Nachricht.</small>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Garage Erwin Hofer AG · Walkestrasse 51 · 4653 Obergösgen</span>
+    <span><a href="tel:+41622911017">062 291 10 17</a> · <button type="button" id="replay">Animation nochmals abspielen</button></span>
+  </div>
+</footer>
+
+<div class="draft"><i></i><span><b>Entwurf</b> · nicht veröffentlicht</span></div>
+
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var logoOnly=/[?&]logo\b/.test(location.search);
+  var body=document.body, intro=document.getElementById('intro'), isvg=intro.querySelector('svg'), hlogo=document.getElementById('hlogo');
+  if(logoOnly) body.classList.add('logo-only');
+
+  var timers=[];
+  function play(){
+    timers.forEach(clearTimeout); timers=[];
+    body.classList.add('intro-on'); body.classList.remove('ready');
+    intro.classList.remove('gone','fly','play','done'); isvg.style.transform=''; intro.style.background='';
+    void intro.offsetWidth; intro.classList.add('play');
+    if(logoOnly) return;
+    timers.push(setTimeout(function(){
+      var a=isvg.getBoundingClientRect(), b=hlogo.getBoundingClientRect(), s=b.width/a.width;
+      intro.classList.add('fly','done'); isvg.style.transform='translate('+(b.left-a.left)+'px,'+(b.top-a.top)+'px) scale('+s+')';
+      intro.style.background='transparent'; body.classList.add('ready');
+    }, reduce?300:3100));
+    timers.push(setTimeout(function(){ body.classList.remove('intro-on'); intro.classList.add('gone'); }, reduce?400:3880));
+  }
+  intro.style.transition='background .6s ease';
+  play();
+  document.getElementById('replay').addEventListener('click',function(){ scrollTo({top:0,behavior:'instant'}); setTimeout(play,60); });
+
+  // ----- Öffnungszeiten (Zeitzone Zürich) -----
+  (function(){
+    var p={}; new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Zurich',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()).forEach(function(x){ p[x.type]=x.value; });
+    var d={Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6,Sun:0}[p.weekday], m=(+p.hour%24)*60+(+p.minute);
+    [].forEach.call(document.querySelectorAll('#hours tr'),function(r){ if(r.getAttribute('data-d').split(',').indexOf(String(d))>-1) r.classList.add('today'); });
+    var badge=document.getElementById('badge'), txt=document.getElementById('badgetxt'), t;
+    var close=d===5?1020:1080, am=[450,705], pm=[810,close], sat=[480,705];
+    function hm(x){ return Math.floor(x/60)+'.'+('0'+x%60).slice(-2); }
+    if(d>=1&&d<=5){
+      if((m>=am[0]&&m<am[1])||(m>=pm[0]&&m<pm[1])){ badge.classList.add('is-open'); t='Jetzt geöffnet, bis '+(m<am[1]?'11.45':hm(close))+' Uhr'; }
+      else if(m<am[0]) t='Öffnet heute um 7.30 Uhr';
+      else if(m<pm[0]) t='Mittagspause, ab 13.30 Uhr wieder offen';
+      else t='Geschlossen, '+(d===5?'Samstag ab 8.00':'morgen ab 7.30')+' Uhr';
+    } else if(d===6){
+      if(m>=sat[0]&&m<sat[1]){ badge.classList.add('is-open'); t='Jetzt geöffnet, bis 11.45 Uhr'; }
+      else if(m<sat[0]) t='Öffnet heute um 8.00 Uhr';
+      else t='Geschlossen, Montag ab 7.30 Uhr';
+    } else t='Geschlossen, Montag ab 7.30 Uhr';
+    txt.textContent=t;
+  })();
+
+  // ----- Bühnen -----
+  var wheel=document.getElementById('wheel'), roadl=document.getElementById('roadl'), spds=document.getElementById('spds'), sService=document.getElementById('sService');
+  var needle=document.getElementById('needle'), rws=[].slice.call(document.querySelectorAll('#rows .rw')), sPruef=document.getElementById('sPruef');
+  var panel=document.getElementById('panel'), sUnfall=document.getElementById('sUnfall');
+  var car=document.getElementById('car'), occtag=document.getElementById('occtag'), sOcc=document.getElementById('sOcc');
+  var objs=[].slice.call(document.querySelectorAll('#objs span')), objsBox=document.getElementById('objs');
+
+  function prog(el,a,b){ var r=el.getBoundingClientRect(), vh=innerHeight; return Math.min(1,Math.max(0,(vh*a-r.top)/(vh*(a-b)))); }
+  function panelPath(p){
+    var A=(1-p)*46, y=118;
+    return 'M30 '+y+' L120 '+y+' Q150 '+(y+A*1.1)+' 200 '+(y+A*1.25)+' Q250 '+(y+A*1.1)+' 280 '+y+' L370 '+y+' L370 235 L30 235Z';
+  }
+  function draw(pS,pP,pU,pO){
+    wheel.setAttribute('transform','rotate('+(pS*900)+')');
+    roadl.setAttribute('stroke-dashoffset',String(-pS*300));
+    spds.setAttribute('transform','translate('+(pS*40-20)+' 0)');
+    needle.setAttribute('transform','rotate('+(-80+pP*120)+')');
+    rws.forEach(function(r,i){ r.classList.toggle('on', pP>(i+1)*.2); });
+    panel.setAttribute('d',panelPath(pU));
+    car.setAttribute('transform','translate('+((1-pO)*-340)+' 0)');
+    occtag.classList.toggle('on',pO>.9);
+  }
+  draw(0,0,0,0);
+  if(reduce) draw(1,1,1,1);
+
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+
+  var hdr=document.getElementById('hdr'), navs=[].slice.call(document.querySelectorAll('nav a:not(.tel)')), secs=navs.map(function(a){ return document.querySelector(a.getAttribute('href')); }), tick=false;
+  function frame(){
+    tick=false; var y=scrollY, vh=innerHeight;
+    hdr.classList.toggle('solid', y>30);
+    var c2=-1; secs.forEach(function(sc,i){ if(sc.getBoundingClientRect().top<vh*.45) c2=i; });
+    navs.forEach(function(l,i){ l.classList.toggle('on', i===c2); });
+    if(reduce) return;
+    draw(prog(sService,.95,.1),prog(sPruef,.9,.3),prog(sUnfall,.9,.35),prog(sOcc,.9,.3));
+    var po=prog(objsBox,.9,.35), m=Math.ceil(po*objs.length); objs.forEach(function(s,i){ s.classList.toggle('lit', i<m); });
+  }
+  function onScroll(){ if(!tick){ tick=true; requestAnimationFrame(frame); } }
+  addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',onScroll); frame();
+
+  document.getElementById('form').addEventListener('submit',function(e){
+    e.preventDefault(); var f=e.target;
+    var b='Guten Tag Herr Hofer\n\n'+(f.msg.value||'')+'\n\nName: '+f.name.value+'\nTelefon: '+f.tel.value+'\n';
+    location.href='mailto:info@hofergarage.ch?subject='+encodeURIComponent('Anfrage '+f.thema.value)+'&body='+encodeURIComponent(b);
+  });
+})();
+</script>
+</body>
+</html>
